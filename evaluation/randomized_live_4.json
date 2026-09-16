@@ -1,0 +1,56 @@
+{
+  "seed": 4,
+  "order": [
+    "B1",
+    "B0"
+  ],
+  "measurements": {
+    "B1": {
+      "network": {
+        "measured_at": "2026-09-16T12:39:09.395793+00:00",
+        "host": "127.0.0.1",
+        "status": "measured",
+        "interface": "ueTun0",
+        "target": "10.60.0.1",
+        "ping_count": 5,
+        "packet_loss_percent": 0.0,
+        "rtt_mean_ms": 0.05,
+        "throughput": {
+          "status": "measured",
+          "sent_bps": 5025072703.776958,
+          "received_bps": 4681766174.365909,
+          "reason": ""
+        },
+        "reason": ""
+      },
+      "analytics": {
+        "predicted_label": "ANOMALY",
+        "anomaly_probability": 0.93,
+        "confidence": 0.93,
+        "model_name": "random_forest",
+        "model_version": "rf-v1",
+        "feature_schema": "run-linux-v1"
+      },
+      "detection_latency_ms": 16.97750575840473
+    },
+    "B0": {
+      "network": {
+        "measured_at": "2026-09-16T12:39:16.435277+00:00",
+        "host": "127.0.0.1",
+        "status": "measured",
+        "interface": "ueTun0",
+        "target": "10.60.0.1",
+        "ping_count": 5,
+        "packet_loss_percent": 0.0,
+        "rtt_mean_ms": 0.041,
+        "throughput": {
+          "status": "unavailable",
+          "sent_bps": null,
+          "received_bps": null,
+          "reason": "iperf3 path unavailable"
+        },
+        "reason": ""
+      }
+    }
+  }
+}

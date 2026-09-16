@@ -1,0 +1,3 @@
+run_id,event_time,collection_time,interface,target,rtt_ms,packet_loss
+R00004,2026-09-16T11:55:40.907Z,2026-09-16T11:55:41.992Z,ueTun0,8.8.8.8,,1.0
+R00004,2026-09-16T11:55:43.996Z,2026-09-16T11:55:45.027Z,ueTun0,8.8.8.8,,1.0

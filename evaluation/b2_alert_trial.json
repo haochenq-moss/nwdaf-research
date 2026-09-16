@@ -1,0 +1,88 @@
+{
+  "configuration": "B2",
+  "action": "alert_operator",
+  "decision_id": "b2-alert-4a650e51a22d",
+  "detection": {
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.885,
+    "confidence": 0.885,
+    "model_name": "random_forest",
+    "model_version": "rf-v1",
+    "feature_schema": "run-linux-v1"
+  },
+  "detection_latency_ms": 20.560978911817074,
+  "response": {
+    "status": "accepted",
+    "decisionId": "b2-alert-4a650e51a22d",
+    "targetNF": "SMF",
+    "action": "alert_operator",
+    "effect": "audit_alert_recorded"
+  },
+  "mitigation_latency_ms": 24.893606081604958,
+  "before": {
+    "observation": {
+      "source": "remote_proc_ip_ss",
+      "collection": "single_read_only_snapshot",
+      "process_count": 225,
+      "ue_tunnel_count": 1,
+      "listening_socket_count": 35,
+      "pfcp_recent_log_events": 693,
+      "sbi_recent_log_events": 81,
+      "event_count_window": "tail-2000-log-lines"
+    },
+    "network": {
+      "measured_at": "2026-09-16T11:15:49.113257+00:00",
+      "host": "127.0.0.1",
+      "status": "measured",
+      "interface": "ueTun0",
+      "target": "10.60.0.1",
+      "ping_count": 5,
+      "packet_loss_percent": 0.0,
+      "rtt_mean_ms": 0.04,
+      "throughput": {
+        "status": "measured",
+        "sent_bps": 12044702698.649626,
+        "received_bps": 11750901094.806679,
+        "reason": ""
+      },
+      "reason": ""
+    }
+  },
+  "after": {
+    "observation": {
+      "source": "remote_proc_ip_ss",
+      "collection": "single_read_only_snapshot",
+      "process_count": 225,
+      "ue_tunnel_count": 1,
+      "listening_socket_count": 35,
+      "pfcp_recent_log_events": 693,
+      "sbi_recent_log_events": 81,
+      "event_count_window": "tail-2000-log-lines"
+    },
+    "network": {
+      "measured_at": "2026-09-16T11:15:55.209379+00:00",
+      "host": "127.0.0.1",
+      "status": "measured",
+      "interface": "ueTun0",
+      "target": "10.60.0.1",
+      "ping_count": 5,
+      "packet_loss_percent": 0.0,
+      "rtt_mean_ms": 0.042,
+      "throughput": {
+        "status": "unavailable",
+        "sent_bps": null,
+        "received_bps": null,
+        "reason": "iperf3 path unavailable"
+      },
+      "reason": ""
+    }
+  },
+  "verification": {
+    "status": "measured",
+    "network_effect_expected": false,
+    "recovery_time": "not_applicable_for_alert_operator",
+    "throughput_change": "not_attributable_to_alert_operator",
+    "packet_loss_change": 0.0,
+    "rtt_change_ms": 0.0020000000000000018
+  }
+}

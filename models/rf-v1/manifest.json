@@ -1,0 +1,40 @@
+{
+  "code": {
+    "git_revision": null
+  },
+  "dataset": {
+    "archive": "data/pilot_raw.tar.gz",
+    "archive_sha256": "8cefce33e78fecb6786895c1ce9f153937a6624d969940ea11b55b32660cfe57",
+    "split_manifest": "data/raw/split_manifest.json",
+    "split_manifest_sha256": "fe062f082a8893f1e6cf0a4e42cb22b44cd0a20ddb72d97c8930ef1b87108841"
+  },
+  "feature_schema": {
+    "features": [
+      "duration_sec",
+      "linux_event_count",
+      "linux_load_1m_max",
+      "linux_load_1m_mean",
+      "linux_load_1m_min",
+      "linux_load_1m_std",
+      "linux_memory_available_mean",
+      "linux_memory_total_mean",
+      "memory_available_ratio_mean",
+      "process_event_count"
+    ],
+    "name": "run-linux-v1",
+    "source": "verified Linux host/process telemetry and run metadata"
+  },
+  "model": {
+    "name": "random_forest",
+    "version": "rf-v1"
+  },
+  "runtime": {
+    "executable": "/home/msai/qinh0007/nwdaf-research/.venv/bin/python3",
+    "platform": "Linux-5.14.0-503.14.1.el9_5.x86_64-x86_64-with-glibc2.34",
+    "python": "3.11.16 (main, Aug 14 2026, 15:35:36) [Clang 22.1.3 ]"
+  },
+  "training": {
+    "random_seed": 42,
+    "split_policy": "whole-run"
+  }
+}

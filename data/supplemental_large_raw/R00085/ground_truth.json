@@ -1,0 +1,15 @@
+{
+  "action": {
+    "hard_limit_sec": 30,
+    "mechanism": "burst of NRF discovery lookups with mismatched requester/target S-NSSAI (SBI layer only)",
+    "target": "127.0.0.10:8000"
+  },
+  "anomalous": true,
+  "attack_phase": "recovery",
+  "class": "cross_slice_anomaly",
+  "run_id": "R00085",
+  "scenario_id": "S10",
+  "security": true,
+  "service_impact": "none",
+  "severity": "medium"
+}

@@ -1,0 +1,128 @@
+{
+  "completed": 12,
+  "failed": 0,
+  "generated_at": "2026-09-16T11:57:10.016Z",
+  "requested": {
+    "loads": [
+      "L0"
+    ],
+    "repetitions": 3,
+    "scenarios": [
+      "NORMAL",
+      "S08",
+      "S10",
+      "S14"
+    ]
+  },
+  "runs": [
+    {
+      "load": "L0",
+      "path": "dataset/supplemental_raw/R00001",
+      "returncode": 0,
+      "run_id": "R00001",
+      "scenario": "NORMAL",
+      "seed": 7000,
+      "status": "complete"
+    },
+    {
+      "load": "L0",
+      "path": "dataset/supplemental_raw/R00002",
+      "returncode": 0,
+      "run_id": "R00002",
+      "scenario": "NORMAL",
+      "seed": 7001,
+      "status": "complete"
+    },
+    {
+      "load": "L0",
+      "path": "dataset/supplemental_raw/R00003",
+      "returncode": 0,
+      "run_id": "R00003",
+      "scenario": "NORMAL",
+      "seed": 7002,
+      "status": "complete"
+    },
+    {
+      "load": "L0",
+      "path": "dataset/supplemental_raw/R00004",
+      "returncode": 0,
+      "run_id": "R00004",
+      "scenario": "S08",
+      "seed": 7003,
+      "status": "complete"
+    },
+    {
+      "load": "L0",
+      "path": "dataset/supplemental_raw/R00005",
+      "returncode": 0,
+      "run_id": "R00005",
+      "scenario": "S08",
+      "seed": 7004,
+      "status": "complete"
+    },
+    {
+      "load": "L0",
+      "path": "dataset/supplemental_raw/R00006",
+      "returncode": 0,
+      "run_id": "R00006",
+      "scenario": "S08",
+      "seed": 7005,
+      "status": "complete"
+    },
+    {
+      "load": "L0",
+      "path": "dataset/supplemental_raw/R00007",
+      "returncode": 0,
+      "run_id": "R00007",
+      "scenario": "S10",
+      "seed": 7006,
+      "status": "complete"
+    },
+    {
+      "load": "L0",
+      "path": "dataset/supplemental_raw/R00008",
+      "returncode": 0,
+      "run_id": "R00008",
+      "scenario": "S10",
+      "seed": 7007,
+      "status": "complete"
+    },
+    {
+      "load": "L0",
+      "path": "dataset/supplemental_raw/R00009",
+      "returncode": 0,
+      "run_id": "R00009",
+      "scenario": "S10",
+      "seed": 7008,
+      "status": "complete"
+    },
+    {
+      "load": "L0",
+      "path": "dataset/supplemental_raw/R00010",
+      "returncode": 0,
+      "run_id": "R00010",
+      "scenario": "S14",
+      "seed": 7009,
+      "status": "complete"
+    },
+    {
+      "load": "L0",
+      "path": "dataset/supplemental_raw/R00011",
+      "returncode": 0,
+      "run_id": "R00011",
+      "scenario": "S14",
+      "seed": 7010,
+      "status": "complete"
+    },
+    {
+      "load": "L0",
+      "path": "dataset/supplemental_raw/R00012",
+      "returncode": 0,
+      "run_id": "R00012",
+      "scenario": "S14",
+      "seed": 7011,
+      "status": "complete"
+    }
+  ],
+  "total": 12
+}

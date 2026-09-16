@@ -1,0 +1,81 @@
+{
+  "target": "10.60.0.1",
+  "measurement_scope": "same live UE target; sequential observations",
+  "B0": {
+    "network_measurement": {
+      "measured_at": "2026-09-16T11:23:36.091220+00:00",
+      "host": "127.0.0.1",
+      "status": "measured",
+      "interface": "ueTun0",
+      "target": "10.60.0.1",
+      "ping_count": 5,
+      "packet_loss_percent": 0.0,
+      "rtt_mean_ms": 0.059,
+      "throughput": {
+        "status": "measured",
+        "sent_bps": 7203965976.593791,
+        "received_bps": 7065175795.173797,
+        "reason": ""
+      },
+      "reason": ""
+    },
+    "measurement_overhead_ms": 7984.488243237138
+  },
+  "B1": {
+    "detection": {
+      "predicted_label": "ANOMALY",
+      "anomaly_probability": 0.955,
+      "confidence": 0.955,
+      "model_name": "random_forest",
+      "model_version": "rf-v1",
+      "feature_schema": "run-linux-v1"
+    },
+    "detection_latency_ms": 18.385684117674828,
+    "network_measurement": {
+      "measured_at": "2026-09-16T11:23:46.029947+00:00",
+      "host": "127.0.0.1",
+      "status": "measured",
+      "interface": "ueTun0",
+      "target": "10.60.0.1",
+      "ping_count": 5,
+      "packet_loss_percent": 0.0,
+      "rtt_mean_ms": 0.046,
+      "throughput": {
+        "status": "measured",
+        "sent_bps": 10411297727.63178,
+        "received_bps": 10178573123.219337,
+        "reason": ""
+      },
+      "reason": ""
+    }
+  },
+  "B2": {
+    "response_status": "skipped",
+    "reason": "single live snapshot is not autonomous-response eligible",
+    "autonomous_response_eligible": false,
+    "mitigation_latency_ms": "unavailable",
+    "recovery_time": "unavailable",
+    "network_measurement": {
+      "measured_at": "2026-09-16T11:23:53.370470+00:00",
+      "host": "127.0.0.1",
+      "status": "measured",
+      "interface": "ueTun0",
+      "target": "10.60.0.1",
+      "ping_count": 5,
+      "packet_loss_percent": 0.0,
+      "rtt_mean_ms": 0.073,
+      "throughput": {
+        "status": "measured",
+        "sent_bps": 9010199603.801624,
+        "received_bps": 8766966422.345047,
+        "reason": ""
+      },
+      "reason": ""
+    }
+  },
+  "limitations": [
+    "throughput measures the local UE-tunnel-to-Ubuntu-host path, not external internet capacity",
+    "B2 is skipped because the current snapshot lacks event-rate and before/after telemetry",
+    "Sequential measurements are not a randomized controlled comparison"
+  ]
+}

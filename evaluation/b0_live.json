@@ -1,0 +1,18 @@
+{
+  "configuration": "B0",
+  "measurement": {
+    "measured_at": "2026-09-16T10:55:08.473216+00:00",
+    "host": "127.0.0.1",
+    "status": "measured",
+    "interface": "ueTun0",
+    "target": "10.60.0.1",
+    "ping_count": 10,
+    "packet_loss_percent": 0.0,
+    "rtt_mean_ms": 0.077,
+    "throughput": {
+      "status": "unavailable",
+      "reason": "iperf3 is not installed"
+    },
+    "reason": ""
+  }
+}

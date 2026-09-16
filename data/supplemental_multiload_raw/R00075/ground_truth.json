@@ -1,0 +1,15 @@
+{
+  "action": {
+    "hard_limit_sec": 30,
+    "mechanism": "burst of legitimate NF-discovery GET requests to NRF (valid paths, no malformed body)",
+    "target": "127.0.0.10:8000"
+  },
+  "anomalous": true,
+  "attack_phase": "recovery",
+  "class": "administrative_operation",
+  "run_id": "R00075",
+  "scenario_id": "S14",
+  "security": false,
+  "service_impact": "none",
+  "severity": "none"
+}

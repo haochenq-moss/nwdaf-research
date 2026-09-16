@@ -1,0 +1,148 @@
+{
+  "run_count": 12,
+  "scenario_counts": {
+    "NORMAL": 3,
+    "S08": 3,
+    "S10": 3,
+    "S14": 3
+  },
+  "total_sbi_events": 652,
+  "total_pfcp_events": 17,
+  "runs_with_sbi": 9.0,
+  "runs_with_pfcp": 10.0,
+  "runs": [
+    {
+      "run_id": "R00001",
+      "scenario_id": "NORMAL",
+      "sbi_event_count": 0,
+      "pfcp_event_count": 1,
+      "sbi_error_event_count": 0,
+      "pfcp_request_count": 1,
+      "pfcp_response_count": 0,
+      "sbi_telemetry_available": 0.0,
+      "pfcp_telemetry_available": 1.0
+    },
+    {
+      "run_id": "R00002",
+      "scenario_id": "NORMAL",
+      "sbi_event_count": 0,
+      "pfcp_event_count": 1,
+      "sbi_error_event_count": 0,
+      "pfcp_request_count": 1,
+      "pfcp_response_count": 0,
+      "sbi_telemetry_available": 0.0,
+      "pfcp_telemetry_available": 1.0
+    },
+    {
+      "run_id": "R00003",
+      "scenario_id": "NORMAL",
+      "sbi_event_count": 0,
+      "pfcp_event_count": 3,
+      "sbi_error_event_count": 0,
+      "pfcp_request_count": 1,
+      "pfcp_response_count": 1,
+      "sbi_telemetry_available": 0.0,
+      "pfcp_telemetry_available": 1.0
+    },
+    {
+      "run_id": "R00004",
+      "scenario_id": "S08",
+      "sbi_event_count": 67,
+      "pfcp_event_count": 1,
+      "sbi_error_event_count": 67,
+      "pfcp_request_count": 1,
+      "pfcp_response_count": 0,
+      "sbi_telemetry_available": 1.0,
+      "pfcp_telemetry_available": 1.0
+    },
+    {
+      "run_id": "R00005",
+      "scenario_id": "S08",
+      "sbi_event_count": 62,
+      "pfcp_event_count": 1,
+      "sbi_error_event_count": 62,
+      "pfcp_request_count": 1,
+      "pfcp_response_count": 0,
+      "sbi_telemetry_available": 1.0,
+      "pfcp_telemetry_available": 1.0
+    },
+    {
+      "run_id": "R00006",
+      "scenario_id": "S08",
+      "sbi_event_count": 70,
+      "pfcp_event_count": 2,
+      "sbi_error_event_count": 70,
+      "pfcp_request_count": 0,
+      "pfcp_response_count": 1,
+      "sbi_telemetry_available": 1.0,
+      "pfcp_telemetry_available": 1.0
+    },
+    {
+      "run_id": "R00007",
+      "scenario_id": "S10",
+      "sbi_event_count": 82,
+      "pfcp_event_count": 0,
+      "sbi_error_event_count": 82,
+      "pfcp_request_count": 0,
+      "pfcp_response_count": 0,
+      "sbi_telemetry_available": 1.0,
+      "pfcp_telemetry_available": 0.0
+    },
+    {
+      "run_id": "R00008",
+      "scenario_id": "S10",
+      "sbi_event_count": 87,
+      "pfcp_event_count": 0,
+      "sbi_error_event_count": 87,
+      "pfcp_request_count": 0,
+      "pfcp_response_count": 0,
+      "sbi_telemetry_available": 1.0,
+      "pfcp_telemetry_available": 0.0
+    },
+    {
+      "run_id": "R00009",
+      "scenario_id": "S10",
+      "sbi_event_count": 46,
+      "pfcp_event_count": 3,
+      "sbi_error_event_count": 46,
+      "pfcp_request_count": 1,
+      "pfcp_response_count": 1,
+      "sbi_telemetry_available": 1.0,
+      "pfcp_telemetry_available": 1.0
+    },
+    {
+      "run_id": "R00010",
+      "scenario_id": "S14",
+      "sbi_event_count": 73,
+      "pfcp_event_count": 1,
+      "sbi_error_event_count": 73,
+      "pfcp_request_count": 1,
+      "pfcp_response_count": 0,
+      "sbi_telemetry_available": 1.0,
+      "pfcp_telemetry_available": 1.0
+    },
+    {
+      "run_id": "R00011",
+      "scenario_id": "S14",
+      "sbi_event_count": 81,
+      "pfcp_event_count": 1,
+      "sbi_error_event_count": 81,
+      "pfcp_request_count": 1,
+      "pfcp_response_count": 0,
+      "sbi_telemetry_available": 1.0,
+      "pfcp_telemetry_available": 1.0
+    },
+    {
+      "run_id": "R00012",
+      "scenario_id": "S14",
+      "sbi_event_count": 84,
+      "pfcp_event_count": 3,
+      "sbi_error_event_count": 84,
+      "pfcp_request_count": 1,
+      "pfcp_response_count": 1,
+      "sbi_telemetry_available": 1.0,
+      "pfcp_telemetry_available": 1.0
+    }
+  ],
+  "source": "Ubuntu free5GC supplemental_raw archive"
+}

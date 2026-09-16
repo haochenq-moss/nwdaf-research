@@ -1,0 +1,211 @@
+{
+  "split_manifest": "data/supplemental_large_raw/_split_manifest.json",
+  "split_policy": "whole-run scenario-stratified",
+  "train_runs": [
+    "R00002",
+    "R00003",
+    "R00004",
+    "R00006",
+    "R00007",
+    "R00010",
+    "R00011",
+    "R00012",
+    "R00013",
+    "R00015",
+    "R00016",
+    "R00017",
+    "R00018",
+    "R00019",
+    "R00021",
+    "R00022",
+    "R00023",
+    "R00025",
+    "R00026",
+    "R00027",
+    "R00029",
+    "R00031",
+    "R00034",
+    "R00035",
+    "R00036",
+    "R00037",
+    "R00038",
+    "R00039",
+    "R00040",
+    "R00041",
+    "R00042",
+    "R00045",
+    "R00046",
+    "R00047",
+    "R00050",
+    "R00051",
+    "R00052",
+    "R00053",
+    "R00054",
+    "R00057",
+    "R00058",
+    "R00060",
+    "R00061",
+    "R00062",
+    "R00063",
+    "R00064",
+    "R00066",
+    "R00067",
+    "R00072",
+    "R00073",
+    "R00074",
+    "R00075",
+    "R00078",
+    "R00079",
+    "R00080",
+    "R00081",
+    "R00082",
+    "R00083",
+    "R00085",
+    "R00086",
+    "R00088",
+    "R00089",
+    "R00090",
+    "R00091",
+    "R00093",
+    "R00094",
+    "R00095",
+    "R00096",
+    "R00097",
+    "R00098",
+    "R00099",
+    "R00100",
+    "R00101",
+    "R00102",
+    "R00103",
+    "R00104",
+    "R00105",
+    "R00110",
+    "R00111",
+    "R00113",
+    "R00114",
+    "R00116",
+    "R00119",
+    "R00120"
+  ],
+  "test_runs": [
+    "R00005",
+    "R00008",
+    "R00014",
+    "R00028",
+    "R00030",
+    "R00032",
+    "R00044",
+    "R00048",
+    "R00049",
+    "R00056",
+    "R00068",
+    "R00071",
+    "R00076",
+    "R00077",
+    "R00087",
+    "R00107",
+    "R00109",
+    "R00112",
+    "R00115",
+    "R00118"
+  ],
+  "groups": {
+    "network_only": {
+      "features": [
+        "sbi_event_count",
+        "sbi_error_event_count",
+        "pfcp_event_count",
+        "pfcp_request_count",
+        "pfcp_response_count"
+      ],
+      "classification_report": {
+        "0": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 5.0
+        },
+        "1": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 15.0
+        },
+        "accuracy": 1.0,
+        "macro avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 20.0
+        },
+        "weighted avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 20.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          5,
+          0
+        ],
+        [
+          0,
+          15
+        ]
+      ]
+    },
+    "combined": {
+      "features": [
+        "linux_event_count",
+        "process_event_count",
+        "linux_load_1m_mean",
+        "linux_load_1m_std",
+        "memory_available_ratio_mean",
+        "sbi_event_count",
+        "sbi_error_event_count",
+        "pfcp_event_count",
+        "pfcp_request_count",
+        "pfcp_response_count"
+      ],
+      "classification_report": {
+        "0": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 5.0
+        },
+        "1": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 15.0
+        },
+        "accuracy": 1.0,
+        "macro avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 20.0
+        },
+        "weighted avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 20.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          5,
+          0
+        ],
+        [
+          0,
+          15
+        ]
+      ]
+    }
+  }
+}

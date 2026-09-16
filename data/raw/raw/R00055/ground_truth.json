@@ -1,0 +1,15 @@
+{
+  "action": {
+    "hard_limit_sec": 60,
+    "resource": "cpu",
+    "worker_count": 1
+  },
+  "anomalous": true,
+  "attack_phase": "recovery",
+  "class": "service_degradation",
+  "run_id": "R00055",
+  "scenario_id": "S11",
+  "security": false,
+  "service_impact": "none",
+  "severity": "none"
+}

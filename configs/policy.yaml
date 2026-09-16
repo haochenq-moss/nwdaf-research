@@ -1,0 +1,17 @@
+minimum_confidence: 0.8
+actions:
+  rate_limit:
+    enabled: true
+    max_duration: 60
+  isolate_test_ue:
+    enabled: true
+    max_duration: 60
+  terminate_test_session:
+    enabled: false
+    max_duration: 0
+  change_test_policy:
+    enabled: true
+    max_duration: 300
+  alert_operator:
+    enabled: true
+    max_duration: 0

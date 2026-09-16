@@ -1,0 +1,84 @@
+{
+  "trial_count": 10,
+  "B0": {
+    "rtt_mean_ms": {
+      "count": 10,
+      "mean": 0.0486,
+      "median": 0.046,
+      "stddev": 0.008448537019968474,
+      "min": 0.04,
+      "max": 0.065
+    },
+    "packet_loss_percent": {
+      "count": 10,
+      "mean": 0.0,
+      "median": 0.0,
+      "stddev": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "throughput_sent_bps": {
+      "count": 8,
+      "mean": 9917934001.354923,
+      "median": 9987276101.673475,
+      "stddev": 3260286086.454799,
+      "min": 6120932480.849858,
+      "max": 13703772649.490637
+    },
+    "throughput_received_bps": {
+      "count": 8,
+      "mean": 9665481591.07984,
+      "median": 9728002800.934456,
+      "stddev": 3172241917.0234194,
+      "min": 5949469578.449644,
+      "max": 13369040193.035002
+    }
+  },
+  "B1": {
+    "rtt_mean_ms": {
+      "count": 10,
+      "mean": 0.0749,
+      "median": 0.0455,
+      "stddev": 0.0599730495028114,
+      "min": 0.039,
+      "max": 0.2
+    },
+    "packet_loss_percent": {
+      "count": 10,
+      "mean": 0.0,
+      "median": 0.0,
+      "stddev": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "throughput_sent_bps": {
+      "count": 9,
+      "mean": 11130662918.872885,
+      "median": 12503909928.352098,
+      "stddev": 2667303664.5889835,
+      "min": 6847067762.1786375,
+      "max": 13625836344.909653
+    },
+    "throughput_received_bps": {
+      "count": 9,
+      "mean": 10881886016.73129,
+      "median": 12280866507.365862,
+      "stddev": 2616440122.677975,
+      "min": 6674498628.000486,
+      "max": 13314768939.55866
+    },
+    "detection_latency_ms": {
+      "count": 10,
+      "mean": 17.519703786820173,
+      "median": 17.39318110048771,
+      "stddev": 0.690687636975992,
+      "min": 16.542077995836735,
+      "max": 18.52436736226082
+    }
+  },
+  "B2": {
+    "status": "not included in this report",
+    "reason": "Use the alert-only B2 trial runner and summarize its persisted reports separately."
+  },
+  "interpretation": "Sequential live measurements are descriptive and do not establish causal mitigation benefit."
+}

@@ -1,0 +1,156 @@
+{
+  "baseline": {
+    "all_required_nfs_running": true,
+    "baseline_verified": true,
+    "nf_processes": {
+      "amf": true,
+      "ausf": true,
+      "nrf": true,
+      "nssf": true,
+      "pcf": true,
+      "smf": true,
+      "udm": true,
+      "udr": true,
+      "upf": true
+    },
+    "ran": {
+      "gnb_count": 1,
+      "implementation": "free-ran-ue",
+      "pdu_session_interfaces": [
+        {
+          "addresses": [
+            "10.60.0.1/32",
+            "fe80::9aa7:1e90:7533:4548/64"
+          ],
+          "name": "ueTun0",
+          "state": "UNKNOWN"
+        }
+      ],
+      "pdu_session_verified": true,
+      "ue_count": 2
+    },
+    "ran_verified": true,
+    "required_nfs": [
+      "amf",
+      "ausf",
+      "nrf",
+      "nssf",
+      "pcf",
+      "smf",
+      "udm",
+      "udr",
+      "upf"
+    ]
+  },
+  "created_at": "2026-09-16T12:18:07.734Z",
+  "duration_sec": 5.0,
+  "ebpf": {
+    "reason": "bpftrace requires root/CAP_BPF on this host: ERROR: bpftrace currently only supports running as the root user.",
+    "status": "unavailable"
+  },
+  "host_id": "free5gc",
+  "load_profile": "L0",
+  "provenance": {
+    "collector_version": "v1",
+    "kernel": "5.15.0-139-generic",
+    "os": "Linux-5.15.0-139-generic-x86_64-with-glibc2.29",
+    "python": "3.8.10",
+    "research_commit": "84b874c056dac3b344f8dfe68db1c7b49fd89644",
+    "scenario_version": "v1"
+  },
+  "run_id": "R00079",
+  "scenario_id": "S10",
+  "seed": 8078,
+  "status": "complete",
+  "testbed": {
+    "components": {
+      "docker": false,
+      "kubernetes": false,
+      "mongodb": true,
+      "ovs": false,
+      "podman": false,
+      "prometheus": false
+    },
+    "deployment": {
+      "baseline_verified": true,
+      "inventory_collected_at": "2026-09-15T06:35:01Z",
+      "mode": "native-binaries"
+    },
+    "free5gc": {
+      "any_nf_running": true,
+      "nf_processes": {
+        "amf": true,
+        "ausf": true,
+        "bsf": false,
+        "chf": true,
+        "nef": true,
+        "nrf": true,
+        "nssf": true,
+        "pcf": true,
+        "scp": false,
+        "smf": true,
+        "udm": true,
+        "udr": true,
+        "upf": true
+      }
+    },
+    "network": {
+      "n2_interface": "",
+      "n3_interface": "",
+      "n4_interface": "",
+      "n6_interface": "",
+      "observed_interfaces": [
+        "lo",
+        "enp0s3",
+        "upfgtp",
+        "ueTun0"
+      ]
+    },
+    "ran": {
+      "gnb_count": 1,
+      "implementation": "free-ran-ue",
+      "pdu_session_interfaces": [
+        {
+          "addresses": [
+            "10.60.0.1/32",
+            "fe80::e619:482:651f:8caa/64"
+          ],
+          "name": "ueTun0",
+          "state": "UNKNOWN"
+        }
+      ],
+      "pdu_session_verified": true,
+      "ue_count": 2
+    },
+    "runtime": {
+      "listening_sockets": "Netid   State    Recv-Q   Send-Q     Local Address:Port      Peer Address:Port  Process                                                                         \nudp     UNCONN   0        0                0.0.0.0:40931          0.0.0.0:*                                                                                     \nudp     UNCONN   0        0          127.0.0.53%lo:53             0.0.0.0:*                                                                                     \nudp     UNCONN   0        0              10.0.2.15:2152           0.0.0.0:*                                                                                     \nudp     UNCONN   0        0                0.0.0.0:5353           0.0.0.0:*                                                                                     \nudp     UNCONN   0        0              127.0.0.1:8805           0.0.0.0:*      users:((\"smf\",pid=10285,fd=10))                                                \nudp     UNCONN   0        0              127.0.0.8:8805           0.0.0.0:*                                                                                     \nudp     UNCONN   0        0              10.0.2.15:31414          0.0.0.0:*      users:((\"free-ran-ue\",pid=12708,fd=10))                                        \nudp     UNCONN   0        0                   [::]:5353              [::]:*                                                                                     \nudp     UNCONN   0        0                   [::]:49715             [::]:*                                                                                     \ntcp     LISTEN   0        4096           127.0.0.4:8000           0.0.0.0:*      users:((\"udr\",pid=10287,fd=11))                                                \ntcp     LISTEN   0        4096           127.0.0.9:8000           0.0.0.0:*      users:((\"ausf\",pid=10317,fd=10))                                               \ntcp     LISTEN   0        4096         127.0.0.113:2122           0.0.0.0:*      users:((\"chf\",pid=10328,fd=9))                                                 \ntcp     LISTEN   0        4096           10.0.2.15:40104          0.0.0.0:*      users:((\"free-ran-ue\",pid=12708,fd=11))                                        \ntcp     LISTEN   0        4096           127.0.0.2:8000           0.0.0.0:*      users:((\"smf\",pid=10285,fd=11))                                                \ntcp     LISTEN   0        4096           127.0.0.3:8000           0.0.0.0:*      users:((\"udm\",pid=10302,fd=10))                                                \ntcp     LISTEN   0        4096       127.0.0.53%lo:53             0.0.0.0:*                                                                                     \ntcp     LISTEN   0        511            127.0.0.1:42605          0.0.0.0:*      users:((\"MainThread\",pid=2226,fd=30))                                          \ntcp     LISTEN   0        5              127.0.0.1:631            0.0.0.0:*                                                                                     \ntcp     LISTEN   0        4096          127.0.0.31:8000           0.0.0.0:*      users:((\"nssf\",pid=10309,fd=10))                                               \ntcp     LISTEN   0        4096           127.0.0.7:8000           0.0.0.0:*      users:((\"pcf\",pid=10292,fd=12))                                                \ntcp     LISTEN   0        4096          127.0.0.18:8000           0.0.0.0:*      users:((\"amf\",pid=10281,fd=11))                                                \ntcp     LISTEN   0        4096           10.0.2.15:31413          0.0.0.0:*      users:((\"free-ran-ue\",pid=12708,fd=9))                                         \ntcp     LISTEN   0        4096           127.0.0.5:8000           0.0.0.0:*      users:((\"nef\",pid=10332,fd=10))                                                \ntcp     LISTEN   0        128            127.0.0.1:43121          0.0.0.0:*      users:((\"code-645f29cc31\",pid=2096,fd=11))                                     \ntcp     LISTEN   0        128              0.0.0.0:22             0.0.0.0:*                                                                                     \ntcp     LISTEN   0        4096         127.0.0.113:3868           0.0.0.0:*      users:((\"chf\",pid=10328,fd=12))                                                \ntcp     LISTEN   0        4096         127.0.0.113:3869           0.0.0.0:*      users:((\"chf\",pid=10328,fd=10))                                                \ntcp     LISTEN   0        4096          127.0.0.10:8000           0.0.0.0:*      users:((\"nrf\",pid=10277,fd=12))                                                \ntcp     LISTEN   0        4096           127.0.0.1:27017          0.0.0.0:*                                                                                     \ntcp     LISTEN   0        4096         127.0.0.113:8000           0.0.0.0:*      users:((\"chf\",pid=10328,fd=14))                                                \ntcp     LISTEN   0        128            127.0.0.1:34265          0.0.0.0:*      users:((\"code-645f29cc31\",pid=2020,fd=9))                                      \ntcp     LISTEN   0        128                 [::]:22                [::]:*                                                                                     \ntcp     LISTEN   0        5                  [::1]:631               [::]:*",
+      "optional_commands": {
+        "docker": false,
+        "kubectl": false,
+        "mongo": false,
+        "mongosh": true,
+        "ovs-vsctl": false,
+        "podman": false,
+        "prometheus": false
+      }
+    },
+    "testbed": {
+      "free5gc_commit": "9f8ac6ad879de5ac973edaabf68ec341b0d40c91",
+      "free5gc_version": "v4.2.3-67-g9f8ac6a",
+      "host_id": "free5gc",
+      "kernel": "5.15.0-139-generic",
+      "os": "Ubuntu 20.04.6 LTS"
+    }
+  },
+  "throughput": {
+    "reason": null,
+    "result": null,
+    "status": "not_requested"
+  },
+  "traffic": {
+    "interface": "ueTun0",
+    "load_profile": "L0",
+    "status": "running",
+    "target": "8.8.8.8"
+  }
+}

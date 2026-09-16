@@ -1,0 +1,117 @@
+{
+  "train_runs": [
+    "R00001",
+    "R00002",
+    "R00004",
+    "R00005",
+    "R00007",
+    "R00008",
+    "R00010",
+    "R00011"
+  ],
+  "test_runs": [
+    "R00003",
+    "R00006",
+    "R00009",
+    "R00012"
+  ],
+  "groups": {
+    "network_only": {
+      "features": [
+        "sbi_event_count",
+        "sbi_error_event_count",
+        "pfcp_event_count",
+        "pfcp_request_count",
+        "pfcp_response_count"
+      ],
+      "classification_report": {
+        "0": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 1.0
+        },
+        "1": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 3.0
+        },
+        "accuracy": 1.0,
+        "macro avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 4.0
+        },
+        "weighted avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 4.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ]
+    },
+    "combined": {
+      "features": [
+        "linux_event_count",
+        "process_event_count",
+        "linux_load_1m_mean",
+        "linux_load_1m_std",
+        "memory_available_ratio_mean",
+        "sbi_event_count",
+        "sbi_error_event_count",
+        "pfcp_event_count",
+        "pfcp_request_count",
+        "pfcp_response_count"
+      ],
+      "classification_report": {
+        "0": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 1.0
+        },
+        "1": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 3.0
+        },
+        "accuracy": 1.0,
+        "macro avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 4.0
+        },
+        "weighted avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 4.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ]
+    }
+  }
+}

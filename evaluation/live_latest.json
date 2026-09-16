@@ -1,0 +1,42 @@
+{
+  "observed_at": "2026-09-16T10:48:58.276005+00:00",
+  "host": "127.0.0.1",
+  "observation": {
+    "features": {
+      "linux_load_1m_mean": 0.14,
+      "linux_load_1m_std": 0.0,
+      "linux_load_1m_max": 0.14,
+      "linux_load_1m_min": 0.14,
+      "linux_memory_total_mean": 2059501568.0,
+      "linux_memory_available_mean": 530890752.0,
+      "memory_available_ratio_mean": 0.25777632814115925
+    },
+    "evidence": {
+      "source": "remote_proc_ip_ss",
+      "collection": "single_read_only_snapshot",
+      "process_count": 227,
+      "ue_tunnel_count": 1,
+      "listening_socket_count": 35,
+      "pfcp_recent_log_events": 424,
+      "sbi_recent_log_events": 81,
+      "event_count_window": "tail-2000-log-lines"
+    },
+    "unavailable_features": [
+      "linux_event_count",
+      "process_event_count",
+      "linux_load_1m_std_over_window",
+      "sbi_event_rate",
+      "pfcp_message_rate",
+      "service_latency"
+    ],
+    "autonomous_response_eligible": false
+  },
+  "analytics": {
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.905,
+    "confidence": 0.905,
+    "model_name": "random_forest",
+    "model_version": "rf-v1",
+    "feature_schema": "run-linux-v1"
+  }
+}

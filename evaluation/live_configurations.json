@@ -1,0 +1,81 @@
+{
+  "target": "10.60.0.1",
+  "measurement_scope": "same live UE target; sequential observations",
+  "B0": {
+    "network_measurement": {
+      "measured_at": "2026-09-16T11:02:58.124368+00:00",
+      "host": "127.0.0.1",
+      "status": "measured",
+      "interface": "ueTun0",
+      "target": "10.60.0.1",
+      "ping_count": 5,
+      "packet_loss_percent": 0.0,
+      "rtt_mean_ms": 0.429,
+      "throughput": {
+        "status": "measured",
+        "sent_bps": 8372509048.343392,
+        "received_bps": 8195272809.259129,
+        "reason": ""
+      },
+      "reason": ""
+    },
+    "measurement_overhead_ms": 7316.597789525986
+  },
+  "B1": {
+    "detection": {
+      "predicted_label": "ANOMALY",
+      "anomaly_probability": 0.865,
+      "confidence": 0.865,
+      "model_name": "random_forest",
+      "model_version": "rf-v1",
+      "feature_schema": "run-linux-v1"
+    },
+    "detection_latency_ms": 18.455514684319496,
+    "network_measurement": {
+      "measured_at": "2026-09-16T11:03:06.991924+00:00",
+      "host": "127.0.0.1",
+      "status": "measured",
+      "interface": "ueTun0",
+      "target": "10.60.0.1",
+      "ping_count": 5,
+      "packet_loss_percent": 0.0,
+      "rtt_mean_ms": 0.16,
+      "throughput": {
+        "status": "measured",
+        "sent_bps": 7394223612.01416,
+        "received_bps": 7232331555.15711,
+        "reason": ""
+      },
+      "reason": ""
+    }
+  },
+  "B2": {
+    "response_status": "skipped",
+    "reason": "single live snapshot is not autonomous-response eligible",
+    "autonomous_response_eligible": false,
+    "mitigation_latency_ms": "unavailable",
+    "recovery_time": "unavailable",
+    "network_measurement": {
+      "measured_at": "2026-09-16T11:03:14.565964+00:00",
+      "host": "127.0.0.1",
+      "status": "measured",
+      "interface": "ueTun0",
+      "target": "10.60.0.1",
+      "ping_count": 5,
+      "packet_loss_percent": 0.0,
+      "rtt_mean_ms": 0.05,
+      "throughput": {
+        "status": "measured",
+        "sent_bps": 9378383547.166113,
+        "received_bps": 9163421618.806913,
+        "reason": ""
+      },
+      "reason": ""
+    }
+  },
+  "limitations": [
+    "iperf3 is unavailable on Ubuntu, so throughput is unavailable",
+    "B2 is skipped because the current snapshot lacks event-rate and before/after telemetry",
+    "Sequential measurements are not a randomized controlled comparison"
+  ]
+}

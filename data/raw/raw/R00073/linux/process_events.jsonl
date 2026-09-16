@@ -1,0 +1,3 @@
+{"collection_time": "2026-09-16T04:32:47.276Z", "event_time": "2026-09-16T04:32:47.276Z", "event_type": "process_exited", "pid": 120665, "pid_namespace": "4026531836", "ppid": 2215, "process_name": "sh", "run_id": "R00073", "source": "linux"}
+{"collection_time": "2026-09-16T04:32:47.277Z", "event_time": "2026-09-16T04:32:47.276Z", "event_type": "process_exited", "pid": 120666, "pid_namespace": "4026531836", "ppid": 120665, "process_name": "cpuUsage.sh", "run_id": "R00073", "source": "linux"}
+{"collection_time": "2026-09-16T04:32:47.277Z", "event_time": "2026-09-16T04:32:47.276Z", "event_type": "process_exited", "pid": 120672, "pid_namespace": "4026531836", "ppid": 120666, "process_name": "sleep", "run_id": "R00073", "source": "linux"}

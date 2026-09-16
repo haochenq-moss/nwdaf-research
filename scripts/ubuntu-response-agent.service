@@ -1,0 +1,14 @@
+[Unit]
+Description=External NWDAF-like Ubuntu Response Agent
+After=network.target
+
+[Service]
+Type=simple
+EnvironmentFile=%h/.nwdaf-response-agent/env
+ExecStart=/usr/bin/python3 %h/nwdaf-response-agent/agent.py --host 127.0.0.1 --port 9090 --state-dir %h/.nwdaf-response-agent
+Restart=on-failure
+RestartSec=3
+PrivateTmp=true
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,86 @@
+{
+  "b0_trials": 1,
+  "b2_trials": 1,
+  "B0": {
+    "rtt_mean_ms": {
+      "count": 1,
+      "mean": 0.077,
+      "median": 0.077,
+      "min": 0.077,
+      "max": 0.077,
+      "stddev": 0.0
+    },
+    "packet_loss_percent": {
+      "count": 1,
+      "mean": 0.0,
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "stddev": 0.0
+    },
+    "throughput_sent_bps": {
+      "count": 0,
+      "status": "unavailable"
+    },
+    "throughput_received_bps": {
+      "count": 0,
+      "status": "unavailable"
+    }
+  },
+  "B2_alert_only": {
+    "detection_latency_ms": {
+      "count": 1,
+      "mean": 20.560978911817074,
+      "median": 20.560978911817074,
+      "min": 20.560978911817074,
+      "max": 20.560978911817074,
+      "stddev": 0.0
+    },
+    "mitigation_latency_ms": {
+      "count": 1,
+      "mean": 24.893606081604958,
+      "median": 24.893606081604958,
+      "min": 24.893606081604958,
+      "max": 24.893606081604958,
+      "stddev": 0.0
+    },
+    "before_rtt_mean_ms": {
+      "count": 1,
+      "mean": 0.04,
+      "median": 0.04,
+      "min": 0.04,
+      "max": 0.04,
+      "stddev": 0.0
+    },
+    "after_rtt_mean_ms": {
+      "count": 1,
+      "mean": 0.042,
+      "median": 0.042,
+      "min": 0.042,
+      "max": 0.042,
+      "stddev": 0.0
+    },
+    "before_packet_loss_percent": {
+      "count": 1,
+      "mean": 0.0,
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "stddev": 0.0
+    },
+    "after_packet_loss_percent": {
+      "count": 1,
+      "mean": 0.0,
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "stddev": 0.0
+    },
+    "interpretation": "alert_operator does not change network state; recovery cannot be attributed to this action"
+  },
+  "limitations": [
+    "B0 and B2 trials are sequential, not randomized",
+    "B2 uses alert_operator only; tc rate_limit remains disabled",
+    "Network differences are descriptive and not causal mitigation evidence"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "action": {
+    "hard_limit_sec": 30,
+    "mechanism": "unshare --user --pid --mount --fork (bounded sleep)",
+    "pid": 113270
+  },
+  "anomalous": true,
+  "attack_phase": "recovery",
+  "class": "administrative_operation",
+  "run_id": "R00064",
+  "scenario_id": "S12",
+  "security": false,
+  "service_impact": "none",
+  "severity": "none"
+}

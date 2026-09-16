@@ -1,0 +1,7 @@
+seed: 42
+configurations:
+  B0: linux_load_threshold
+  B1: random_forest_linux_telemetry
+  B2: random_forest_policy_bounded_response
+mitigation_metrics:
+  unavailable_without_live_response_timeline: true

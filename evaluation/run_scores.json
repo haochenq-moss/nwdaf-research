@@ -1,0 +1,542 @@
+[
+  {
+    "run_id": "R00001",
+    "predicted_label": "NORMAL",
+    "anomaly_probability": 0.0,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00002",
+    "predicted_label": "NORMAL",
+    "anomaly_probability": 0.0,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00003",
+    "predicted_label": "NORMAL",
+    "anomaly_probability": 0.305,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00004",
+    "predicted_label": "NORMAL",
+    "anomaly_probability": 0.35,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00005",
+    "predicted_label": "NORMAL",
+    "anomaly_probability": 0.0,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00006",
+    "predicted_label": "NORMAL",
+    "anomaly_probability": 0.0,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00007",
+    "predicted_label": "NORMAL",
+    "anomaly_probability": 0.01,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00008",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.535,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00009",
+    "predicted_label": "NORMAL",
+    "anomaly_probability": 0.0,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00010",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.69,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00011",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.795,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00012",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.945,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00013",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.935,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00014",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.8,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00015",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.94,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00016",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.82,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00017",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.85,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00018",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.97,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00019",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.91,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00020",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.955,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00021",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.95,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00022",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.935,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00023",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.94,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00024",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.94,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00025",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.965,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00026",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.88,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00027",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.755,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00028",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.995,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00029",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.88,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00030",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.885,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00031",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.955,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00032",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 1.0,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00033",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 1.0,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00034",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.965,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00035",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.965,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00036",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.7,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00037",
+    "predicted_label": "NORMAL",
+    "anomaly_probability": 0.275,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00038",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.805,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00039",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.985,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00040",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.885,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00041",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.925,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00042",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.965,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00043",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.97,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00044",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.88,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00045",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.97,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00046",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.955,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00047",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.87,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00048",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.935,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00049",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.795,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00050",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.91,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00051",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.81,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00052",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.96,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00053",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.96,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00054",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.925,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00055",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.85,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00056",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.925,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00057",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.87,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00058",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.96,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00059",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.975,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00060",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.6,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00061",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.75,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00062",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.89,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00063",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.87,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00064",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.865,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00065",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.91,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00066",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.78,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00067",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.95,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00068",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.96,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00069",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.94,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00070",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.965,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00071",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.915,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00072",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.82,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00073",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.81,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00074",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.86,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00075",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.78,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00076",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.945,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00077",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.85,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00078",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.89,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00079",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.965,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00080",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.575,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00081",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.875,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00082",
+    "predicted_label": "NORMAL",
+    "anomaly_probability": 0.29,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00083",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.98,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00084",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.995,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00085",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.995,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00086",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 1.0,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00087",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.955,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00088",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.965,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00089",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.95,
+    "feature_count": 10
+  },
+  {
+    "run_id": "R00090",
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.9,
+    "feature_count": 10
+  }
+]

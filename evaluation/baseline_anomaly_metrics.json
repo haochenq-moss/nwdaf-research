@@ -1,0 +1,6 @@
+{
+  "accuracy": 0.9,
+  "f1": 0.9473684210526315,
+  "test_count": 10,
+  "positive_rate": 0.9
+}

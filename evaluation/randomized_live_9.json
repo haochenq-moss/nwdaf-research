@@ -1,0 +1,56 @@
+{
+  "seed": 9,
+  "order": [
+    "B0",
+    "B1"
+  ],
+  "measurements": {
+    "B0": {
+      "network": {
+        "measured_at": "2026-09-16T12:40:45.179727+00:00",
+        "host": "127.0.0.1",
+        "status": "measured",
+        "interface": "ueTun0",
+        "target": "10.60.0.1",
+        "ping_count": 5,
+        "packet_loss_percent": 0.0,
+        "rtt_mean_ms": 0.053,
+        "throughput": {
+          "status": "measured",
+          "sent_bps": 7540758778.230648,
+          "received_bps": 7354149317.177375,
+          "reason": ""
+        },
+        "reason": ""
+      }
+    },
+    "B1": {
+      "network": {
+        "measured_at": "2026-09-16T12:40:52.990242+00:00",
+        "host": "127.0.0.1",
+        "status": "measured",
+        "interface": "ueTun0",
+        "target": "10.60.0.1",
+        "ping_count": 5,
+        "packet_loss_percent": 0.0,
+        "rtt_mean_ms": 0.039,
+        "throughput": {
+          "status": "measured",
+          "sent_bps": 4688609621.776656,
+          "received_bps": 4655273896.17785,
+          "reason": ""
+        },
+        "reason": ""
+      },
+      "analytics": {
+        "predicted_label": "ANOMALY",
+        "anomaly_probability": 0.925,
+        "confidence": 0.925,
+        "model_name": "random_forest",
+        "model_version": "rf-v1",
+        "feature_schema": "run-linux-v1"
+      },
+      "detection_latency_ms": 17.01220963150263
+    }
+  }
+}

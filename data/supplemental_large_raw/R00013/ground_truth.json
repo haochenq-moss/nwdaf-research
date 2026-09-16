@@ -1,0 +1,11 @@
+{
+  "action": null,
+  "anomalous": false,
+  "attack_phase": "recovery",
+  "class": "normal",
+  "run_id": "R00013",
+  "scenario_id": "NORMAL",
+  "security": false,
+  "service_impact": "none",
+  "severity": "none"
+}
