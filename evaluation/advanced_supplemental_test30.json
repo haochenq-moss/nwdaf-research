@@ -1,0 +1,69 @@
+{
+  "feature_names": [
+    "duration_sec",
+    "ebpf_event_count",
+    "ebpf_telemetry_available",
+    "free5gc_event_count",
+    "free5gc_telemetry_available",
+    "linux_event_count",
+    "linux_load_1m_max",
+    "linux_load_1m_mean",
+    "linux_load_1m_min",
+    "linux_load_1m_std",
+    "linux_memory_available_mean",
+    "linux_memory_total_mean",
+    "memory_available_ratio_mean",
+    "pfcp_event_count",
+    "pfcp_request_count",
+    "pfcp_response_count",
+    "pfcp_telemetry_available",
+    "process_event_count",
+    "sbi_error_event_count",
+    "sbi_event_count",
+    "sbi_telemetry_available"
+  ],
+  "normalization": "StandardScaler fit on train only",
+  "hyperparameter_search": true,
+  "early_stopping": "GPU MLP backend only",
+  "calibration": "sigmoid CalibratedClassifierCV",
+  "result": {
+    "best_params": {
+      "n_estimators": 200,
+      "max_depth": null,
+      "class_weight": "balanced"
+    },
+    "seed_results": [
+      {
+        "seed": 7,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "average_precision": 1.0,
+        "brier_score": 0.0032640624999999996
+      },
+      {
+        "seed": 42,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "average_precision": 1.0,
+        "brier_score": 0.0026406249999999984
+      },
+      {
+        "seed": 123,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "average_precision": 1.0,
+        "brier_score": 0.0027929687499999994
+      }
+    ],
+    "calibrated": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "average_precision": 1.0,
+      "brier_score": 0.009013741053774959
+    }
+  }
+}

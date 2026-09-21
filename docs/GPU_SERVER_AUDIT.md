@@ -16,6 +16,33 @@
 | Dataset | `data/pilot_raw.tar.gz`, extracted under `data/raw` |
 | Dataset hash | `8cefce33e78fecb6786895c1ce9f153937a6624d969940ea11b55b32660cfe57` |
 
+## Ubuntu Testbed Forks
+
+The live Ubuntu/free5GC testbed is built from:
+
+- https://github.com/haochenq-moss/free5gc
+- https://github.com/haochenq-moss/free-ran-ue
+
+The Ubuntu startup order is:
+
+```bash
+cd ~/free5gc
+./run.sh
+
+cd ~/free5gc/webconsole
+go run server.go
+
+cd ~/free-ran-ue
+./build/free-ran-ue gnb -c config/gnb.yaml
+
+cd ~/free-ran-ue
+sudo ./build/free-ran-ue ue -c config/ue.yaml
+```
+
+The WebConsole is used to create or verify the subscriber/user before UE startup.
+The GPU server consumes derived data or read-only live observations; it does not
+install or recreate free5GC.
+
 ## Existing components
 
 - Dataset extraction and run-level loader.
@@ -23,21 +50,26 @@
 - Linux host/process feature aggregation.
 - Random Forest run-level anomaly baseline and evaluation tests.
 - Offline NWDAF-style scoring wrapper (`score_run`, batch scoring, and metrics).
+- Ubuntu response-agent with authenticated, bounded `tc` response and automatic
+  `fq_codel` restoration.
+- Supplemental real SBI/PFCP telemetry campaigns and network-feature ablations.
 
-## Missing components
+## Remaining boundaries
 
-- GPU-backed training/inference entry points.
-- FastAPI analytics and experimental subscription endpoints.
-- Policy-bounded mitigation API and audit logging.
-- NF adapter, controlled mock NFs, closed-loop controller, and verification.
-- Reproduction documentation and Slurm jobs for the later GPU workloads.
+- Full 3GPP NWDAF compliance is not claimed.
+- Kubernetes quarantine, OVS enforcement, clean NF replacement, and UPF failover
+  are not implemented in the current prototype.
+- Strict least-privilege isolation for the Ubuntu user remains a deployment task;
+  the agent action itself is allow-listed.
 
 ## Potential conflicts and constraints
 
 - Do not run GPU-dependent commands from the login shell; submit them through Slurm.
 - Do not assume the login-node Python 3.9 satisfies the project requirement. Batch jobs use the project Python 3.11 environment.
 - Do not regenerate or modify the pilot archive or the Ubuntu testbed.
-- PFCP, SBI, and free5GC event files are present but empty in the transferred archive; feature work must remain grounded in available Linux telemetry unless new evidence is supplied.
+- PFCP, SBI, and free5GC event files in the original pilot archive are empty; a
+	separate supplemental campaign now supplies real SBI/PFCP evidence and is
+	documented separately from the frozen pilot results.
 - The current baseline is scikit-learn CPU code. GPU acceleration must be introduced and measured explicitly; it must not be implied by the partition name.
 
 ## Recommended implementation order

@@ -2,6 +2,10 @@
   "dataset_policy": "whole-run train/validation/test split",
   "feature_names": [
     "duration_sec",
+    "ebpf_event_count",
+    "ebpf_telemetry_available",
+    "free5gc_event_count",
+    "free5gc_telemetry_available",
     "linux_event_count",
     "linux_load_1m_max",
     "linux_load_1m_mean",
@@ -10,7 +14,14 @@
     "linux_memory_available_mean",
     "linux_memory_total_mean",
     "memory_available_ratio_mean",
-    "process_event_count"
+    "pfcp_event_count",
+    "pfcp_request_count",
+    "pfcp_response_count",
+    "pfcp_telemetry_available",
+    "process_event_count",
+    "sbi_error_event_count",
+    "sbi_event_count",
+    "sbi_telemetry_available"
   ],
   "configurations": {
     "B0": {
@@ -218,6 +229,27 @@
         },
         "test_count": 10
       },
+      "probability_metrics": {
+        "precision": 1.0,
+        "recall": 0.8888888888888888,
+        "f1": 0.9411764705882353,
+        "false_positive_rate": 0.0,
+        "confusion_matrix": {
+          "tn": 1,
+          "fp": 0,
+          "fn": 1,
+          "tp": 8
+        },
+        "test_count": 10,
+        "average_precision": 0.9888888888888889,
+        "roc_auc": 0.8888888888888888,
+        "brier_score": 0.08995249999999999
+      },
+      "f1_bootstrap_ci": {
+        "lower_95": 0.7692307692307693,
+        "upper_95": 1.0,
+        "bootstrap_repetitions": 1271
+      },
       "per_scenario": {
         "NORMAL": {
           "precision": 0.0,
@@ -407,7 +439,7 @@
         },
         "test_count": 10
       },
-      "mitigation_eligible_test_count": 7,
+      "mitigation_eligible_test_count": 4,
       "mitigation_metrics": {
         "detection_latency": "unavailable",
         "mitigation_latency": "unavailable",

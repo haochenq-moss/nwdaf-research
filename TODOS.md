@@ -1,4 +1,4 @@
-# TODOs
+# Project Status and TODOs
 
 ## Phase 1 — Dataset reconnaissance and documentation
 - [x] Inspect repository state and archive contents
@@ -35,11 +35,36 @@
 - [x] Add the NWDAF-style run scoring pipeline and batch export workflow
 - [x] Validate feature ablation on the same whole-run split to confirm the full feature set remains strongest
 
-## Phase 6 — Agent and NEMOIR (later)
-- [ ] Only implement after the analytics baseline is working
-- [ ] Use structured evidence from the dataset and model outputs
-- [ ] Ensure agent claims are grounded in telemetry and ground truth
-- [ ] Keep NEMOIR downstream of validated analytics and evidence collection
+## Completed Architecture and Response
+- [x] Prototype DCCF normalization/correlation module
+- [x] Prototype MFAF model registry
+- [x] Prototype ADRF durable evidence store
+- [x] Prototype SecIR typed workflow compiler
+- [x] Prototype VFL operational reporting
+- [x] Non-executing evidence-grounded NemoIR workflow renderer
+- [x] Policy engine, authenticated Ubuntu response-agent, audit, and replay protection
+- [x] Real reversible `tc` rate-limit trial with automatic `fq_codel` restoration
+- [x] Kubernetes/container, OVS, and runtime-socket read-only observers
+- [x] Optional CUDA MLP and temporal GRU backends with Slurm jobs
+- [x] Pilot, supplemental SBI/PFCP, multi-load, randomized-live, and GPU experiments
+- [x] 71 automated tests
+
+## Remaining Deployment-Level Work
+- [ ] Kubernetes NetworkPolicy/pod quarantine enforcement
+- [ ] Container-runtime socket abuse generation in a disposable runtime
+- [ ] OVS flow mutation and rollback adapter
+- [ ] Clean NF replacement and re-registration
+- [ ] UPF failover with matched service-state verification
+- [ ] Real OAM/OSS/BOSS platform integration
+- [ ] Causal attack/recovery experiment with matched no-response control
+- [ ] Strict dedicated response-agent service account with no broader sudo access
+- [ ] Full 3GPP NWDAF conformance and interoperability testing
+
+## Research Extensions
+- [ ] Expand scenarios and unseen attack seeds
+- [ ] Add load/topology conditions and collector overhead measurements
+- [ ] Add calibration plots and confidence intervals to all public result tables
+- [ ] Evaluate GPU/CPU cost and throughput at larger scale
 
 ## Guardrails
 - [x] Never modify or delete the raw archive

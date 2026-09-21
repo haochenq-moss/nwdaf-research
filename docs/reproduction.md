@@ -3,6 +3,107 @@
 This repository hosts an external **NWDAF-like Security Analytics Prototype**.
 It is not a 3GPP-compliant NWDAF and does not contain the free5GC runtime.
 
+## Two-Machine Setup
+
+The Ubuntu testbed and GPU analytics server are separate machines.
+
+### Ubuntu testbed repositories
+
+Use the project forks used for the validated testbed:
+
+- [free5GC fork](https://github.com/haochenq-moss/free5gc)
+- [free-ran-ue fork](https://github.com/haochenq-moss/free-ran-ue)
+
+On Ubuntu 20.04 or a compatible Linux host, install the dependencies required by
+the upstream projects, including Go, MongoDB, gtp5g/kernel build dependencies,
+Node.js/Yarn for the WebConsole, and standard build tools. The free5GC fork's
+`quick-setup.sh` installs or configures the core dependencies; review it before
+running because it may require `sudo`, network access, and host networking
+changes.
+
+Clone and build both repositories:
+
+```bash
+git clone https://github.com/haochenq-moss/free5gc.git ~/free5gc
+git clone https://github.com/haochenq-moss/free-ran-ue.git ~/free-ran-ue
+
+cd ~/free5gc
+./quick-setup.sh
+make all
+
+cd ~/free-ran-ue
+make
+```
+
+Before starting the system, verify that the IP addresses and identifiers in
+`~/free-ran-ue/config/gnb.yaml` and `~/free-ran-ue/config/ue.yaml` match the
+Ubuntu host and the free5GC configuration: N2/N3 addresses, PLMN, TAC, S-NSSAI,
+DNN, subscriber identity, and authentication subscription. The UE configuration
+creates the `ueTun*` user-plane tunnel when PDU-session setup succeeds.
+
+### Ubuntu startup order
+
+Run each long-lived process in its own Ubuntu terminal. Start the core first:
+
+```bash
+cd ~/free5gc
+./run.sh
+```
+
+Start the WebConsole in another terminal:
+
+```bash
+cd ~/free5gc/webconsole
+go run server.go
+```
+
+Use the WebConsole to create or verify the subscriber/user before starting the
+UE. Then start the RAN simulator:
+
+```bash
+cd ~/free-ran-ue
+./build/free-ran-ue gnb -c config/gnb.yaml
+```
+
+Finally start the UE in another terminal:
+
+```bash
+cd ~/free-ran-ue
+sudo ./build/free-ran-ue ue -c config/ue.yaml
+```
+
+Validate the testbed before collecting data:
+
+```bash
+pgrep -a -f 'amf|smf|upf|nrf|udm|udr|pcf|nssf|ausf|free-ran-ue'
+ip -br addr
+ip -br link show | grep -i '^ueTun' || true
+ss -lntup
+```
+
+The expected live evidence includes running free5GC NFs, one gNB, one or more
+UE processes, and a configured `ueTun*` interface. The experiment controller
+uses the existing Ubuntu collectors and writes run directories under its chosen
+dataset output path.
+
+### GPU server connection
+
+The GPU server does not run free5GC. If Ubuntu is behind NAT, create a reverse
+SSH tunnel from Ubuntu to the GPU server. One tunnel maps SSH and the response
+agent:
+
+```bash
+ssh -N -T \
+  -o ServerAliveInterval=30 \
+  -o ServerAliveCountMax=3 \
+  -R 127.0.0.1:2222:127.0.0.1:22 \
+  -R 127.0.0.1:9090:127.0.0.1:9090 \
+  qinh0007@<gpu-server-address>
+```
+
+The GPU server can then use the read-only live observer through port `2222` and
+the authenticated Ubuntu response-agent through port `9090`.
+
 ## Local CPU workflow
 
 The pilot archive is immutable. Its verified SHA-256 is:
@@ -158,10 +259,58 @@ The service exposes the experimental endpoints:
 - `POST /nnwdaf-eventssubscription/v1/notifications`
 - `POST /security/v1/mitigation`
 
+Read-only architecture status is available at:
+
+```http
+GET /architecture/v1/status
+```
+
+It reports DCCF/MFAF/ADRF/SecIR/VFL module state, active model metadata, ADRF
+storage path, and the response action vocabulary. It explicitly labels the
+service as an external NWDAF-like prototype rather than a compliant NWDAF.
+
+The current implementation boundary is listed in
+`docs/implementation_boundary.md`; it distinguishes measured capabilities from
+future OVS, Kubernetes, NF-replacement, UPF-failover, and full-NWDAF work.
+
+Kubernetes/container inventory is available as a read-only optional observer:
+
+```python
+from nwdaf_research.live.kubernetes_observer import KubernetesObserver, ContainerRuntimeObserver
+
+pods = KubernetesObserver().observe()
+containers = ContainerRuntimeObserver().observe()
+```
+
+The observers report `measured` or `unavailable`; they never mutate pods,
+containers, namespaces, or runtime sockets.
+
+An optional read-only OVS observer is also available:
+
+```python
+from nwdaf_research.live.ovs_observer import OVSObserver
+
+ovs = OVSObserver().observe()
+```
+
+It inventories bridges, ports, and flows when `ovs-vsctl`/`ovs-ofctl` are
+installed. OVS flow mutation and enforcement remain disabled.
+
+Runtime socket metadata can also be inspected without opening the socket:
+
+```python
+from nwdaf_research.live.runtime_socket_observer import RuntimeSocketObserver
+
+runtime = RuntimeSocketObserver().observe()
+```
+
+This records socket mode, ownership, process accessibility, and world-writable
+status. It does not perform runtime API calls or generate a socket-abuse event.
+
 The notification endpoint generates experimental notification payloads for the
-latest in-process analytics result. It does not claim guaranteed delivery to a
-remote URI; delivery transport and durable subscription state remain future
-deployment work.
+latest analytics result. Subscriptions and replay IDs are persisted in SQLite;
+pass `deliver=true` to request an optional HTTP callback to `notificationUri`.
+Delivery status and callback errors are returned in the notification payload.
 
 ## Closed-loop mock demonstration
 
@@ -186,3 +335,53 @@ sbatch scripts/slurm/run_gpu_job.sbatch python -c \
 The wrapper requests one GPU from `MGPU-TC2`, uses `.venv/bin/python`, and logs
 the allocated node and visible GPU. Do not install free5GC or modify the Ubuntu
 testbed from this project.
+
+## Optional CUDA ML Experiment
+
+The validated baseline is a CPU Random Forest. An optional PyTorch CUDA MLP is
+provided for an explicit CPU/GPU measurement; it is not silently substituted
+into the primary result. On the cluster used for this prototype, prepare a
+user-owned CUDA environment and then submit:
+
+```bash
+sbatch scripts/slurm/setup_gpu_env.sbatch
+sbatch scripts/slurm/train_gpu_mlp.sbatch --epochs 100
+```
+
+If the CUDA PyTorch wheel is unavailable, try the compatible CUDA 12.4 wheel:
+
+```bash
+"$HOME/nwdaf-gpu-venv/bin/pip" install --force-reinstall torch \
+  --index-url https://download.pytorch.org/whl/cu124
+```
+
+If no CUDA wheel can be installed, run the explicitly labeled CPU MLP fallback
+for a model-family comparison only:
+
+```bash
+sbatch scripts/slurm/train_gpu_mlp.sbatch --backend cpu --epochs 100
+```
+
+The CPU fallback must not be reported as GPU acceleration. The primary paper
+baseline remains the CPU Random Forest unless a result contains
+`device: cuda` and a valid CUDA/PyTorch version.
+
+The optional `TemporalGRUClassifier` uses real Linux event sequences and
+validation early stopping when run in a CUDA-enabled environment. It is a model
+research extension, not part of the frozen Random Forest result.
+
+Run the temporal model on the supplemental split:
+
+```bash
+sbatch scripts/slurm/train_temporal_gru.sbatch \
+  --root data/supplemental_large_raw \
+  --epochs 100 --max-length 64
+```
+
+The verified temporal run produced test accuracy `0.7500` and test F1
+`0.8571`. The verified CUDA MLP produced test accuracy `0.9000` and test F1
+`0.9412`.
+
+The job writes `$HOME/nwdaf-research-gpu-results/gpu_mlp-<job-id>.json` with the CUDA device, PyTorch/CUDA
+versions, training time, inference time, accuracy, and F1. If PyTorch or CUDA is
+missing, the job fails explicitly rather than reporting a CPU run as GPU work.

@@ -30,6 +30,13 @@ class AnalyticsApiTests(unittest.TestCase):
         self.assertEqual(body["model"]["name"], "random_forest")
         self.assertEqual(body["model"]["version"], "rf-v1")
 
+    def test_architecture_status_exposes_module_boundaries(self):
+        response = self.client.get("/architecture/v1/status")
+        self.assertEqual(response.status_code, 200)
+        body = response.json()
+        self.assertEqual(body["modules"]["DCCF"], "active")
+        self.assertEqual(body["modules"]["NemoIR"], "reporting_only")
+
     def test_invalid_time_window_is_rejected(self):
         response = self.client.post(
             "/nnwdaf-analyticsinfo/v1/security-analytics",

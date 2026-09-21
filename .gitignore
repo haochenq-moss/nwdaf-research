@@ -23,6 +23,9 @@ ENV/
 logs/*
 !logs/.gitkeep
 
+# Local evaluation copies
+data/supplemental_large_raw_test30/
+
 # Testing & Coverage
 .coverage
 .coverage.*

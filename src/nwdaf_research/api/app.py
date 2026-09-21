@@ -16,6 +16,7 @@ from nwdaf_research.adapters.http_nf import HTTPNFAdapter
 from nwdaf_research.analytics.nwdaf import NWDAFResearchAnalyzer
 from nwdaf_research.policy.engine import PolicyEngine
 from nwdaf_research.security.audit import AuditLogger
+from nwdaf_research.architecture import ADRFStore, DCCF, MFAFRegistry, SecIRCompiler, VFLReporter
 from .persistence import APIState
 
 from .schemas import (
@@ -67,6 +68,13 @@ def create_app(
         else Path("/tmp") / f"nwdaf-api-{uuid.uuid4().hex}.sqlite3"
     )
     state = APIState(state_path)
+    adrf = ADRFStore(state_path.with_name(f"{state_path.stem}-adrf.sqlite3"))
+    dccf = DCCF()
+    mfaf = MFAFRegistry()
+    secir = SecIRCompiler()
+    vfl = VFLReporter()
+    if model_artifact and (Path(model_artifact) / "manifest.json").exists():
+        mfaf.register(model_artifact)
     subscriptions: dict[str, SubscriptionResponse] = {}
     recent_analytics: dict[str, AnalyticsResponse] = {}
     app = FastAPI(
@@ -74,10 +82,39 @@ def create_app(
         version="0.1.0",
         description="Experimental SBA-inspired analytics interface; not 3GPP-compliant NWDAF.",
     )
+    app.state.dccf = dccf
+    app.state.mfaf = mfaf
+    app.state.adrf = adrf
+    app.state.secir = secir
+    app.state.vfl = vfl
 
     @app.get("/health")
     def health() -> dict[str, str]:
         return {"status": "ok"}
+
+    @app.get("/architecture/v1/status")
+    def architecture_status() -> dict[str, Any]:
+        active_model = mfaf.active
+        return {
+            "status": "ok",
+            "standard_boundary": "external NWDAF-like prototype; not 3GPP-compliant NWDAF",
+            "modules": {
+                "DCCF": "active",
+                "MFAF": "active" if active_model else "available_no_active_model",
+                "ADRF": "active",
+                "SecIR": "active",
+                "VFL": "active",
+                "NemoIR": "reporting_only",
+            },
+            "active_model": {
+                "name": active_model.name,
+                "version": active_model.version,
+            }
+            if active_model
+            else None,
+            "adrf_path": str(adrf.path),
+            "response_actions": sorted(policy.actions),
+        }
 
     @app.middleware("http")
     async def request_context(request: Request, call_next):
@@ -141,6 +178,18 @@ def create_app(
             model_version=response.model.version,
         )
         recent_analytics[request.analytics_id] = response
+        adrf.put(
+            f"analytics-{uuid.uuid4().hex[:12]}",
+            {"type": "analytics", **response.model_dump(mode="json", by_alias=True)},
+        )
+        vfl.create(
+            report_id=f"report-{uuid.uuid4().hex[:12]}",
+            lifecycle="detected",
+            analytics_id=response.analytics_id,
+            severity=response.result.severity,
+            confidence=response.result.confidence,
+            evidence={"model": response.model.model_dump(mode="json", by_alias=True)},
+        )
         return response
 
     @app.post(
@@ -258,7 +307,18 @@ def create_app(
                 status_code=422,
                 detail=decision.rejection_reason,
             )
+        workflow = secir.compile(decision, evidence={"reason": decision.reason})
         adapter.execute(decision)
+        adrf.put(
+            f"workflow-{workflow.workflow_id}",
+            {"type": "security_workflow", "workflow": workflow.as_dict()},
+        )
+        vfl.create(
+            report_id=f"report-{uuid.uuid4().hex[:12]}",
+            lifecycle="mitigation_in_progress",
+            action_status="accepted",
+            evidence={"workflow_id": workflow.workflow_id},
+        )
         audit_request(
             http_request,
             "mitigation_request",

@@ -6,10 +6,13 @@ from typing import Any
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import (
+    average_precision_score,
+    brier_score_loss,
     confusion_matrix,
     f1_score,
     precision_score,
     recall_score,
+    roc_auc_score,
 )
 
 from nwdaf_research.analytics.baseline import BaselineAnomalyModel
@@ -30,6 +33,41 @@ def _binary_metrics(labels: list[int], predictions: list[int]) -> dict[str, Any]
         "false_positive_rate": float(fp / (fp + tn)) if fp + tn else 0.0,
         "confusion_matrix": {"tn": int(tn), "fp": int(fp), "fn": int(fn), "tp": int(tp)},
         "test_count": len(labels),
+    }
+
+
+def _probability_metrics(labels: list[int], probabilities: np.ndarray) -> dict[str, Any]:
+    predictions = [int(value >= 0.5) for value in probabilities]
+    metrics = _binary_metrics(labels, predictions)
+    metrics.update(
+        {
+            "average_precision": float(average_precision_score(labels, probabilities)),
+            "roc_auc": float(roc_auc_score(labels, probabilities)),
+            "brier_score": float(brier_score_loss(labels, probabilities)),
+        }
+    )
+    return metrics
+
+
+def _bootstrap_f1_ci(
+    labels: list[int], probabilities: np.ndarray, seed: int = 42, repetitions: int = 2000
+) -> dict[str, float]:
+    rng = np.random.default_rng(seed)
+    labels_array = np.asarray(labels, dtype=int)
+    predictions = (probabilities >= 0.5).astype(int)
+    scores: list[float] = []
+    for _ in range(repetitions):
+        indices = rng.integers(0, len(labels_array), size=len(labels_array))
+        if len(set(labels_array[indices].tolist())) < 2:
+            continue
+        scores.append(float(f1_score(labels_array[indices], predictions[indices], zero_division=0)))
+    if not scores:
+        return {"lower_95": 0.0, "upper_95": 0.0, "bootstrap_repetitions": 0}
+    lower, upper = np.percentile(scores, [2.5, 97.5])
+    return {
+        "lower_95": float(lower),
+        "upper_95": float(upper),
+        "bootstrap_repetitions": len(scores),
     }
 
 
@@ -142,6 +180,8 @@ def evaluate_configurations(raw_root: str) -> dict[str, Any]:
             "B1": {
                 "description": "Linux telemetry Random Forest detection",
                 "metrics": _binary_metrics(test_labels, b1_predictions),
+                "probability_metrics": _probability_metrics(test_labels, b1_probabilities),
+                "f1_bootstrap_ci": _bootstrap_f1_ci(test_labels, b1_probabilities),
                 "per_scenario": _per_group(test, b1_predictions, "scenario_id"),
                 "per_load": _per_group(test, b1_predictions, "load_profile"),
             },

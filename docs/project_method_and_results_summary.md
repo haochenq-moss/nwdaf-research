@@ -22,6 +22,26 @@ Telemetry collection
 
 The model produces an evidence-backed diagnosis and never executes arbitrary commands. A separate policy layer validates action type, target NF, confidence, duration, and authorization before a response agent can act.
 
+The repository now exposes prototype modules corresponding to the paper's
+architecture vocabulary: `architecture/dccf.py` for event normalization and
+correlation, `architecture/mfaf.py` for approved model-artifact registration,
+`architecture/adrf.py` for durable analytics/evidence records,
+`architecture/secir.py` for typed rollback-aware workflow compilation, and
+`architecture/vfl.py` for operational lifecycle reports. SecIR compiles
+evidence-gated typed steps with postconditions and rollback actions, while
+NemoIR renders those plans without executing them. These modules implement
+research boundaries and are not claims of standardized 3GPP network functions.
+
+## 1.1 Reproducible Ubuntu Testbed
+
+The Ubuntu side uses the project forks [free5GC](https://github.com/haochenq-moss/free5gc)
+and [free-ran-ue](https://github.com/haochenq-moss/free-ran-ue). The reproducible
+startup order is: build both repositories, run `~/free5gc/run.sh`, start the
+WebConsole with `go run server.go`, then start `gnb` and `ue` from the
+`free-ran-ue` build. The GPU-side repository does not contain the free5GC
+runtime; it receives derived archives or read-only observations over an
+authenticated reverse SSH path.
+
 ## 2. Dataset and Feature Method
 
 The immutable pilot dataset contains 90 valid runs with 10 scenarios, three traffic loads, and a whole-run split of 60 training, 20 validation, and 10 test runs. The main pilot model uses verified Linux host/process telemetry, memory and load features, run metadata, and ground-truth labels only for evaluation.
@@ -37,6 +57,10 @@ Empty collector files are explicitly marked unavailable and are never replaced w
 
 A separate supplemental campaign was generated on the real Ubuntu/free5GC testbed to provide network-layer evidence. It contains 120 runs distributed across NORMAL, S08, S10, and S14 scenarios, with 8,034 real SBI events and 181 PFCP events. A second multi-load campaign contains 80 runs across L1 and L2 load profiles.
 
+The multi-load campaign contains 20 runs per scenario across NORMAL, S08, S10,
+and S14, with 3,684 SBI events and 156 PFCP events. The resulting B1 F1 is
+0.9412 overall, with per-load F1 of 1.0000 for L1 and 0.9231 for L2.
+
 All model splits are performed at the complete-run level rather than at the individual-event level to avoid train/test leakage.
 
 ## 3. Model and Configuration Method
@@ -48,6 +72,19 @@ Three configurations are evaluated:
 - **B2:** B1 combined with a policy-bounded response layer.
 
 The response layer supports authenticated and allow-listed actions including operator alerting and a bounded reversible traffic-rate-limit action. The Ubuntu response-agent uses API-key authentication, persistent replay protection, SQLite state, JSONL audit records, and automatic restoration of the original `fq_codel` queue discipline after a bounded rate-limit duration.
+
+An advanced evaluation path additionally applies train-only feature
+normalization, validation-selected hyperparameters and class weights, multiple
+random seeds, sigmoid calibration, and bootstrap uncertainty reporting. The
+optional CUDA MLP supports validation early stopping, while the optional GRU
+backend consumes Linux event sequences for temporal modeling. These extensions
+are separate from the frozen Random Forest headline result.
+
+The verified CUDA MLP run used PyTorch `2.11.0+cu128` with CUDA 12.8 and
+achieved test accuracy `0.9000` and F1 `0.9412`. The verified temporal GRU run
+achieved test accuracy `0.7500` and F1 `0.8571`. These results demonstrate
+executable GPU and temporal backends, but the CUDA MLP did not improve accuracy
+over the CPU Random Forest on the small pilot split.
 
 ## 4. Frozen Pilot Results
 
@@ -157,13 +194,16 @@ Important project artifacts include:
 - Supplemental telemetry summary: `evaluation/supplemental_large_telemetry.json`
 - Supplemental network ablation: `evaluation/supplemental_large_network_ablation.json`
 - Multi-load configuration results: `evaluation/supplemental_multiload_configurations.json`
+- Multi-load telemetry summary: `evaluation/supplemental_multiload_telemetry.json`
 - B2 alert trial: `evaluation/b2_alert_trial.json`
 - Repeated B2 rate-limit evidence: `evaluation/b2_rate_trials.jsonl`
 - Model artifact: `models/rf-v1/model.pkl`
 - Model provenance: `models/rf-v1/manifest.json`
+- CUDA MLP result: `$HOME/nwdaf-research-gpu-results/gpu_mlp-36688.json`
+- Temporal GRU result: `$HOME/nwdaf-research-gpu-results/temporal_gru-36698.json`
 - Paper-oriented report: `docs/paper_results.md`
 
-The latest project test suite contains 52 passing tests.
+The latest project test suite contains 71 passing tests.
 
 ## 9. Limitations
 
@@ -175,4 +215,4 @@ The current evaluation has several limitations:
 - The B2 rate-limit experiment is controlled and bounded rather than a full attack-recovery campaign.
 - Causal recovery, availability improvement, and production generalization have not been established.
 - The Ubuntu user still has broader sudo privileges than the response-agent allow-list, which remains a residual least-privilege risk.
-- Full Kubernetes quarantine, OVS enforcement, clean NF replacement, UPF failover, and full 3GPP NWDAF compliance are future work rather than demonstrated capabilities.
+- Full Kubernetes quarantine, OVS enforcement, clean NF replacement, UPF failover, and full 3GPP NWDAF compliance are future work rather than demonstrated capabilities. Read-only Kubernetes/container, OVS, and runtime-socket observers are implemented, but they do not mutate infrastructure.
