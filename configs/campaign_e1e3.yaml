@@ -1,0 +1,67 @@
+# Fresh-campaign matrix definition for E1 (detection), E2 (host/5G modality
+# ablation only), and E3 (held-out evaluation), per SecureNWDAF_free5GC_Forum2026.
+#
+# Scope and honesty constraints (see TODOS.md "Paper Campaign Preflight"):
+# - The UE data path is currently broken (misdirected GTP-U downlink port).
+#   E4/E5 (service-level latency/impact, response verification) are blocked
+#   and are intentionally excluded from this matrix.
+# - Load is fixed to L0 for every cell. L1/L2 packet-rate differentiation is
+#   not meaningful right now (traffic controller cannot reach the UE), and the
+#   remote traffic-controller code also collapses L2 to the same interval as
+#   L0. Do not claim multi-load results from this matrix.
+# - All ten scenario IDs (NORMAL, S01, S04, S07, S08, S10, S11, S12, S13, S14)
+#   use only "linux" or "sbi" required_components per config/scenarios.yaml on
+#   the testbed, which matches the modalities that are actually functioning.
+# - Repetitions reuse the SAME seed within a cell (statistical replication of
+#   execution/timing variance), not a new seed per repetition. This is a
+#   deliberate correction of research/controller/repeat_runs.py's per-repetition
+#   seed increment, applied only in this local orchestration layer; the remote
+#   repository is not modified.
+# - dev and held_out partitions use disjoint, non-overlapping seed ranges and
+#   must never be tuned against each other.
+
+campaign_id: campaign_20260925_e1e3
+remote:
+  repo_root: "$HOME/free5gc"
+  output_root: "dataset/raw/campaign_20260925_e1e3"
+  testbed_config: "config/testbed.yaml"
+  traffic_profiles: "config/traffic_profiles.yaml"
+ssh:
+  host: "127.0.0.1"
+  port: 2222
+  user: "haochenqin-moss"
+
+run_defaults:
+  load_profile: "L0"
+  duration_sec: 20
+  baseline_sec: 5
+  require_baseline: true
+  traffic_target: "8.8.8.8"   # traffic controller will honestly record failure; not used for E1-E3 evidence
+
+repetitions_per_cell: 5
+
+scenarios:
+  - NORMAL
+  - S01
+  - S04
+  - S07
+  - S08
+  - S10
+  - S11
+  - S12
+  - S13
+  - S14
+
+# Seed base per partition; per-scenario seed = base + scenario_index, held
+# fixed across all repetitions of that scenario in that partition.
+partitions:
+  dev:
+    seed_base: 1000
+  held_out:
+    seed_base: 5000
+
+preconditions:
+  # Must pass before any cell in this matrix is executed for real.
+  - "probe_baseline().baseline_verified is true"
+  - "config/testbed.yaml regenerated from a live inventory, not the stale 2026-09-15 snapshot"
+  - "explicit user approval recorded for live scenario stimulus execution"

@@ -10,10 +10,17 @@ from typing import Any
 REMOTE_SNAPSHOT = r"""
 set -eu
 load_1m=$(awk '{print $1}' /proc/loadavg)
+hostname=$(hostname)
 mem_total=$(awk '/^MemTotal:/ {print $2 * 1024}' /proc/meminfo)
 mem_available=$(awk '/^MemAvailable:/ {print $2 * 1024}' /proc/meminfo)
 process_count=$(ps -e --no-headers | wc -l)
 ue_tunnel_count=$(ip -br addr | awk '$1 ~ /^ueTun/ {count += 1} END {print count + 0}')
+ue_namespace_tunnel_count=0
+ue_namespace_available=0
+if namespace_interfaces=$(sudo -n ip netns exec free-ue-ns ip -br addr 2>/dev/null); then
+    ue_namespace_tunnel_count=$(printf '%s\n' "$namespace_interfaces" | awk '$1 ~ /^ueTun/ {count += 1} END {print count + 0}')
+    ue_namespace_available=1
+fi
 listening_socket_count=$(ss -lntupH 2>/dev/null | wc -l)
 latest_log=$(find "$HOME/free5gc/log" -maxdepth 2 -type f -name '*.log' -printf '%T@ %p\n' 2>/dev/null | sort -nr | head -1 | cut -d' ' -f2-)
 pfcp_recent=0
@@ -22,7 +29,7 @@ if [ -n "$latest_log" ]; then
     pfcp_recent=$(tail -n 2000 "$latest_log" | grep -c 'CAT="PFCP"' || true)
     sbi_recent=$(tail -n 2000 "$latest_log" | grep -c 'CAT="GIN"' || true)
 fi
-printf '{"load_1m":%s,"memory_total":%s,"memory_available":%s,"process_count":%s,"ue_tunnel_count":%s,"listening_socket_count":%s,"pfcp_recent_log_events":%s,"sbi_recent_log_events":%s}\n' "$load_1m" "$mem_total" "$mem_available" "$process_count" "$ue_tunnel_count" "$listening_socket_count" "$pfcp_recent" "$sbi_recent"
+printf '{"hostname":"%s","load_1m":%s,"memory_total":%s,"memory_available":%s,"process_count":%s,"ue_tunnel_count":%s,"ue_namespace_tunnel_count":%s,"ue_namespace_available":%s,"listening_socket_count":%s,"pfcp_recent_log_events":%s,"sbi_recent_log_events":%s}\n' "$hostname" "$load_1m" "$mem_total" "$mem_available" "$process_count" "$ue_tunnel_count" "$ue_namespace_tunnel_count" "$ue_namespace_available" "$listening_socket_count" "$pfcp_recent" "$sbi_recent"
 """.strip()
 
 
@@ -106,15 +113,21 @@ class SSHLiveObserver:
             "pfcp_message_rate",
             "service_latency",
         ]
+        ue_namespace_available = bool(int(snapshot["ue_namespace_available"]))
+        if not ue_namespace_available:
+            unavailable_features.append("ue_namespace_tunnel_count")
         return LiveObservation(
             observed_at=datetime.now(timezone.utc).isoformat(),
-            host=self.host,
+            host=str(snapshot["hostname"]),
             features=features,
             evidence={
                 "source": "remote_proc_ip_ss",
                 "collection": "single_read_only_snapshot",
+                "ssh_endpoint": self.host,
                 "process_count": int(snapshot["process_count"]),
-                "ue_tunnel_count": int(snapshot["ue_tunnel_count"]),
+                "ue_tunnel_count": int(snapshot["ue_tunnel_count"])
+                + int(snapshot["ue_namespace_tunnel_count"]),
+                "ue_namespace_available": ue_namespace_available,
                 "listening_socket_count": int(snapshot["listening_socket_count"]),
                 "pfcp_recent_log_events": int(snapshot["pfcp_recent_log_events"]),
                 "sbi_recent_log_events": int(snapshot["sbi_recent_log_events"]),

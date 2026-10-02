@@ -1,0 +1,18 @@
+{
+  "created_at": "2026-10-01T11:11:35.686Z",
+  "duration_sec": 2.128,
+  "host_id": "free5gc",
+  "load_profile": "uncontrolled_live_lab",
+  "provenance": {
+    "collector_version": "nwdaf-passive-baseline-v1",
+    "free5gc_commit": "4aa237be57404dea5b49ca8f332c6e25ede052de"
+  },
+  "run_id": "RNORM004",
+  "scenario_id": "PASSIVE_NORMAL_BASELINE",
+  "status": "complete",
+  "telemetry_notes": {
+    "linux": "9 normalized passive events",
+    "pfcp": "0 normalized passive events",
+    "sbi": "0 normalized passive events"
+  }
+}

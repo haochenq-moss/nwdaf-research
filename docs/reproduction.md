@@ -3,6 +3,14 @@
 This repository hosts an external **NWDAF-like Security Analytics Prototype**.
 It is not a 3GPP-compliant NWDAF and does not contain the free5GC runtime.
 
+Open [docs/workflow.html](workflow.html) for the interactive workflow diagram
+covering telemetry, DCCF, inference, policy/SecIR, response, persistence, and
+verification.
+
+The offline free5GC input-testing record format and held-out evaluation probe
+are documented in [input_testing.md](input_testing.md). They do not run or
+contact the testbed.
+
 ## Two-Machine Setup
 
 The Ubuntu testbed and GPU analytics server are separate machines.
@@ -71,6 +79,192 @@ Finally start the UE in another terminal:
 cd ~/free-ran-ue
 sudo ./build/free-ran-ue ue -c config/ue.yaml
 ```
+
+### Prepared single-UE namespace recovery
+
+Status (2026-09-25): user-executed through the PDU-path test. Private transport
+passed (3/3 replies); namespace tunnel `10.60.0.2/32` and host route lookups
+are correct, but the PDU gateway ping failed (0/3 replies). This is an active
+diagnostic topology, not a validated recovery. Rollback has not been exercised.
+This procedure interrupts the UE session only. Leave the gNB, core, response
+agent, and reverse SSH tunnel running. Run these steps on Ubuntu, not the GPU
+server, and stop at any failed check. Enter sudo passwords directly in Ubuntu.
+
+The observed shared-host layout assigns `10.60.0.1` to host `ueTun0`, making
+the UE address host-local even though downlink traffic should traverse UPF.
+Enabling IPv4 forwarding and temporarily enabling `upfgtp.accept_local` did
+not restore traffic. Namespace isolation tests this topology hypothesis; it
+does not guarantee recovery or fix the separate external-connectivity failure.
+
+Use a UE-only namespace `nwdaf-ue`, with host `nwue-host` at
+`172.30.250.1/30` and namespace `nwue-peer` at `172.30.250.2/30`.
+Keep gNB control/data endpoints at `10.0.2.15:31413/31414`. Only a host route
+to `10.0.2.15` uses the veth link; there is no namespace default route through
+the host. The gateway probe gets a separate route through the PDU tunnel.
+Do not execute the upstream namespace setup script: it tears down its named
+resources and changes the RAN topology as well.
+
+#### 1. Preflight without changes
+
+Confirm the proposed subnet does not overlap any existing route, address,
+namespace, VPN, or reserved lab subnet, and both interface names are unused.
+The observed host route inventory did not contain this subnet, but recheck it
+at execution time. Save these non-secret outputs with the trial record:
+
+```bash
+ip -4 route show table all
+ip -4 addr show
+ip netns list
+ip -br link
+ps -C free-ran-ue -o pid=,args=
+sysctl net.ipv4.ip_forward net.ipv4.conf.upfgtp.accept_local
+```
+
+Require forwarding `1` and `upfgtp.accept_local=0`, as last observed. Do not
+change firewall, NAT, global reverse-path filtering, or host default routes.
+Check the existing UE configuration without printing subscriber credentials:
+
+```bash
+cd "$HOME/free-ran-ue" && python3 -B -c '
+import yaml
+with open("config/ue.yaml", encoding="utf-8") as source:
+  config = yaml.safe_load(source)["ue"]
+assert config["ranControlPlaneIp"] == "10.0.2.15"
+assert config["ranDataPlaneIp"] == "10.0.2.15"
+assert config["ranControlPlanePort"] == 31413
+assert config["ranDataPlanePort"] == 31414
+assert config.get("localDataPlaneIp") in (None, "")
+assert not config.get("nrdc", {}).get("enable", False)
+assert config["ueTunnelDevice"] == "ueTun"
+assert config["ignoreSetupTunnel"] is False
+print("Single-UE namespace configuration prerequisites passed")
+'
+```
+
+If any assertion fails, adapt the procedure before proceeding. The original
+configuration stays unchanged; do not publish or copy its authentication keys.
+
+#### 2. Stop only the original UE
+
+In the original UE terminal, press Ctrl+C and wait for graceful shutdown.
+Do not use `pkill free-ran-ue`, which would also stop the gNB. If the original
+terminal is unavailable, verify the current exact UE PID and executable before
+sending SIGTERM to that PID; do not reuse a historical PID blindly.
+
+Check that the gNB remains and the original UE process/tunnel are gone:
+
+```bash
+ps -C free-ran-ue -o pid=,args=
+ip -br addr
+ip -4 route show table local
+```
+
+Stop if `ueTun0` or its local UE address remains on the host. Do not delete
+an unidentified interface or start a duplicate subscriber session.
+
+#### 3. Create the isolated transport
+
+Only after the preceding checks, run this chained block. It stops on the first
+failure. If it partially succeeds, use the ownership-aware rollback below;
+do not rerun blindly. These commands intentionally use `add`, not `replace`.
+
+```bash
+sudo ip netns add nwdaf-ue &&
+sudo ip link add nwue-host type veth peer name nwue-peer &&
+sudo ip link set nwue-peer netns nwdaf-ue &&
+sudo ip addr add 172.30.250.1/30 dev nwue-host &&
+sudo ip link set nwue-host up &&
+sudo ip -n nwdaf-ue link set lo up &&
+sudo ip -n nwdaf-ue addr add 172.30.250.2/30 dev nwue-peer &&
+sudo ip -n nwdaf-ue link set nwue-peer up &&
+sudo ip -n nwdaf-ue route add 10.0.2.15/32 via 172.30.250.1 dev nwue-peer
+```
+
+Verify simulator transport before starting the UE:
+
+```bash
+sudo ip -n nwdaf-ue route get 10.0.2.15 &&
+sudo ip netns exec nwdaf-ue ping -n -c 3 -W 2 10.0.2.15
+```
+
+Expect route source `172.30.250.2` via `nwue-peer` and replies. This tests only
+the private transport, not the PDU session. Stop on failure.
+
+#### 4. Start one UE and verify the PDU path
+
+In a dedicated Ubuntu terminal, keep this foreground process running:
+
+```bash
+cd "$HOME/free-ran-ue" &&
+sudo ip netns exec nwdaf-ue ./build/free-ran-ue ue -c config/ue.yaml -n 1
+```
+
+In another Ubuntu terminal, wait for registration/session setup to finish,
+then inspect the assigned address (it need not remain `10.60.0.1`):
+
+```bash
+sudo ip -n nwdaf-ue -4 addr show dev ueTun0
+ip -4 route show table local
+```
+
+Require an addressed, UP tunnel inside `nwdaf-ue`, and no host-local entry for
+that assigned address. For the actual assigned address, host `ip route get`
+must select `upfgtp`, not a local route. Then add the bounded service route:
+
+```bash
+sudo ip -n nwdaf-ue route add 10.0.2.2/32 dev ueTun0 &&
+sudo ip -n nwdaf-ue route get 10.0.2.2 &&
+sudo ip netns exec nwdaf-ue ping -n -I ueTun0 -c 3 -W 2 10.0.2.2
+```
+
+Require route device `ueTun0`, source equal to the assigned PDU address, and
+3 replies before declaring gateway connectivity restored. The explicit route
+prevents a successful probe from bypassing the PDU tunnel through the veth.
+If it fails, retain the configuration only for a bounded diagnostic window;
+capture gateway ICMP on `upfgtp` and `enp0s3`, then roll back. Do not relax
+filtering or add duplicate NAT rules. An external-service test is a separate
+gate and is not implied by successful gateway connectivity.
+
+#### 5. Rollback
+
+Press Ctrl+C in the namespace UE terminal and wait for exit. Check that no
+process remains inside the namespace:
+
+```bash
+sudo ip netns pids nwdaf-ue
+```
+
+If any PIDs remain, identify and stop only this trial's processes before
+continuing. Delete only resources confirmed absent before step 3 and created
+by this trial. For a partial setup, skip commands for resources not created;
+if `nwue-peer` remained on the host, deleting its paired `nwue-host` removes it.
+
+```bash
+sudo ip link delete nwue-host
+sudo ip netns delete nwdaf-ue
+```
+
+Verify the trial links/namespace are gone, the original default and UE-pool
+routes are unchanged, and the gNB/core remain running. Then restart the original
+single UE in its original Ubuntu terminal:
+
+```bash
+cd "$HOME/free-ran-ue" &&
+sudo ./build/free-ran-ue ue -c config/ue.yaml
+```
+
+Rollback restores the previous topology, not working connectivity. Forwarding
+remains at its pre-procedure value `1`; `accept_local` remains `0`. No persistent
+network configuration or subscriber configuration is changed by this procedure.
+
+#### Campaign integration gate
+
+Do not start the fresh campaign immediately after a successful namespace test.
+The current host-only RAN probe and traffic controller discover host `ueTun*`
+interfaces; they must become namespace-aware before collection. Validate
+namespace-targeted service probes, interface observers, policy target identity,
+response execution, and rollback independently. Until then, this topology is
+only a diagnostic setup, not a campaign-ready or response-validated deployment.
 
 Validate the testbed before collecting data:
 

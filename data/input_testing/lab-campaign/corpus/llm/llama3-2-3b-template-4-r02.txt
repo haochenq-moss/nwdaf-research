@@ -1,0 +1,1 @@
+/nnrf-disc/v1/nf-instances?limit=5&service-names=nudm-ueau&requester-nf-type=AUSF&target-nf-type=UDM

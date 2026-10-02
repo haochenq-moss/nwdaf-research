@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below. Add the archival release DOI here when one is minted."
+title: "SecureNWDAF: Cross-Layer Security Analytics and Policy-Bounded Response for free5GC 5G Core Networks"
+type: software
+authors:
+  - family-names: Qin
+    given-names: Haochen
+  - family-names: Tan
+    given-names: Chee Wei
+version: 0.1.0
+license: Apache-2.0
+repository-code: "https://github.com/haochenq-moss/nwdaf-research"

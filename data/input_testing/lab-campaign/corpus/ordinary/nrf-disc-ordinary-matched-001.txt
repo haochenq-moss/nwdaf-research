@@ -1,0 +1,1 @@
+/nnrf-disc/v1/nf-instances?service-names=nausf-auth&target-nf-type=AUSF&requester-nf-type=AMF&limit=1

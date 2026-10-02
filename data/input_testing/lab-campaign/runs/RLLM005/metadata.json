@@ -1,0 +1,22 @@
+{
+  "created_at": "2026-10-01T10:58:49.223Z",
+  "duration_sec": 0.649,
+  "host_id": "free5gc",
+  "load_profile": "uncontrolled_live_lab",
+  "provenance": {
+    "auth_context": "OAuth2 client_credentials; nf_type=AMF; target_nf_type=NRF; scope=nnrf-disc",
+    "collector_version": "nwdaf-live-snapshot-v1",
+    "free5gc_commit": "4aa237be57404dea5b49ca8f332c6e25ede052de",
+    "input_id": "llm-nrf-004",
+    "input_sha256": "ece250780df0bb9849714ece7d179309970be72bf8bdda69b8f13f9c07f685ea"
+  },
+  "run_id": "RLLM005",
+  "scenario_id": "NRF_DISCOVERY_INPUT_TEST",
+  "status": "complete",
+  "telemetry_notes": {
+    "linux": "2 normalized metadata events captured; raw payloads, addresses, and session identifiers excluded",
+    "pfcp": "rolling log-tail summary only; no event stream",
+    "sbi": "2 normalized metadata events captured; raw payloads, addresses, and session identifiers excluded",
+    "ue_namespace": "unavailable to non-interactive observer"
+  }
+}

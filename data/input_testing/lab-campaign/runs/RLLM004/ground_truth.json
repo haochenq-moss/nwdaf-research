@@ -1,0 +1,11 @@
+{
+  "action": null,
+  "anomalous": false,
+  "attack_phase": "not_applicable",
+  "class": "input_test",
+  "run_id": "RLLM004",
+  "scenario_id": "NRF_DISCOVERY_INPUT_TEST",
+  "security": false,
+  "service_impact": "none",
+  "severity": "none"
+}

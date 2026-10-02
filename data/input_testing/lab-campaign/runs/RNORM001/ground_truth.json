@@ -1,0 +1,11 @@
+{
+  "action": null,
+  "anomalous": false,
+  "attack_phase": "not_applicable",
+  "class": "normal",
+  "run_id": "RNORM001",
+  "scenario_id": "PASSIVE_NORMAL_BASELINE",
+  "security": false,
+  "service_impact": "none",
+  "severity": "none"
+}

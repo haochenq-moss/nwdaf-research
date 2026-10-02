@@ -1,0 +1,1 @@
+{"collection_time": "2026-10-01T10:52:56.837Z", "direction": "request", "event_time": "2026-10-01T18:52:56.479363331+08:00", "latency_ms": null, "level": "info", "message_type": "handleHeartbeatRequest", "nf_type": "UPF", "run_id": "RLLM002", "source": "pfcp", "status": null}

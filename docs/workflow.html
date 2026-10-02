@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SecureNWDAF Prototype Workflow</title>
+  <style>
+    :root { --ink:#172331; --muted:#607080; --line:#cbd7df; --blue:#1f5f8b; --teal:#147d78; --amber:#a66a16; --green:#34785b; --red:#a83f49; --paper:#f7fafb; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:linear-gradient(135deg,#eef5f6,#fff 55%,#f5f0e7); font:15px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    main { max-width:1240px; margin:auto; padding:42px 22px 72px; }
+    header { border-bottom:1px solid var(--line); padding-bottom:26px; margin-bottom:28px; }
+    h1 { margin:0; font-size:clamp(2rem,4vw,3.4rem); letter-spacing:-.03em; line-height:1.05; }
+    h2 { margin:0 0 14px; font-size:1.25rem; }
+    .eyebrow { color:var(--teal); font-weight:800; text-transform:uppercase; letter-spacing:.12em; font-size:.74rem; }
+    .lede { max-width:760px; color:var(--muted); font-size:1.05rem; margin:14px 0 0; }
+    .notice { margin-top:18px; padding:13px 16px; border-left:4px solid var(--amber); background:#fff9ed; color:#644311; }
+    .workflow { display:grid; grid-template-columns:repeat(7,minmax(120px,1fr)); gap:10px; align-items:stretch; margin:28px 0; }
+    .node { position:relative; min-height:150px; padding:16px 13px; border:1px solid var(--line); border-top:5px solid var(--blue); background:rgba(255,255,255,.9); box-shadow:0 8px 20px rgba(26,51,65,.08); }
+    .node:nth-child(2),.node:nth-child(3) { border-top-color:var(--teal); }
+    .node:nth-child(4) { border-top-color:var(--amber); }
+    .node:nth-child(5),.node:nth-child(6) { border-top-color:var(--green); }
+    .node:nth-child(7) { border-top-color:var(--red); }
+    .node:not(:last-child)::after { content:"→"; position:absolute; right:-14px; top:50%; transform:translateY(-50%); color:var(--muted); font-size:1.4rem; z-index:2; }
+    .num { color:var(--muted); font-size:.72rem; font-weight:800; }
+    .node h3 { font-size:1rem; margin:5px 0 8px; }
+    .node p { margin:0; color:var(--muted); font-size:.84rem; }
+    .panel { background:rgba(255,255,255,.76); border:1px solid var(--line); padding:22px; margin-top:20px; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .item { padding:16px; background:var(--paper); border-left:4px solid var(--blue); }
+    .item h3 { margin:0 0 7px; font-size:1rem; }
+    .item p { margin:0; color:var(--muted); font-size:.9rem; }
+    .item.future { border-left-color:var(--red); }
+    .item.evidence { border-left-color:var(--teal); }
+    code { background:#e9f0f3; padding:2px 5px; border-radius:3px; }
+    pre { overflow:auto; padding:16px; background:#172331; color:#d8edf0; }
+    .legend { display:flex; gap:18px; flex-wrap:wrap; color:var(--muted); font-size:.86rem; }
+    .dot { display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:5px; background:var(--teal); }
+    .dot.future { background:var(--red); }
+    @media (max-width:900px) { .workflow { grid-template-columns:1fr; } .node:not(:last-child)::after { content:"↓"; right:50%; top:auto; bottom:-22px; transform:translateX(50%); } .grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">External NWDAF-like Security Analytics Prototype</div>
+    <h1>Detection to verified response</h1>
+    <p class="lede">A two-machine workflow connecting the Ubuntu free5GC testbed to GPU-side analytics, policy-bounded workflows, an authenticated response agent, and evidence-backed verification.</p>
+    <div class="notice"><strong>Boundary:</strong> this is a research prototype aligned with NWDAF concepts. It is not a claim of full 3GPP NWDAF compliance.</div>
+  </header>
+
+  <section class="workflow" aria-label="SecureNWDAF workflow">
+    <article class="node"><div class="num">01 · Ubuntu</div><h3>Testbed telemetry</h3><p>free5GC, free-ran-ue, Linux/process, SBI, PFCP, eBPF where available, and UE service probes.</p></article>
+    <article class="node"><div class="num">02 · DCCF</div><h3>Normalize & correlate</h3><p>Run IDs, source identity, timestamps, NF context, and complete-run windows.</p></article>
+    <article class="node"><div class="num">03 · AnLF / MTLF</div><h3>Infer & manage models</h3><p>Random Forest baseline, optional CUDA MLP/GRU, model artifacts, seeds, and provenance.</p></article>
+    <article class="node"><div class="num">04 · PDP / SecIR</div><h3>Gate the action</h3><p>Confidence, target, duration, evidence, preconditions, postconditions, rollback.</p></article>
+    <article class="node"><div class="num">05 · Adapter</div><h3>Execute bounded action</h3><p>Authenticated Ubuntu response-agent or controlled Mock NF; no arbitrary shell commands.</p></article>
+    <article class="node"><div class="num">06 · ADRF / VFL</div><h3>Persist & report</h3><p>SQLite analytics/workflow records, audit JSONL, lifecycle reports, optional callback.</p></article>
+    <article class="node"><div class="num">07 · Verify</div><h3>Check state</h3><p>UE reachability, qdisc restoration, latency/loss/throughput evidence, escalation on failure.</p></article>
+  </section>
+
+  <section class="panel">
+    <h2>Control path</h2>
+    <pre>Ubuntu evidence → reverse SSH / batch archive → GPU inference → policy decision
+→ SecIR typed workflow → authenticated response-agent → ADRF/VFL audit
+→ measured postcondition → rollback or operator escalation</pre>
+    <div class="legend"><span><i class="dot"></i>implemented/measured prototype path</span><span><i class="dot future"></i>future infrastructure extension</span></div>
+  </section>
+
+  <section class="panel">
+    <h2>Implemented modules</h2>
+    <div class="grid">
+      <article class="item evidence"><h3>DCCF</h3><p>Collects run streams and creates normalized correlated windows.</p></article>
+      <article class="item evidence"><h3>MFAF</h3><p>Registers and activates model artifacts with manifest provenance.</p></article>
+      <article class="item evidence"><h3>ADRF</h3><p>Persists analytics and workflow evidence in SQLite.</p></article>
+      <article class="item evidence"><h3>SecIR</h3><p>Compiles approved decisions into typed, rollback-aware steps.</p></article>
+      <article class="item evidence"><h3>VFL / NemoIR</h3><p>Creates operational reports and non-executing evidence summaries.</p></article>
+      <article class="item evidence"><h3>Response agent</h3><p>Supports alerting and bounded <code>tc</code> rate limiting with automatic <code>fq_codel</code> restoration.</p></article>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Explicit future boundaries</h2>
+    <div class="grid">
+      <article class="item future"><h3>Kubernetes / OVS enforcement</h3><p>Read-only observers exist; quarantine and flow mutation are not enabled.</p></article>
+      <article class="item future"><h3>NF replacement / UPF failover</h3><p>No clean NF replacement or session-preserving failover is claimed.</p></article>
+      <article class="item future"><h3>OAM/OSS/BOSS integration</h3><p>Prototype payload/callback only; no external operator platform.</p></article>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Evidence locations</h2>
+    <p><code>evaluation/configurations.json</code> · frozen pilot metrics</p>
+    <p><code>evaluation/supplemental_large_network_ablation.json</code> · SBI/PFCP ablation</p>
+    <p><code>evaluation/supplemental_multiload_configurations.json</code> · L1/L2 results</p>
+    <p><code>evaluation/b2_rate_trials.jsonl</code> · repeated apply/restore evidence</p>
+    <p><code>models/rf-v1/manifest.json</code> · model/data provenance</p>
+  </section>
+</main>
+</body>
+</html>

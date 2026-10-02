@@ -1,0 +1,2 @@
+{"collection_time": "2026-10-01T11:28:53.061Z", "event_time": "2026-10-01T19:28:52.979565716+08:00", "http_method": "POST", "latency_ms": null, "nf_type": "NRF", "procedure": "/oauth2/token", "run_id": "RLLM017", "source": "sbi", "status": 200}
+{"collection_time": "2026-10-01T11:28:53.061Z", "event_time": "2026-10-01T19:28:53.023130021+08:00", "http_method": "GET", "latency_ms": null, "nf_type": "NRF", "procedure": "/nnrf-disc/v1/nf-instances", "run_id": "RLLM017", "source": "sbi", "status": 200}

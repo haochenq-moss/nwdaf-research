@@ -1,0 +1,14 @@
+{
+  "action": {
+    "hard_limit_sec": 30,
+    "mechanism": "rapid short-lived process spawn (/bin/true, no arguments)"
+  },
+  "anomalous": true,
+  "attack_phase": "recovery",
+  "class": "process_anomaly",
+  "run_id": "R00027",
+  "scenario_id": "S04",
+  "security": true,
+  "service_impact": "none",
+  "severity": "medium"
+}

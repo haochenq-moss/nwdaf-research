@@ -1,0 +1,57 @@
+# Follow-up diagnostic matrix (v2) after E1/E3 v1 showed near-chance detection
+# (security-label ROC AUC 0.474 on a 25/25 held-out split). This increases
+# statistical power (more repetitions per cell) and the observation window
+# (duration raised from 20s to 28s, still under the 30s hard cap shared by
+# S01/S04/S08/S10/S12/S13/S14 in config/scenarios.yaml) to test whether v1's
+# result reflects a genuinely weak signal or an underpowered sample.
+#
+# Uniform duration across ALL scenarios (including NORMAL) is deliberate:
+# metadata includes a raw duration_sec feature, so unequal duration between
+# classes would let a model trivially learn duration -> label instead of a
+# real signal. Do not give NORMAL a different duration than the others.
+#
+# Isolated from v1: new campaign_id, new output_root, and non-overlapping
+# seed ranges (v1 used dev 1000-1009 / held_out 5000-5009).
+
+campaign_id: campaign_20260925_e1e3_v2
+remote:
+  repo_root: "$HOME/free5gc"
+  output_root: "dataset/raw/campaign_20260925_e1e3_v2"
+  testbed_config: "config/testbed.yaml"
+  traffic_profiles: "config/traffic_profiles.yaml"
+ssh:
+  host: "127.0.0.1"
+  port: 2222
+  user: "haochenqin-moss"
+
+run_defaults:
+  load_profile: "L0"
+  duration_sec: 28
+  baseline_sec: 8
+  require_baseline: true
+  traffic_target: "8.8.8.8"
+
+repetitions_per_cell: 10
+
+scenarios:
+  - NORMAL
+  - S01
+  - S04
+  - S07
+  - S08
+  - S10
+  - S11
+  - S12
+  - S13
+  - S14
+
+partitions:
+  dev:
+    seed_base: 2000
+  held_out:
+    seed_base: 6000
+
+preconditions:
+  - "probe_baseline().baseline_verified is true"
+  - "explicit user approval recorded for live scenario stimulus execution"
+  - "estimated wall-clock time (200 cells x ~38-40s) accepted by the user before starting"

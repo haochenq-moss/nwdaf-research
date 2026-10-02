@@ -1,0 +1,15 @@
+{
+  "action": {
+    "hard_limit_sec": 60,
+    "resource": "cpu",
+    "worker_count": 1
+  },
+  "anomalous": true,
+  "attack_phase": "recovery",
+  "class": "resource_exhaustion",
+  "run_id": "R00029",
+  "scenario_id": "S07",
+  "security": true,
+  "service_impact": "none",
+  "severity": "medium"
+}

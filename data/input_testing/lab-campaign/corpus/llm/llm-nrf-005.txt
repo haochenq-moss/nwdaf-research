@@ -1,0 +1,1 @@
+/nnrf-disc/v1/nf-instances?requester-nf-type=UDM&target-nf-type=UDR&service-names=nudr-dr

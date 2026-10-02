@@ -1,0 +1,395 @@
+{
+  "campaign_id": "campaign_20260925_e1e3_v2",
+  "run_count": 200,
+  "caveat": "Diagnostic only: uses all runs (dev+held_out combined) for maximum statistical power to check for any usable univariate signal. Not a frozen evaluation and must not be used to select features/thresholds for the dev/held_out B0/B1 comparison in evaluate_e1_e3.py.",
+  "anomalous_label": {
+    "per_feature": {
+      "duration_sec": {
+        "constant": true
+      },
+      "ebpf_event_count": {
+        "constant": true
+      },
+      "ebpf_telemetry_available": {
+        "constant": true
+      },
+      "free5gc_event_count": {
+        "auc": 0.616111111111111,
+        "auc_inversion_corrected": 0.616111111111111,
+        "mean_positive": 246.12777777777777,
+        "mean_negative": 4.1,
+        "std_positive": 367.55288403402363,
+        "std_negative": 0.5385164807134504
+      },
+      "free5gc_telemetry_available": {
+        "constant": true
+      },
+      "linux_event_count": {
+        "auc": 0.6923611111111111,
+        "auc_inversion_corrected": 0.6923611111111111,
+        "mean_positive": 38.73888888888889,
+        "mean_negative": 35.75,
+        "std_positive": 1.1564499743654615,
+        "std_negative": 6.089950738717022
+      },
+      "linux_load_1m_max": {
+        "auc": 0.4423611111111111,
+        "auc_inversion_corrected": 0.5576388888888889,
+        "mean_positive": 2.6986666666666665,
+        "mean_negative": 13.3595,
+        "std_positive": 2.508565637083382,
+        "std_negative": 18.620842482283123
+      },
+      "linux_load_1m_mean": {
+        "auc": 0.44277777777777777,
+        "auc_inversion_corrected": 0.5572222222222223,
+        "mean_positive": 2.2964302224858013,
+        "mean_negative": 11.029530682286408,
+        "std_positive": 2.2129029739078114,
+        "std_negative": 15.202125858257794
+      },
+      "linux_load_1m_min": {
+        "auc": 0.4502777777777778,
+        "auc_inversion_corrected": 0.5497222222222222,
+        "mean_positive": 1.9598888888888888,
+        "mean_negative": 8.6975,
+        "std_positive": 2.0052445095822797,
+        "std_negative": 11.702952138242727
+      },
+      "linux_load_1m_std": {
+        "auc": 0.3686111111111111,
+        "auc_inversion_corrected": 0.6313888888888889,
+        "mean_positive": 0.22855625549588518,
+        "mean_negative": 1.414499242927849,
+        "std_positive": 0.21030995078451223,
+        "std_negative": 2.302652295287083
+      },
+      "linux_memory_available_mean": {
+        "auc": 0.7522222222222222,
+        "auc_inversion_corrected": 0.7522222222222222,
+        "mean_positive": 984144559.2300551,
+        "mean_negative": 904835445.0690973,
+        "std_positive": 37071909.87655243,
+        "std_negative": 162406474.89774847
+      },
+      "linux_memory_total_mean": {
+        "constant": true
+      },
+      "memory_available_ratio_mean": {
+        "auc": 0.7522222222222222,
+        "auc_inversion_corrected": 0.7522222222222222,
+        "mean_positive": 0.4778556979617969,
+        "mean_negative": 0.4393468104750175,
+        "std_positive": 0.01800042809025549,
+        "std_negative": 0.07885717467817362
+      },
+      "pfcp_event_count": {
+        "auc": 0.43,
+        "auc_inversion_corrected": 0.5700000000000001,
+        "mean_positive": 3.9,
+        "mean_negative": 4.1,
+        "std_positive": 0.33499585403736304,
+        "std_negative": 0.5385164807134504
+      },
+      "pfcp_request_count": {
+        "auc": 0.43,
+        "auc_inversion_corrected": 0.5700000000000001,
+        "mean_positive": 3.9,
+        "mean_negative": 4.1,
+        "std_positive": 0.33499585403736304,
+        "std_negative": 0.5385164807134504
+      },
+      "pfcp_response_count": {
+        "constant": true
+      },
+      "pfcp_telemetry_available": {
+        "constant": true
+      },
+      "process_event_count": {
+        "auc": 0.6915277777777779,
+        "auc_inversion_corrected": 0.6915277777777779,
+        "mean_positive": 49.95,
+        "mean_negative": 38.05,
+        "std_positive": 12.872138301169873,
+        "std_negative": 18.125879289016574
+      },
+      "sbi_error_event_count": {
+        "auc": 0.6666666666666666,
+        "auc_inversion_corrected": 0.6666666666666666,
+        "mean_positive": 133.92777777777778,
+        "mean_negative": 0.0,
+        "std_positive": 196.13371375885254,
+        "std_negative": 0.0
+      },
+      "sbi_event_count": {
+        "auc": 0.6666666666666666,
+        "auc_inversion_corrected": 0.6666666666666666,
+        "mean_positive": 133.92777777777778,
+        "mean_negative": 0.0,
+        "std_positive": 196.13371375885254,
+        "std_negative": 0.0
+      },
+      "sbi_telemetry_available": {
+        "auc": 0.6666666666666666,
+        "auc_inversion_corrected": 0.6666666666666666,
+        "mean_positive": 0.3333333333333333,
+        "mean_negative": 0.0,
+        "std_positive": 0.4714045207910317,
+        "std_negative": 0.0
+      }
+    },
+    "top_by_discriminative_auc": [
+      [
+        "linux_memory_available_mean",
+        0.7522222222222222
+      ],
+      [
+        "memory_available_ratio_mean",
+        0.7522222222222222
+      ],
+      [
+        "linux_event_count",
+        0.6923611111111111
+      ],
+      [
+        "process_event_count",
+        0.6915277777777779
+      ],
+      [
+        "sbi_error_event_count",
+        0.6666666666666666
+      ],
+      [
+        "sbi_event_count",
+        0.6666666666666666
+      ],
+      [
+        "sbi_telemetry_available",
+        0.6666666666666666
+      ],
+      [
+        "linux_load_1m_std",
+        0.6313888888888889
+      ],
+      [
+        "free5gc_event_count",
+        0.616111111111111
+      ],
+      [
+        "pfcp_event_count",
+        0.5700000000000001
+      ],
+      [
+        "pfcp_request_count",
+        0.5700000000000001
+      ],
+      [
+        "linux_load_1m_max",
+        0.5576388888888889
+      ],
+      [
+        "linux_load_1m_mean",
+        0.5572222222222223
+      ],
+      [
+        "linux_load_1m_min",
+        0.5497222222222222
+      ]
+    ]
+  },
+  "security_label": {
+    "per_feature": {
+      "duration_sec": {
+        "constant": true
+      },
+      "ebpf_event_count": {
+        "constant": true
+      },
+      "ebpf_telemetry_available": {
+        "constant": true
+      },
+      "free5gc_event_count": {
+        "auc": 0.5904999999999999,
+        "auc_inversion_corrected": 0.5904999999999999,
+        "mean_positive": 259.93,
+        "mean_negative": 183.92,
+        "std_positive": 345.3955777076481,
+        "std_negative": 362.6683796528173
+      },
+      "free5gc_telemetry_available": {
+        "constant": true
+      },
+      "linux_event_count": {
+        "auc": 0.5289,
+        "auc_inversion_corrected": 0.5289,
+        "mean_positive": 38.76,
+        "mean_negative": 38.12,
+        "std_positive": 1.4221111067704946,
+        "std_negative": 3.034073169849403
+      },
+      "linux_load_1m_max": {
+        "auc": 0.5523,
+        "auc_inversion_corrected": 0.5523,
+        "mean_positive": 3.0988000000000007,
+        "mean_negative": 4.430700000000001,
+        "std_positive": 3.2097268668844707,
+        "std_negative": 9.483810337095528
+      },
+      "linux_load_1m_mean": {
+        "auc": 0.5494999999999999,
+        "auc_inversion_corrected": 0.5494999999999999,
+        "mean_positive": 2.63821614295752,
+        "mean_negative": 3.701264393974203,
+        "std_positive": 2.829508038677865,
+        "std_negative": 7.758371844270752
+      },
+      "linux_load_1m_min": {
+        "auc": 0.55055,
+        "auc_inversion_corrected": 0.55055,
+        "mean_positive": 2.2598,
+        "mean_negative": 3.0075,
+        "std_positive": 2.567598481071369,
+        "std_negative": 5.9940562851878525
+      },
+      "linux_load_1m_std": {
+        "auc": 0.515,
+        "auc_inversion_corrected": 0.515,
+        "mean_positive": 0.25691170772363564,
+        "mean_negative": 0.43738940075452754,
+        "std_positive": 0.25372478249902986,
+        "std_negative": 1.145668620815076
+      },
+      "linux_memory_available_mean": {
+        "auc": 0.5923,
+        "auc_inversion_corrected": 0.5923,
+        "mean_positive": 978193255.3650236,
+        "mean_negative": 974234040.2628953,
+        "std_positive": 48821537.409957536,
+        "std_negative": 80559099.54802695
+      },
+      "linux_memory_total_mean": {
+        "constant": true
+      },
+      "memory_available_ratio_mean": {
+        "auc": 0.5923,
+        "auc_inversion_corrected": 0.5923,
+        "mean_positive": 0.47496601632352997,
+        "mean_negative": 0.473043602102708,
+        "std_positive": 0.02370551116276573,
+        "std_negative": 0.03911582336218301
+      },
+      "pfcp_event_count": {
+        "auc": 0.5342,
+        "auc_inversion_corrected": 0.5342,
+        "mean_positive": 3.95,
+        "mean_negative": 3.89,
+        "std_positive": 0.29580398915498074,
+        "std_negative": 0.4217819341792629
+      },
+      "pfcp_request_count": {
+        "auc": 0.5342,
+        "auc_inversion_corrected": 0.5342,
+        "mean_positive": 3.95,
+        "mean_negative": 3.89,
+        "std_positive": 0.29580398915498074,
+        "std_negative": 0.4217819341792629
+      },
+      "pfcp_response_count": {
+        "constant": true
+      },
+      "pfcp_telemetry_available": {
+        "constant": true
+      },
+      "process_event_count": {
+        "auc": 0.5384000000000001,
+        "auc_inversion_corrected": 0.5384000000000001,
+        "mean_positive": 49.91,
+        "mean_negative": 47.61,
+        "std_positive": 12.722495824326295,
+        "std_negative": 14.997929857150286
+      },
+      "sbi_error_event_count": {
+        "auc": 0.57895,
+        "auc_inversion_corrected": 0.57895,
+        "mean_positive": 151.07,
+        "mean_negative": 90.0,
+        "std_positive": 194.22802346726385,
+        "std_negative": 181.33526959750552
+      },
+      "sbi_event_count": {
+        "auc": 0.57895,
+        "auc_inversion_corrected": 0.57895,
+        "mean_positive": 151.07,
+        "mean_negative": 90.0,
+        "std_positive": 194.22802346726385,
+        "std_negative": 181.33526959750552
+      },
+      "sbi_telemetry_available": {
+        "auc": 0.6,
+        "auc_inversion_corrected": 0.6,
+        "mean_positive": 0.4,
+        "mean_negative": 0.2,
+        "std_positive": 0.4898979485566356,
+        "std_negative": 0.4
+      }
+    },
+    "top_by_discriminative_auc": [
+      [
+        "sbi_telemetry_available",
+        0.6
+      ],
+      [
+        "linux_memory_available_mean",
+        0.5923
+      ],
+      [
+        "memory_available_ratio_mean",
+        0.5923
+      ],
+      [
+        "free5gc_event_count",
+        0.5904999999999999
+      ],
+      [
+        "sbi_error_event_count",
+        0.57895
+      ],
+      [
+        "sbi_event_count",
+        0.57895
+      ],
+      [
+        "linux_load_1m_max",
+        0.5523
+      ],
+      [
+        "linux_load_1m_min",
+        0.55055
+      ],
+      [
+        "linux_load_1m_mean",
+        0.5494999999999999
+      ],
+      [
+        "process_event_count",
+        0.5384000000000001
+      ],
+      [
+        "pfcp_event_count",
+        0.5342
+      ],
+      [
+        "pfcp_request_count",
+        0.5342
+      ],
+      [
+        "linux_event_count",
+        0.5289
+      ],
+      [
+        "linux_load_1m_std",
+        0.515
+      ]
+    ]
+  }
+}

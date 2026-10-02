@@ -1,0 +1,2 @@
+{"collection_time": "2026-10-01T11:29:11.299Z", "direction": null, "event_time": "2026-10-01T19:29:11.258259318+08:00", "latency_ms": null, "level": "info", "message_type": "serveUSAReport", "nf_type": "UPF", "run_id": "RLLM024", "source": "pfcp", "status": null}
+{"collection_time": "2026-10-01T11:29:11.299Z", "direction": "response", "event_time": "2026-10-01T19:29:11.262044835+08:00", "latency_ms": null, "level": "info", "message_type": "handleSessionReportResponse", "nf_type": "UPF", "run_id": "RLLM024", "source": "pfcp", "status": null}
