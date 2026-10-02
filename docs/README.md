@@ -6,6 +6,8 @@
 - [GPU server audit](GPU_SERVER_AUDIT.md): inspected environment and dataset provenance.
 - [Experiments](experiments.md): offline configuration comparisons and evaluator usage.
 - [Fuzz-to-NWDAF Stage 1](fuzz_to_nwdaf_stage1.md): offline input-testing workflow, evidence format, and safety boundaries.
+- `scripts/import_fuzz_campaign.py`: hash-verifying importer for exact NAS fuzz seeds from `free5gc-security-lab`; creates input cases only, not replay outcomes or telemetry.
+- `data/input_testing/nas-afl-structured-20261002/`: current 48-case ordinary/LLM structured-seed handoff; seed staging only, not an evaluable live campaign.
 - [Offline input testing](input_testing.md): campaign record format and held-out evaluation probe.
 
 ## Methods and Evidence

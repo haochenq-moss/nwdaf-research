@@ -31,6 +31,11 @@ from nwdaf_research.input_testing.nrf_discovery import (
     validate_candidate_path,
 )
 from nwdaf_research.input_testing.normal_baseline import REMOTE_BASELINE
+from nwdaf_research.input_testing.fuzz_import import (
+    correct_live_nas_replay_payload,
+    import_afl_matrix_campaign,
+    record_live_nas_replay,
+)
 from nwdaf_research.input_testing.fuzz_provenance import (
     AnalystReview,
     CoverageEvidence,
@@ -43,6 +48,172 @@ from nwdaf_research.input_testing.trial_generation import build_candidate_rows
 
 
 class InputTestingRecordTests(unittest.TestCase):
+    def test_live_nas_replay_record_preserves_exact_bytes_and_separates_telemetry(self):
+        with tempfile.TemporaryDirectory() as directory:
+            campaign = Path(directory) / "campaign"
+            campaign.mkdir()
+            (campaign / "input_cases.jsonl").write_text("", encoding="utf-8")
+            payload = bytes.fromhex("7e004179000c0102f83900000000000000f21001802e047878")
+            record = record_live_nas_replay(
+                campaign,
+                input_id="nas-gmm-security-cut-supi0002",
+                payload=payload,
+                free5gc_commit="4" * 40,
+                run_id="RNAS0001",
+                window_start="2026-10-02T20:58:34.634928027+08:00",
+                window_end="2026-10-02T20:58:41.040804795+08:00",
+                outcome_status="rejected",
+                exit_code=1,
+                evidence={"nas_response": "registration_reject", "cause": 22,
+                          "telemetry_status": "not_collected_as_nwdaf_run"},
+            )
+
+            cases = read_jsonl(campaign / "input_cases.jsonl", InputCase)
+            outcomes = read_jsonl(campaign / "outcomes.jsonl", TestOutcome)
+            labels = read_jsonl(campaign / "run_labels.jsonl", RunLabel)
+            self.assertEqual(len(cases), 1)
+            self.assertEqual(cases[0].input_sha256, hashlib.sha256(payload).hexdigest())
+            self.assertEqual((campaign / cases[0].corpus_path).read_bytes(), payload)
+            self.assertEqual(outcomes[0].status, "rejected")
+            self.assertEqual(labels, [RunLabel("RNAS0001", "input_test", "train")])
+            self.assertEqual(record["telemetry_status"], "not_collected_as_nwdaf_run")
+            self.assertEqual(record["input_hex"], payload.hex())
+            self.assertFalse((campaign / "runs" / "RNAS0001").exists())
+
+    def test_live_nas_replay_payload_correction_updates_all_hash_references(self):
+        with tempfile.TemporaryDirectory() as directory:
+            campaign = Path(directory) / "campaign"
+            campaign.mkdir()
+            (campaign / "input_cases.jsonl").write_text("", encoding="utf-8")
+            old_payload = b"old-test-pdu"
+            new_payload = b"correct-test-pdu"
+            record_live_nas_replay(
+                campaign, input_id="nas-case", payload=old_payload, free5gc_commit="4" * 40,
+                run_id="RNAS0001", window_start="2026-10-02T20:58:34Z",
+                window_end="2026-10-02T20:58:35Z", outcome_status="rejected", evidence={},
+            )
+
+            corrected = correct_live_nas_replay_payload(
+                campaign, input_id="nas-case", payload=new_payload,
+            )
+            case = read_jsonl(campaign / "input_cases.jsonl", InputCase)[0]
+            replay = json.loads((campaign / "network_replay_observations.jsonl").read_text().strip())
+
+            self.assertEqual(corrected["old_sha256"], hashlib.sha256(old_payload).hexdigest())
+            self.assertEqual(corrected["new_sha256"], hashlib.sha256(new_payload).hexdigest())
+            self.assertEqual((campaign / case.corpus_path).read_bytes(), new_payload)
+            self.assertEqual(case.input_sha256, corrected["new_sha256"])
+            self.assertEqual(replay["input_sha256"], corrected["new_sha256"])
+            self.assertEqual(replay["input_hex"], new_payload.hex())
+
+    def test_live_nas_replay_record_rejects_unsafe_id_without_writing(self):
+        with tempfile.TemporaryDirectory() as directory:
+            campaign = Path(directory) / "campaign"
+            campaign.mkdir()
+            for filename in ("input_cases.jsonl", "outcomes.jsonl", "run_labels.jsonl"):
+                (campaign / filename).write_text("", encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "safe campaign identifier"):
+                record_live_nas_replay(
+                    campaign, input_id="../escape", payload=b"x", free5gc_commit="4" * 40,
+                    run_id="RNAS0001", window_start="2026-10-02T20:58:34Z",
+                    window_end="2026-10-02T20:58:35Z", outcome_status="rejected", evidence={},
+                )
+            self.assertEqual(list(campaign.rglob("*.bin")), [])
+
+    def _write_afl_import_fixture(self, root: Path) -> tuple[Path, dict[str, bytes]]:
+        source = root / "afl-source"
+        blobs = {
+            "ordinary": b"\x7e\x00\x41\x79",
+            "llama": b"\x7e\x00\x41\x7a",
+            "qwen": b"\x7e\x00\x41\x7a",
+        }
+        corpus_records = []
+        for model_slug, model, key, arm in (
+            ("llama3_2_3b", None, "ordinary", "ordinary"),
+            ("qwen2_5_coder_3b", None, "ordinary", "ordinary"),
+            ("llama3_2_3b", "llama3.2:3b", "llama", "llm"),
+            ("qwen2_5_coder_3b", "qwen2.5-coder:3b", "qwen", "llm"),
+        ):
+            path = source / "corpora" / model_slug / "gmm" / arm / "seed_001.bin"
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(blobs[key])
+            corpus_records.append({
+                "file": path.name,
+                "parser": "gmm",
+                "seed_arm": arm,
+                "sha256": hashlib.sha256(blobs[key]).hexdigest(),
+                "size_bytes": len(blobs[key]),
+                "model": model,
+            })
+        (source / "matrix_manifest.json").write_text(json.dumps({
+            "schema_version": "afl-multimodel-seed-study-v2",
+            "free5gc_commit": "4" * 40,
+            "harness_path": "harness/nas_parser/main.go",
+            "harness_sha256": "b" * 64,
+            "seed_strategy": "structured",
+            "models": ["llama3.2:3b", "qwen2.5-coder:3b"],
+            "parsers": ["gmm"],
+            "seeds_per_arm_per_parser": 1,
+            "corpora": corpus_records,
+        }), encoding="utf-8")
+        return source, blobs
+
+    def test_import_afl_campaign_preserves_inputs_and_does_not_fabricate_replay(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source, blobs = self._write_afl_import_fixture(root)
+            output = root / "nw-campaign"
+            report = import_afl_matrix_campaign(source, output)
+            cases = read_jsonl(output / "input_cases.jsonl", InputCase)
+
+            self.assertEqual(len(cases), 3)
+            self.assertEqual({case.free5gc_commit for case in cases}, {"4" * 40})
+            self.assertEqual({case.input_source for case in cases}, {"ordinary", "llm_suggested"})
+            llm_cases = [case for case in cases if case.input_source == "llm_suggested"]
+            self.assertEqual({case.generator_model for case in llm_cases}, {"llama3.2:3b", "qwen2.5-coder:3b"})
+            for case in cases:
+                payload = (output / case.corpus_path).read_bytes()
+                self.assertEqual(hashlib.sha256(payload).hexdigest(), case.input_sha256)
+            self.assertEqual(report["input_case_count"], 3)
+            self.assertIn("matrix_manifest", report["source_artifacts"])
+            self.assertEqual(
+                report["source_artifacts"]["matrix_manifest"]["sha256"],
+                hashlib.sha256((source / "matrix_manifest.json").read_bytes()).hexdigest(),
+            )
+            self.assertEqual(report["network_replay"], "not_performed")
+            self.assertEqual(report["telemetry"], "not_collected")
+            self.assertIn("No network replay was performed", (output / "README.md").read_text(encoding="utf-8"))
+            self.assertFalse((output / "outcomes.jsonl").exists())
+            self.assertFalse((output / "run_labels.jsonl").exists())
+            self.assertFalse((output / "runs").exists())
+            self.assertEqual(blobs["llama"], blobs["qwen"])
+
+    def test_import_afl_campaign_rejects_corpus_hash_mismatch_atomically(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source, _ = self._write_afl_import_fixture(root)
+            bad_corpus = source / "corpora" / "llama3_2_3b" / "gmm" / "llm" / "seed_001.bin"
+            bad_corpus.write_bytes(b"tampered")
+            output = root / "nw-campaign"
+
+            with self.assertRaisesRegex(ValueError, "no corpus file matches manifest hash/size"):
+                import_afl_matrix_campaign(source, output)
+
+            self.assertFalse(output.exists())
+
+    def test_import_afl_campaign_refuses_existing_destination(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source, _ = self._write_afl_import_fixture(root)
+            output = root / "nw-campaign"
+            output.mkdir()
+            (output / "keep.txt").write_text("existing", encoding="utf-8")
+
+            with self.assertRaisesRegex(FileExistsError, "refusing to overwrite"):
+                import_afl_matrix_campaign(source, output)
+
+            self.assertEqual((output / "keep.txt").read_text(encoding="utf-8"), "existing")
+
     def test_fuzz_provenance_keeps_execution_coverage_and_reviews_distinct(self):
         record = FuzzRunProvenance(
             run_id="FZ0001",

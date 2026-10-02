@@ -84,6 +84,64 @@ telemetry run, and analytics artifact. Mitigation remains out of scope until a
 separate human-approval gate, audit record, and verified rollback procedure are
 designed and tested.
 
+## NAS Fuzzing Lab Handoff
+
+The separate `free5gc-security-lab` repository implements offline GMM/GSM parser
+fuzzing through Go/AFL++ harnesses. These parser runs do not start free5GC NFs or
+produce network SBI/PFCP traffic. NWDAF's fixed read-only NRF discovery helper
+tests a different interface and is not a NAS replay adapter. Do not equate a
+parser fuzz result, an NRF GET result, or a parser crash with network-level
+evidence or a vulnerability.
+
+The cross-repository handoff is specified in
+[`free5gc-security-lab/docs/fuzz_to_nwdaf_handoff.md`](https://github.com/haochenq-moss/free5gc-security-lab/blob/master/docs/fuzz_to_nwdaf_handoff.md).
+Use a stable `input_id`, exact SHA-256, and pinned `free5gc_commit` to join the
+lab's `fuzz-run-v1` sidecar with an NWDAF `InputCase`. The offline fuzz record,
+deterministic reproduction result, human bug/security review, network replay
+outcome, and telemetry-derived assessment remain separate evidence objects.
+
+To stage verified seed bytes from an AFL matrix into the NWDAF campaign schema,
+run the importer from the NWDAF repository:
+
+```bash
+PYTHONPATH=src python scripts/import_fuzz_campaign.py \
+  --source-campaign /path/to/free5gc-security-lab/data/results/<afl-campaign> \
+  --campaign-dir data/input_testing/<new-campaign-id>
+```
+
+The importer validates every seed's manifest hash and size, copies exact bytes
+into campaign-relative `corpus/ordinary/` or `corpus/llm/`, writes
+`input_cases.jsonl`, and records the source AFL campaign/corpus links in
+`fuzz_source_manifest.json`. It refuses an existing destination. It does not
+write outcomes, run labels, or `runs/`: corpus membership is not evidence that a
+seed was replayed against the network or detected by NWDAF. `fuzz-run-v1` remains
+for an actual bounded fuzz execution and its execution/coverage/review evidence;
+do not fabricate a per-seed execution record from aggregate AFL statistics.
+
+An initial import from the completed structured AFL campaign is staged locally
+at `data/input_testing/nas-afl-structured-20261002/` with 48 unique cases. It
+contains 16 ordinary and 32 LLM-generated exact seed cases. One subsequent
+single-case replay was recorded for a derived GMM security-capability truncated
+PDU using synthetic SUPI `208930000000002`; its exact SHA-256 is
+`49532803b6dd390d756842cf17aa830f0117e2262ec26f85e333d1c097e1b53a`. Local
+`ParseGMM` accepted/dissected the message through `UESecCapability`, while the
+AMF returned Registration Reject cause 22 after UDR returned 404 for that
+synthetic subscriber's authentication subscription. This is a test-fixture
+authentication failure, not a parser-vulnerability result. The probe did not
+confirm an NGAP UE Context Release handshake; AMF logs showed SCTP shutdown and
+RAN-context removal, and a read-only follow-up found no matching AMF access
+context. No campaign-local NWDAF Linux/SBI/PFCP run bundle was collected. The
+campaign therefore remains ineligible for NWDAF classifier evaluation until
+telemetry runs and normal controls are added.
+
+No NAS PDU replay adapter currently exists. Network replay remains blocked until
+an adapter is reviewed to enforce testbed isolation, synthetic identities,
+bounded inputs/resources, timestamps, and reset/rollback. After such a replay,
+use its own NWDAF run ID and time window, capture only observed Linux/SBI/PFCP
+data, and split complete runs into train/held-out partitions. Classifying an
+`input_test` run is not vulnerability detection; mitigation requires a separate
+authorization and rollback gate.
+
 ## Historical Data Boundary
 
 Keep `data/pilot_raw.tar.gz`, `data/raw`, the frozen split manifest, existing
