@@ -1,0 +1,55 @@
+{
+  "schema": "benign-control-pair-v1",
+  "pair_id": 7,
+  "group": "held_out-pair-07",
+  "split": "held_out",
+  "attempt_id": "6de8b04d-ea31-4f99-bab0-391f1c8b8a3d",
+  "plan_sha256": "1589f643ddd1bfcf5fd068c21f3d682ef5d6504242afc5d0883f1a3788b17b77",
+  "authorization_sha256": "2888669784517a47fc74fd24ab1c1094fc6150f9d9748ae46b29896cb6b995c8",
+  "authorization_scope": "held_out_benign_collection_only",
+  "collector_module_sha256": "8d459d430b6f7a1cc0fbfce98f7d395705f4b5800dad2ddc9c3eb38fbdd6db26",
+  "control_module_sha256": "1babd8c8d9eb8987f8c5e3aaaf82ac284243154dd312e105471b2dda1d27b988",
+  "remote_code_sha256": "5a9c9e4b2c225f59b9fd996518cc289aa2742f6af8d50ac50cff907dddb144a4",
+  "benign_remote_code_sha256": "8e4d22656d133aa610f5914034c95a80b65587e84d8dbc1137248d181e636b13",
+  "registered_nf_instance_id": "53494dfe-e7bc-4709-a240-44db37750381",
+  "condition_order": [
+    "passive",
+    "benign_nrf"
+  ],
+  "status": "READY",
+  "executed_conditions": [
+    "passive",
+    "benign_nrf"
+  ],
+  "outcomes": {
+    "passive": {
+      "status": "READY",
+      "blockers": [],
+      "window_status_counts": {
+        "READY": 3
+      },
+      "campaign_dir": "/home/msai/qinh0007/nwdaf-research/data/input_testing/benign-control-held-out-pair07-20261003/passive",
+      "manifest_path": "/home/msai/qinh0007/nwdaf-research/data/input_testing/benign-control-held-out-pair07-20261003/passive/manifest.json",
+      "report_path": "/home/msai/qinh0007/nwdaf-research/data/input_testing/benign-control-held-out-pair07-20261003/passive/report.json",
+      "condition": "passive",
+      "provenance_verified": true,
+      "collector_module_sha256": "8d459d430b6f7a1cc0fbfce98f7d395705f4b5800dad2ddc9c3eb38fbdd6db26",
+      "remote_code_sha256": "5a9c9e4b2c225f59b9fd996518cc289aa2742f6af8d50ac50cff907dddb144a4"
+    },
+    "benign_nrf": {
+      "status": "READY",
+      "blockers": [],
+      "window_status_counts": {
+        "READY": 3
+      },
+      "campaign_dir": "/home/msai/qinh0007/nwdaf-research/data/input_testing/benign-control-held-out-pair07-20261003/benign_nrf",
+      "manifest_path": "/home/msai/qinh0007/nwdaf-research/data/input_testing/benign-control-held-out-pair07-20261003/benign_nrf/manifest.json",
+      "report_path": "/home/msai/qinh0007/nwdaf-research/data/input_testing/benign-control-held-out-pair07-20261003/benign_nrf/report.json",
+      "condition": "benign_nrf",
+      "provenance_verified": true,
+      "collector_module_sha256": "8d459d430b6f7a1cc0fbfce98f7d395705f4b5800dad2ddc9c3eb38fbdd6db26",
+      "remote_code_sha256": "8e4d22656d133aa610f5914034c95a80b65587e84d8dbc1137248d181e636b13"
+    }
+  },
+  "error_type": null
+}

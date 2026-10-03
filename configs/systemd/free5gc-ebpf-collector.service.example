@@ -1,0 +1,29 @@
+[Unit]
+Description=free5GC eBPF Telemetry Collector (Operator-Reviewed Template)
+After=network.target
+
+[Service]
+Type=simple
+User=telemetry-collector
+Group=telemetry-collector
+AmbientCapabilities=CAP_BPF CAP_PERFMON
+CapabilityBoundingSet=CAP_BPF CAP_PERFMON
+NoNewPrivileges=yes
+ExecStart=/opt/telemetry/bin/ebpf_collector --config /etc/telemetry/collector.yaml
+Restart=on-failure
+RestartSec=5s
+StateDirectory=free5gc-telemetry
+StateDirectoryMode=0750
+RuntimeDirectory=free5gc-telemetry
+RuntimeDirectoryMode=0750
+UMask=0027
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+ProtectKernelTunables=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+RestrictRealtime=yes
+
+[Install]
+WantedBy=multi-user.target

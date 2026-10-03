@@ -1,0 +1,55 @@
+{
+  "contract": "linux-sbi-pfcp-v1",
+  "source_count": 3,
+  "status": "READY",
+  "window_status_counts": {
+    "READY": 3
+  },
+  "warmup": {
+    "contract": "linux-sbi-pfcp-v1",
+    "status": "READY",
+    "clock_domain": "free5gc/b7be8cad-6385-400f-9164-3362839e91cc/CLOCK_MONOTONIC",
+    "clock": "CLOCK_MONOTONIC",
+    "healthy_coverage_sec": 30.002467084,
+    "required_coverage_sec": 30.0,
+    "errors": [],
+    "actionable": false
+  },
+  "blockers": [],
+  "inference_performed": false,
+  "network_transmission_executed": true,
+  "active_ue_not_modified": true,
+  "operation_scope": "Fixed OAuth and one fixed read-only NRF discovery only; active UE not modified; continuity not verified.",
+  "clock_basis": "CLOCK_MONOTONIC_PROJECTED_UTC",
+  "source_notes": {
+    "linux": "Synchronous /proc/loadavg and /proc/meminfo observations.",
+    "sbi": "Log-derived SBI from the newest timestamped run directory, not pcap; unmatched semantic lines cannot certify parser completeness.",
+    "pfcp": "Log-derived PFCP from the newest timestamped run directory, not pcap; unmatched semantic lines cannot certify parser completeness.",
+    "time": "Observation-time cursor reads; projected monotonic time, not physical UTC, packet time or causal subscriber actions."
+  },
+  "condition": "benign_nrf",
+  "operation_receipt": {
+    "schema": "benign-nrf-receipt-v1",
+    "method": "GET",
+    "request_identity": "GET /nnrf-disc/v1/nf-instances?requester-nf-type=AMF&target-nf-type=AUSF&service-names=nausf-auth; Authorization/token excluded",
+    "request_target_sha256": "d25edf729beac2de92eaa6256840654661a01867f8701f0d2ad1c4e81a026eb0",
+    "auth_performed": true,
+    "performed": true,
+    "auth_status": 200,
+    "http_status": 200,
+    "operation_start_monotonic_ns": 47492997694612,
+    "operation_end_monotonic_ns": 47493129112064,
+    "discovery_start_monotonic_ns": 47493059518111,
+    "discovery_end_monotonic_ns": 47493129100360,
+    "operation_error": null,
+    "worker_completed": true,
+    "warmup_admitted": true,
+    "trigger_index": 41
+  },
+  "control_valid": true,
+  "collection_status": "READY",
+  "synchronized": true,
+  "middle_window_start_monotonic_ns": 47491983505883,
+  "middle_window_end_monotonic_ns": 47501982484508,
+  "generated_traffic_status": "discovery_attempted"
+}

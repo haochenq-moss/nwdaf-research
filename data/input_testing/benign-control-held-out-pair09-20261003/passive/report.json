@@ -1,0 +1,30 @@
+{
+  "contract": "linux-sbi-pfcp-v1",
+  "source_count": 3,
+  "status": "READY",
+  "window_status_counts": {
+    "READY": 3
+  },
+  "warmup": {
+    "contract": "linux-sbi-pfcp-v1",
+    "status": "READY",
+    "clock_domain": "free5gc/b7be8cad-6385-400f-9164-3362839e91cc/CLOCK_MONOTONIC",
+    "clock": "CLOCK_MONOTONIC",
+    "healthy_coverage_sec": 30.00188501,
+    "required_coverage_sec": 30.0,
+    "errors": [],
+    "actionable": false
+  },
+  "blockers": [],
+  "inference_performed": false,
+  "network_transmission_executed": false,
+  "active_ue_not_modified": true,
+  "operation_scope": "Read-only observer only; active UE not modified by this operation. Service continuity is not verified.",
+  "clock_basis": "CLOCK_MONOTONIC_PROJECTED_UTC",
+  "source_notes": {
+    "linux": "Synchronous /proc/loadavg and /proc/meminfo observations.",
+    "sbi": "Log-derived SBI from the newest timestamped run directory, not pcap; unmatched semantic lines cannot certify parser completeness.",
+    "pfcp": "Log-derived PFCP from the newest timestamped run directory, not pcap; unmatched semantic lines cannot certify parser completeness.",
+    "time": "Observation-time cursor reads; projected monotonic time, not physical UTC, packet time or causal subscriber actions."
+  }
+}

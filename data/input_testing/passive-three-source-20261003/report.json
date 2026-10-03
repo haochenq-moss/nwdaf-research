@@ -1,0 +1,72 @@
+{
+  "contract": "linux-sbi-pfcp-v1",
+  "source_count": 3,
+  "status": "COLLECTOR_UNAVAILABLE",
+  "window_status_counts": {
+    "COLLECTOR_UNAVAILABLE": 3
+  },
+  "warmup": {
+    "contract": "linux-sbi-pfcp-v1",
+    "status": "COLLECTOR_UNAVAILABLE",
+    "clock_domain": "free5gc/b7be8cad-6385-400f-9164-3362839e91cc/CLOCK_MONOTONIC",
+    "clock": "CLOCK_MONOTONIC",
+    "healthy_coverage_sec": 0.0,
+    "required_coverage_sec": 30.0,
+    "errors": [
+      "missing source: pfcp",
+      "missing source: sbi",
+      "pfcp: timestamps, sequence and counters must be nonnegative integers",
+      "sbi: timestamps, sequence and counters must be nonnegative integers"
+    ],
+    "actionable": false
+  },
+  "blockers": [
+    "WBASE001: fixed 30-second warmup not ready",
+    "WBASE001: missing source: pfcp",
+    "WBASE001: missing source: sbi",
+    "WBASE001: pfcp: timestamps, sequence and counters must be nonnegative integers",
+    "WBASE001: pfcp:log_baseline_failed",
+    "WBASE001: pfcp:log_inventory_failed",
+    "WBASE001: sbi: timestamps, sequence and counters must be nonnegative integers",
+    "WBASE001: sbi:log_baseline_failed",
+    "WBASE001: sbi:log_inventory_failed",
+    "WBASE002: fixed 30-second warmup not ready",
+    "WBASE002: missing source: pfcp",
+    "WBASE002: missing source: sbi",
+    "WBASE002: pfcp: timestamps, sequence and counters must be nonnegative integers",
+    "WBASE002: pfcp:log_baseline_failed",
+    "WBASE002: pfcp:log_inventory_failed",
+    "WBASE002: sbi: timestamps, sequence and counters must be nonnegative integers",
+    "WBASE002: sbi:log_baseline_failed",
+    "WBASE002: sbi:log_inventory_failed",
+    "WBASE003: fixed 30-second warmup not ready",
+    "WBASE003: missing source: pfcp",
+    "WBASE003: missing source: sbi",
+    "WBASE003: pfcp: timestamps, sequence and counters must be nonnegative integers",
+    "WBASE003: pfcp:log_baseline_failed",
+    "WBASE003: pfcp:log_inventory_failed",
+    "WBASE003: sbi: timestamps, sequence and counters must be nonnegative integers",
+    "WBASE003: sbi:log_baseline_failed",
+    "WBASE003: sbi:log_inventory_failed",
+    "fixed 30-second warmup not ready",
+    "missing source: pfcp",
+    "missing source: sbi",
+    "pfcp: timestamps, sequence and counters must be nonnegative integers",
+    "pfcp:log_baseline_failed",
+    "pfcp:log_inventory_failed",
+    "sbi: timestamps, sequence and counters must be nonnegative integers",
+    "sbi:log_baseline_failed",
+    "sbi:log_inventory_failed"
+  ],
+  "inference_performed": false,
+  "network_transmission_executed": false,
+  "active_ue_not_modified": true,
+  "operation_scope": "Read-only observer only; active UE not modified by this operation. Service continuity is not verified.",
+  "clock_basis": "CLOCK_MONOTONIC_PROJECTED_UTC",
+  "source_notes": {
+    "linux": "Synchronous /proc/loadavg and /proc/meminfo observations.",
+    "sbi": "Log-derived SBI, not pcap; unmatched semantic lines cannot certify parser completeness.",
+    "pfcp": "Log-derived PFCP, not pcap; unmatched semantic lines cannot certify parser completeness.",
+    "time": "Observation-time cursor reads; projected monotonic time, not physical UTC, packet time or causal subscriber actions."
+  }
+}

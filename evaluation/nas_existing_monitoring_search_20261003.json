@@ -1,0 +1,91 @@
+{
+  "schema_version": "existing-nas-monitoring-search-v1",
+  "operation": "Read-only archive and packet-record metadata inspection; no new measurements or protocol runs",
+  "case_classification": "User-executed standard NAS input test, not a documented fuzz-input execution",
+  "target_windows": {
+    "standard_registration": {"start": "2026-10-03T06:58:41+00:00", "end": "2026-10-03T06:59:24+00:00"},
+    "RNAS0001": {"start": "2026-10-02T20:58:34.634928027+08:00", "end": "2026-10-02T20:58:41.040804795+08:00"}
+  },
+  "remote_dataset_scan": {
+    "root": "~/free5gc/dataset",
+    "metadata_files": 690,
+    "event_files": 2760,
+    "event_rows": 152509,
+    "metadata_created_at_min": "2026-09-16T02:47:05.786Z",
+    "metadata_created_at_max": "2026-09-26T04:42:24.412Z",
+    "event_time_min_as_recorded": "2026-09-16T02:47:06.182Z",
+    "event_time_max_as_recorded": "2026-09-26T12:42:57.219179362+08:00",
+    "matching_target_minute_files": [],
+    "top_level_health_metadata_keys_found": [],
+    "read_or_json_parse_errors": 0,
+    "usable_for_target_run_linux": false,
+    "limitation": "Historical timestamp ranges support non-overlap; other-run data must not be reassigned to the NAS runs"
+  },
+  "local_archive_scan": {
+    "roots": ["nwdaf-research/data", "nwdaf-research/evaluation", "~/data", "~/evaluation"],
+    "file_patterns": ["capture.json", "events.jsonl"],
+    "files": 2502,
+    "rows": 151577,
+    "read_or_json_parse_errors": 0,
+    "latest_observation": "2026-10-03T06:31:25.615893+00:00",
+    "target_window_matches": [],
+    "limitation": "Known snapshot/event file patterns, not every possible monitoring format"
+  },
+  "additional_remote_search": {
+    "roots": ["~", "/tmp", "/var/log", "/var/lib/prometheus", "/var/lib/pcp"],
+    "max_depth": 8,
+    "directories_scanned": 867,
+    "previously_scanned_dataset_excluded": true,
+    "skipped_directories": [".cache", ".git", "node_modules", ".local", "go", ".vscode-server", "key", "venv", ".venv"],
+    "candidate_monitoring_health_files": [],
+    "absent_roots": ["/var/lib/prometheus", "/var/lib/pcp"],
+    "inaccessible_categories": ["systemd private temporary directories", "/tmp/snap-private-tmp", "/var/log/gdm3", "/var/log/private", "/var/log/unattended-upgrades", "/var/log/speech-dispatcher"],
+    "privilege_escalation_attempted": false,
+    "limitation": "Bounded filename-based search with permission gaps; not proof no archives exist elsewhere"
+  },
+  "existing_pcap_quality": [
+    {
+      "remote_path": "~/nas_capture_records/n2_ngap_nas_20261003_145840.pcap",
+      "sha256": "8c065fdcef5eed03fd02ed0efc8ab8791f54c80db9a84d57a6689d7041417039",
+      "bytes": 1334,
+      "packet_records": 11,
+      "user_reported_packet_count": 12,
+      "count_discrepancy_requires_review": true,
+      "first_packet_utc": "2026-10-03T06:58:46.751363+00:00",
+      "last_packet_utc": "2026-10-03T06:59:22.750083+00:00",
+      "link_type": 1,
+      "snaplen": 262144,
+      "structural_errors": [],
+      "truncated_packet_records": 0,
+      "kernel_drop_count": null,
+      "collector_heartbeat": null
+    },
+    {
+      "remote_path": "~/nas_capture_records/ue_ran_nas_20261003_145840.pcap",
+      "sha256": "85d71f232af580fffd31da489967985bccebf77ac685dd8259784ec910f98e19",
+      "bytes": 1246,
+      "packet_records": 14,
+      "user_reported_packet_count": 14,
+      "count_discrepancy_requires_review": false,
+      "first_packet_utc": "2026-10-03T06:58:46.699812+00:00",
+      "last_packet_utc": "2026-10-03T06:59:03.780091+00:00",
+      "link_type": 113,
+      "snaplen": 262144,
+      "structural_errors": [],
+      "truncated_packet_records": 0,
+      "kernel_drop_count": null,
+      "collector_heartbeat": null
+    }
+  ],
+  "conclusion": {
+    "real_nas_input_test_exists": true,
+    "same_window_linux_samples_located": false,
+    "existing_packet_file_quality_partially_verified": true,
+    "continuous_collector_health_established": false,
+    "zero_packet_loss_established": false,
+    "sixteen_feature_training_sample_completed": false,
+    "other_runs_substituted": false,
+    "new_data_generation_requested_or_executed": false,
+    "actionable": false
+  }
+}

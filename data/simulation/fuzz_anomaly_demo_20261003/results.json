@@ -1,0 +1,713 @@
+{
+  "actionable": false,
+  "analysis_plan_sha256": "0790df0342efa2f8ddd1a2768a8f63425644ebd56e4bf53b9af76bb0c57ba5dd",
+  "contract": "linux-sbi-pfcp-v1",
+  "control_metrics": {
+    "expected_rejection": {
+      "false_positive_rate": 0.0,
+      "run_count": 6
+    },
+    "normal": {
+      "false_positive_rate": 0.0,
+      "run_count": 6
+    }
+  },
+  "dataset_sha256": "aac6b356c19299c528ebb80a8406c0ad1dc136857721a0f107c26d95aff7d024",
+  "feature_names": [
+    "duration_sec",
+    "linux_load_1m_mean",
+    "linux_load_1m_std",
+    "linux_load_1m_min",
+    "linux_load_1m_max",
+    "linux_memory_total_mean",
+    "linux_memory_available_mean",
+    "memory_available_ratio_mean",
+    "linux_event_count",
+    "sbi_event_count",
+    "sbi_error_event_count",
+    "pfcp_event_count",
+    "pfcp_request_count",
+    "pfcp_response_count",
+    "sbi_telemetry_available",
+    "pfcp_telemetry_available"
+  ],
+  "free5gc_commit": "0000000000000000000000000000000000000000",
+  "held_out_predictions": [
+    {
+      "anomaly_probability": 0.0,
+      "observed_label": "normal",
+      "predicted_anomalous": false,
+      "run_id": "sim-held_out-normal-00"
+    },
+    {
+      "anomaly_probability": 0.0,
+      "observed_label": "normal",
+      "predicted_anomalous": false,
+      "run_id": "sim-held_out-normal-01"
+    },
+    {
+      "anomaly_probability": 0.0,
+      "observed_label": "normal",
+      "predicted_anomalous": false,
+      "run_id": "sim-held_out-normal-02"
+    },
+    {
+      "anomaly_probability": 0.0,
+      "observed_label": "normal",
+      "predicted_anomalous": false,
+      "run_id": "sim-held_out-normal-03"
+    },
+    {
+      "anomaly_probability": 0.0,
+      "observed_label": "normal",
+      "predicted_anomalous": false,
+      "run_id": "sim-held_out-normal-04"
+    },
+    {
+      "anomaly_probability": 0.0,
+      "observed_label": "normal",
+      "predicted_anomalous": false,
+      "run_id": "sim-held_out-normal-05"
+    },
+    {
+      "anomaly_probability": 0.005,
+      "observed_label": "expected_rejection",
+      "predicted_anomalous": false,
+      "run_id": "sim-held_out-expected_rejection-00"
+    },
+    {
+      "anomaly_probability": 0.005,
+      "observed_label": "expected_rejection",
+      "predicted_anomalous": false,
+      "run_id": "sim-held_out-expected_rejection-01"
+    },
+    {
+      "anomaly_probability": 0.005,
+      "observed_label": "expected_rejection",
+      "predicted_anomalous": false,
+      "run_id": "sim-held_out-expected_rejection-02"
+    },
+    {
+      "anomaly_probability": 0.005,
+      "observed_label": "expected_rejection",
+      "predicted_anomalous": false,
+      "run_id": "sim-held_out-expected_rejection-03"
+    },
+    {
+      "anomaly_probability": 0.01,
+      "observed_label": "expected_rejection",
+      "predicted_anomalous": false,
+      "run_id": "sim-held_out-expected_rejection-04"
+    },
+    {
+      "anomaly_probability": 0.01,
+      "observed_label": "expected_rejection",
+      "predicted_anomalous": false,
+      "run_id": "sim-held_out-expected_rejection-05"
+    },
+    {
+      "anomaly_probability": 1.0,
+      "observed_label": "anomalous",
+      "predicted_anomalous": true,
+      "run_id": "sim-held_out-anomalous-00"
+    },
+    {
+      "anomaly_probability": 0.96,
+      "observed_label": "anomalous",
+      "predicted_anomalous": true,
+      "run_id": "sim-held_out-anomalous-01"
+    },
+    {
+      "anomaly_probability": 1.0,
+      "observed_label": "anomalous",
+      "predicted_anomalous": true,
+      "run_id": "sim-held_out-anomalous-02"
+    },
+    {
+      "anomaly_probability": 1.0,
+      "observed_label": "anomalous",
+      "predicted_anomalous": true,
+      "run_id": "sim-held_out-anomalous-03"
+    },
+    {
+      "anomaly_probability": 1.0,
+      "observed_label": "anomalous",
+      "predicted_anomalous": true,
+      "run_id": "sim-held_out-anomalous-04"
+    },
+    {
+      "anomaly_probability": 0.99,
+      "observed_label": "anomalous",
+      "predicted_anomalous": true,
+      "run_id": "sim-held_out-anomalous-05"
+    }
+  ],
+  "held_out_run_count": 18,
+  "limitations": "SIMULATION ONLY: generated scenarios, mock approvals and virtual timestamps; metrics do not demonstrate live detection or fuzz causality. No live actions are authorized.",
+  "live_inference_performed": false,
+  "metrics": {
+    "confusion_matrix": {
+      "fn": 0,
+      "fp": 0,
+      "tn": 12,
+      "tp": 6
+    },
+    "f1": 1.0,
+    "false_positive_rate": 0.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "roc_auc": 1.0
+  },
+  "model": "random_forest_200_seed42",
+  "model_deployment_approved": false,
+  "model_fitted": true,
+  "offline_predictions_performed": true,
+  "research_result": false,
+  "reviewer_independence_authenticated": false,
+  "run_provenance": [
+    {
+      "episode_group": "sim-train-normal-00",
+      "input_family": "sim-train-normal-00",
+      "input_sha256": "50132c9c5a9b2abfbcd4cb612b6992ec543f354435a3f742b67b135eb386751e",
+      "label": "normal",
+      "manifest_sha256": "e9cf30682c2e1bb23242c0c9d11ca9812679b400b816d2a5e081a8e971e1b2a0",
+      "review_sha256": "87077cb1848fc2ba139326bd7fc05214c3dd6a03d39d64045ac1c3027dc243b0",
+      "run_id": "sim-train-normal-00",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-normal-01",
+      "input_family": "sim-train-normal-01",
+      "input_sha256": "83c63a0991323f988fa91dfaf15bdd9fc68c06662717df98e087960d7d96617b",
+      "label": "normal",
+      "manifest_sha256": "fca325053e14cf54c9d3b60bb13a301e404b90f8800a1b69938faaf0cf017134",
+      "review_sha256": "cdbc9acad0a1ae8f365b490c3b52f8960b5b21801cd29da98eb4627c9b4768da",
+      "run_id": "sim-train-normal-01",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-normal-02",
+      "input_family": "sim-train-normal-02",
+      "input_sha256": "76845dbf7beb81d023c74a84a2705f50e482a3b68c4e9ccc4f37d1b3adc09872",
+      "label": "normal",
+      "manifest_sha256": "cd20a5beff531e48b43d1f659e1483426b98ac6b3d6c9ffdf249cbe232629bb2",
+      "review_sha256": "3346491047bd1c8b772e2b17c04036e1d19407d00c1d1c812d4309cd57d85a62",
+      "run_id": "sim-train-normal-02",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-normal-03",
+      "input_family": "sim-train-normal-03",
+      "input_sha256": "0f2749e5e24d34c898601f4f49b8167b75c8615f1f4f98a88079c170cd483d5f",
+      "label": "normal",
+      "manifest_sha256": "b8c0ba4c21a112bbe2ea408be8689a70b9a3223589327b3a04c9503bdf859641",
+      "review_sha256": "30b07f49eb21cc2ef7471485c47d7e1f2ebeed46703a8e001a11e27188362c73",
+      "run_id": "sim-train-normal-03",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-normal-04",
+      "input_family": "sim-train-normal-04",
+      "input_sha256": "026b79b299a389eaab65d7d1af835cf13e905e5b1ae252112d05a2525f293bde",
+      "label": "normal",
+      "manifest_sha256": "65dd02f78218c842df11df5d652ec09a6f601809cec5c91c91fb50056a08071a",
+      "review_sha256": "c2eac9063d11ba2c69092acc141345ebed046698125024685bdb08b58578d351",
+      "run_id": "sim-train-normal-04",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-normal-05",
+      "input_family": "sim-train-normal-05",
+      "input_sha256": "786160a121d4c731044de9b4a3d00cce8c04dce7bf66b46f4837192a4a5b52a2",
+      "label": "normal",
+      "manifest_sha256": "eaa5db8c4a78d9c1834965df11f4fa3b331aa3ef081b8fcbccfcbca7b58ef4b7",
+      "review_sha256": "bf8922d3cedebf89193aae67497bbe3827c5f5194265ede54678b93085602ebc",
+      "run_id": "sim-train-normal-05",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-normal-06",
+      "input_family": "sim-train-normal-06",
+      "input_sha256": "38031846611ad53c1f91a31ed8b4f10b7877e4214d12fe8aa8acb4bd1370487a",
+      "label": "normal",
+      "manifest_sha256": "bb82b2495fba2cf708b9545339086a4125a33d1c86cb5ebf6f199258a8704680",
+      "review_sha256": "c5b0f5e08f13ff66c28f1122c8783e7735f0a82398d95bc8908ea38aab60a977",
+      "run_id": "sim-train-normal-06",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-normal-07",
+      "input_family": "sim-train-normal-07",
+      "input_sha256": "a5cb741a3b1d5a09ac548719bf3900a6e7429cae9096886c20411d7c3ecd7357",
+      "label": "normal",
+      "manifest_sha256": "e54b45d7d15d571a6c3b0e125a16e3aea40811821a07c5e4b43bfca85bfe057a",
+      "review_sha256": "e2a02fbfb1fcbb9c42f05b017861787bdaeea00f64f53398ab30cbdbc620e555",
+      "run_id": "sim-train-normal-07",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-normal-08",
+      "input_family": "sim-train-normal-08",
+      "input_sha256": "e0cffc758ed5bedcb5d21e9abfa506eb6e8835f5e23d4ad5a3785c0a95843b7c",
+      "label": "normal",
+      "manifest_sha256": "2dc02e47dff7ffc108a245691aa64038ed405881c0004bfd30b394ea808d8349",
+      "review_sha256": "509df3ce61eb71bbf93877d1ca0b5a908244890f1a1870be6712d1d4e95bb8af",
+      "run_id": "sim-train-normal-08",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-normal-09",
+      "input_family": "sim-train-normal-09",
+      "input_sha256": "65daa6907ccfcda935f6f21ecbe209e57e19d8f5055d810b00fb5ec1c06f897c",
+      "label": "normal",
+      "manifest_sha256": "2a0c1e8372c7f740c269d6e1d7ba6f0e36126489a1e324ef2621399eedc794ae",
+      "review_sha256": "a1998bb472fe07404054cbfe4ffd6be2e202aa3e7083a431689204bdcf6f9883",
+      "run_id": "sim-train-normal-09",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-normal-10",
+      "input_family": "sim-train-normal-10",
+      "input_sha256": "64b4121de06191554a4295592e8e7c78f748cab974a4c5a154aeb61fc5d34b13",
+      "label": "normal",
+      "manifest_sha256": "45fa57cc5d00e5cd82c07b346c97591c835ddff816c6ec02804d424adae94029",
+      "review_sha256": "a6812afc343b1d3fe3e18d1382fb98daa974574ec2a1895f7f4049aabecaf0d4",
+      "run_id": "sim-train-normal-10",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-normal-11",
+      "input_family": "sim-train-normal-11",
+      "input_sha256": "ac54748d1910d20dc3aa3be01e810129eec2f469b1bcaa9ec93e324c68e5e646",
+      "label": "normal",
+      "manifest_sha256": "896108301dba1f780728e082dba44d84199ea9d491ff5e3264d55a5dd959c8b1",
+      "review_sha256": "8ced0990123b377fe00167d4abac1ae19774c6d52fe3d23bb14c7c9a281875cf",
+      "run_id": "sim-train-normal-11",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-expected_rejection-00",
+      "input_family": "sim-train-expected_rejection-00",
+      "input_sha256": "33d953b9053fc41b9c5fc38a111efeca60413bf1551d08b062ae7d42e100a8e8",
+      "label": "expected_rejection",
+      "manifest_sha256": "8a9efad28bc8c4dbdde8a052bbc1f1c73471f419aa54a59777454086ad60193a",
+      "review_sha256": "47d4fdb2f53c05d7615832d820076b08c75e10d5fbe21b235b1bba1c34a8e00d",
+      "run_id": "sim-train-expected_rejection-00",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-expected_rejection-01",
+      "input_family": "sim-train-expected_rejection-01",
+      "input_sha256": "6bbf54676ebbd74999ab9e0dcc69b2f5811ca174a74c365e1131fdb2fef9fb49",
+      "label": "expected_rejection",
+      "manifest_sha256": "eede0bcce71253ab3ce763ccb91df1853580230552e3205aa52600689e452d6b",
+      "review_sha256": "c9ef3c41c6b478e6498e810ce60796b1898528cbafdbf341effe7a478322e5b1",
+      "run_id": "sim-train-expected_rejection-01",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-expected_rejection-02",
+      "input_family": "sim-train-expected_rejection-02",
+      "input_sha256": "44d5b2a91d65e18a9f35bb7a90b7053b163cb99ce8b15a2a16fcaa4eab144bc4",
+      "label": "expected_rejection",
+      "manifest_sha256": "e211a7da1ec116c39534c25ec7c305a3f95cec8e939252e1ea5f5e07d996ecf5",
+      "review_sha256": "df94289e867942f3f8cd3e2c2ecc988d1c542c4f215c4394069fadbef517ecc9",
+      "run_id": "sim-train-expected_rejection-02",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-expected_rejection-03",
+      "input_family": "sim-train-expected_rejection-03",
+      "input_sha256": "3cc8d462a4fc0b4136d13ec8f14cb347d33fb9124835d10c269b3663cec7dacf",
+      "label": "expected_rejection",
+      "manifest_sha256": "bdb00874de07abcf038cfc44d5ed294dc591ea5f510b79f57d222179c16db2c2",
+      "review_sha256": "f239aeac0ad67c30dd3a633149efec3d7d017dfcc4c13d5edae35890975ecfe6",
+      "run_id": "sim-train-expected_rejection-03",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-expected_rejection-04",
+      "input_family": "sim-train-expected_rejection-04",
+      "input_sha256": "5837bca489daa59a602a1d194b4cfaf1ea20484cf7b2c6ccf75bbac858908bd6",
+      "label": "expected_rejection",
+      "manifest_sha256": "e0f207f569035a29d0ed3c8a1b2c64af9ab7cca38df35827caef61d825c5b4bc",
+      "review_sha256": "406f7c536cb1bc4c38455e9e8665c7c3f9661435720ed764527d98143be1cd1e",
+      "run_id": "sim-train-expected_rejection-04",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-expected_rejection-05",
+      "input_family": "sim-train-expected_rejection-05",
+      "input_sha256": "57932bf9e9cb89433837a4bba17a02031e0163aa6f70d77206c0e5871ae908a4",
+      "label": "expected_rejection",
+      "manifest_sha256": "230ba4e70c613108638f76b9fe2172cc9bc29c846b7d14a65738ee33ea782797",
+      "review_sha256": "08640e6c65d462bc648924092039d5c2040ee72ab6e3d9a6b0b85815c9cfec27",
+      "run_id": "sim-train-expected_rejection-05",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-expected_rejection-06",
+      "input_family": "sim-train-expected_rejection-06",
+      "input_sha256": "0d32d25b303778865d1f7c601455998b7182872e357b2e01102c081d0de2380c",
+      "label": "expected_rejection",
+      "manifest_sha256": "314ca00e11077b6dfaefa61579f99337f9c431bae1787662205c84c408b9e5c2",
+      "review_sha256": "125bed1de0886ec46c4a17c881b64172bd44d612fbfbf76c29b4171f1e3904f0",
+      "run_id": "sim-train-expected_rejection-06",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-expected_rejection-07",
+      "input_family": "sim-train-expected_rejection-07",
+      "input_sha256": "e6671e4f0572000f3a18a18b3545170d435bef152496977bed4279a87aead01b",
+      "label": "expected_rejection",
+      "manifest_sha256": "482309547ca365d35e062ca5f188be86f3516741ced044cf7781488c0b92479e",
+      "review_sha256": "1c7ab73e4d553431a00078c3d46d17f6b2ed9449ade9ec1b18a5592fdea2ac25",
+      "run_id": "sim-train-expected_rejection-07",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-expected_rejection-08",
+      "input_family": "sim-train-expected_rejection-08",
+      "input_sha256": "eff02cef3fb637ebb5befa2f482623fc7dc49e91acd6a841d36d09d1e5c0a360",
+      "label": "expected_rejection",
+      "manifest_sha256": "21547f6ab9a01d9ced6c5dc6dde2deca9bac3850e74807245a97dfe233850553",
+      "review_sha256": "6aba5487fc8f9586b669925876a79a8da08c4ba70dbf288934b750f1a2d90477",
+      "run_id": "sim-train-expected_rejection-08",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-expected_rejection-09",
+      "input_family": "sim-train-expected_rejection-09",
+      "input_sha256": "df5309cc9ee56cab6fd06283db9f5cf05f2b8b4a5eb65a631a8db31569e8b450",
+      "label": "expected_rejection",
+      "manifest_sha256": "ac5afce91dbdea8fea6ea62cd57ac026ea77865e87ca739b57b55e1934c4e599",
+      "review_sha256": "11f31e7ebbfca00a10093d4d828399bcc85c336d242dfb9967fb5480952e802a",
+      "run_id": "sim-train-expected_rejection-09",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-expected_rejection-10",
+      "input_family": "sim-train-expected_rejection-10",
+      "input_sha256": "654829652009fa04abc7ed19defe06f6d904e0df18755ba7c72454b2f5560e76",
+      "label": "expected_rejection",
+      "manifest_sha256": "0fd3093a10357e1f4ae96720469bc92a42cf231b8631fe2986addcac0a169441",
+      "review_sha256": "cae799a2064e5c0ca3c109dc4015b53cb931e7ba03696894b0539f86bb0a128d",
+      "run_id": "sim-train-expected_rejection-10",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-expected_rejection-11",
+      "input_family": "sim-train-expected_rejection-11",
+      "input_sha256": "84d029c83d7ea3e37e2020b5893aa04a14c68fbd06c4c71cf80d214b70244485",
+      "label": "expected_rejection",
+      "manifest_sha256": "7ef5fef0111094a5bf8356f9389720868fa739f70f4f2d649eb451ada1a1f3da",
+      "review_sha256": "d0aff508208e373309a10816ae1bcadffd0b220f5643f316ddb1b8baa04c4de4",
+      "run_id": "sim-train-expected_rejection-11",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-anomalous-00",
+      "input_family": "sim-train-anomalous-00",
+      "input_sha256": "c4a1a08c41f3a86f36d7c78383062c6d2a9f11ca509b576e94b3efa3a3044eb6",
+      "label": "anomalous",
+      "manifest_sha256": "868de8ac5aeff1941d2379994c41b4b28db00e245d8c46f766f8be0773489927",
+      "review_sha256": "b2b7ab45a122356713c676f74fba149c75403d70c202141d248cd93eeefa2e38",
+      "run_id": "sim-train-anomalous-00",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-anomalous-01",
+      "input_family": "sim-train-anomalous-01",
+      "input_sha256": "3ac1c165a39d80a7b68ebbcf18378bd2c2aa459e6af360ea8ef891ee40446d6b",
+      "label": "anomalous",
+      "manifest_sha256": "04efe99e64364dcc0aa5cc49d11c9ae8276c9b3e734c4d30f1909087e41a25cf",
+      "review_sha256": "dd2932c3a50152ab31706736dc7bd0f8c31a8859ee545695fd0beaf4f8e14918",
+      "run_id": "sim-train-anomalous-01",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-anomalous-02",
+      "input_family": "sim-train-anomalous-02",
+      "input_sha256": "3d38f8d22b2941b07eefe4088f813df90a269338196798811e4af7d72ed665d3",
+      "label": "anomalous",
+      "manifest_sha256": "a478383ebee5dfba41a656a74728ab2ba9de996165b639c6d14a7d56781baafa",
+      "review_sha256": "96685ccee4c5510e71c3d457706f4628f1295dd67dccfb1a495129689a693cd4",
+      "run_id": "sim-train-anomalous-02",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-anomalous-03",
+      "input_family": "sim-train-anomalous-03",
+      "input_sha256": "2db3c34c59f867a28841f184a9fff890f621fe39a2061f60596854090697390e",
+      "label": "anomalous",
+      "manifest_sha256": "38ac18feba232fc9e1f318b95add35176451a08cd0dfa734b7add6fa63e6ecb8",
+      "review_sha256": "2ad0377b2e745d96c6caee77030ab3eef0efd743d854c3aeeded1f00457ce54e",
+      "run_id": "sim-train-anomalous-03",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-anomalous-04",
+      "input_family": "sim-train-anomalous-04",
+      "input_sha256": "452a985a3a067da30fc016116174d6e43f8b55686ac063dd0947b0f926aac2de",
+      "label": "anomalous",
+      "manifest_sha256": "4e49b64a5acba73141f184050a1cca02dd84c79de2ea5a3192c41c41a54c9469",
+      "review_sha256": "8471393e495d071bb975a5a07c596606ed9c7d1b17fef11ac2e7685eb44c87ef",
+      "run_id": "sim-train-anomalous-04",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-anomalous-05",
+      "input_family": "sim-train-anomalous-05",
+      "input_sha256": "cd9b888d3088533d50169c0b55eef4e67b43042ac4a937b2b79dd036963fc151",
+      "label": "anomalous",
+      "manifest_sha256": "4ee521501fbc7a946e13a6a85bd1f9298deb37d1c0a0ba9521b14b51a366d955",
+      "review_sha256": "7e2f02215ec5b1534a192fce640be9ee6ebf6a65c8df84515cf124f85418d4a2",
+      "run_id": "sim-train-anomalous-05",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-anomalous-06",
+      "input_family": "sim-train-anomalous-06",
+      "input_sha256": "6bae8e3397db753accac6f9fd2d01e110a055fa7c5653db13acf30d78c7356d2",
+      "label": "anomalous",
+      "manifest_sha256": "cec86383665be66f80a698b6256fd7eb95b2792c56ed4b66b76f2f71a96d5dcf",
+      "review_sha256": "b3fcafac53f998851abcdcfe85bb578fb115f06a9787e27cae06c815a6179393",
+      "run_id": "sim-train-anomalous-06",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-anomalous-07",
+      "input_family": "sim-train-anomalous-07",
+      "input_sha256": "4249bf488b1ac0bf5d5db07eb1299615b20d646ded994ab4c19bbeb25b6b2657",
+      "label": "anomalous",
+      "manifest_sha256": "cebe7f938c3f730164582f54b00aa310eed0c80fb3bd781f5c37da04454214d0",
+      "review_sha256": "53d479335e511f48fd7a6bca63e1a19c1f9915faf096ef4257a81d1f2fd03dfc",
+      "run_id": "sim-train-anomalous-07",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-anomalous-08",
+      "input_family": "sim-train-anomalous-08",
+      "input_sha256": "3fe9980a3dc8e80a8d7035f78be7e62e1d814136927024288637a8a4301f205d",
+      "label": "anomalous",
+      "manifest_sha256": "3aa22bd1c58119ec2c739b4d0c7e4bb741b280b7ef1f87f65e1255396108fec4",
+      "review_sha256": "80cf3dfed46a75f867603b053370c0ff16834a4577468ff386da57943c674d94",
+      "run_id": "sim-train-anomalous-08",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-anomalous-09",
+      "input_family": "sim-train-anomalous-09",
+      "input_sha256": "e69ad60216615bff098aacafbb51ae7674fa8146d1d9fffaef9e1ab032b202f0",
+      "label": "anomalous",
+      "manifest_sha256": "a9ea00c30cd6a54868fa6d2d784c797b766216a51121f62450c827c456822f16",
+      "review_sha256": "e07ade20a61b0b6554151faa93b4aa549a10310630690952860be8ac9e687044",
+      "run_id": "sim-train-anomalous-09",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-anomalous-10",
+      "input_family": "sim-train-anomalous-10",
+      "input_sha256": "c0430b0dea0e2a9aa9cdfe8f624c3c259b3e0b229f74312806a77df1358b7096",
+      "label": "anomalous",
+      "manifest_sha256": "e6981dcda370e2a641073b4e3edf4ff101c0142a654ec0f19b3a2ddb003ca919",
+      "review_sha256": "c3cd93ef7aaaf07cba05fe416415773654e4b08bbb7ce73ee9c45245a1331a82",
+      "run_id": "sim-train-anomalous-10",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-train-anomalous-11",
+      "input_family": "sim-train-anomalous-11",
+      "input_sha256": "3ae3b00613368910771935f955fffd2fa006928c2b62e995960c9d975e07fcd3",
+      "label": "anomalous",
+      "manifest_sha256": "41fad29fa75f0b25f87fc3d8123f293a28579a5a4f24ee83b6fdb71a6aac4acb",
+      "review_sha256": "fb2d188a069accf8cedb264d011c47f25e9086efcfc9f6463237edcabe91d05f",
+      "run_id": "sim-train-anomalous-11",
+      "split": "train"
+    },
+    {
+      "episode_group": "sim-held_out-normal-00",
+      "input_family": "sim-held_out-normal-00",
+      "input_sha256": "f1899ed5633936811c71cd4b184988b23c680fa8c216fa67bf98dcd48b7aaeb7",
+      "label": "normal",
+      "manifest_sha256": "1ff841c0eaa436718b8e629831b7db143b83031126b450cac235d5dee6d978ef",
+      "review_sha256": "e42573fd09c0cec0275f6e7617fe875985d0fb58433ee70474a558fea30660b1",
+      "run_id": "sim-held_out-normal-00",
+      "split": "held_out"
+    },
+    {
+      "episode_group": "sim-held_out-normal-01",
+      "input_family": "sim-held_out-normal-01",
+      "input_sha256": "3b6444dc6882095509ff8e2e07d1eb70d7e64453d56545fe5a73b12547b52182",
+      "label": "normal",
+      "manifest_sha256": "ccb7b8377efd35ca86423c7e81db308c6ce959714aaaf21bccacd71265bdec6c",
+      "review_sha256": "e1a1412892ed44787d429e97eeae0be3951f1d795a156eabaa1c519799eb974e",
+      "run_id": "sim-held_out-normal-01",
+      "split": "held_out"
+    },
+    {
+      "episode_group": "sim-held_out-normal-02",
+      "input_family": "sim-held_out-normal-02",
+      "input_sha256": "2e6cd32444e290db467280bdc7cbf79f43f4f5c580e35293239c21a8b62fe111",
+      "label": "normal",
+      "manifest_sha256": "a414ed9e1ef699291ea7e79ce9a2915ce81a17488ce3e2c482ff58aedafef8fd",
+      "review_sha256": "4ab6cbf13160c5742de8cc9c50b88c3c6d825badd0fe0793b48a4867984a3499",
+      "run_id": "sim-held_out-normal-02",
+      "split": "held_out"
+    },
+    {
+      "episode_group": "sim-held_out-normal-03",
+      "input_family": "sim-held_out-normal-03",
+      "input_sha256": "f7e6cb6ddb2530d2ba847fc6e7a5f7582fe5522a527e7170126c844e84a41110",
+      "label": "normal",
+      "manifest_sha256": "3e1f4f718cb8a65c3f881d1e7d8737be8df408a75d3688672924cab6710fb990",
+      "review_sha256": "a826c5b938769d03e34c1fa19b6c43dd3170d4d6debf9b77578925503ce643ef",
+      "run_id": "sim-held_out-normal-03",
+      "split": "held_out"
+    },
+    {
+      "episode_group": "sim-held_out-normal-04",
+      "input_family": "sim-held_out-normal-04",
+      "input_sha256": "24b927c46d2e38d1862616961278f11108f093da7ca2ec635db334a6aa93faee",
+      "label": "normal",
+      "manifest_sha256": "718f915614fb2167108a389355992637669efcdaffd79b0bfe8b0781b8bc33cf",
+      "review_sha256": "8308dc540b930e1b3c0be14e26b894be82e25d05ec1a1688c45688e84151333f",
+      "run_id": "sim-held_out-normal-04",
+      "split": "held_out"
+    },
+    {
+      "episode_group": "sim-held_out-normal-05",
+      "input_family": "sim-held_out-normal-05",
+      "input_sha256": "eb474beff53b208c9ae64e4159133a26983977ad23465ab47a9d8187cbdcda04",
+      "label": "normal",
+      "manifest_sha256": "83498593f409dc0c83cff5bec4f8ebb8425cb364a5ab32e1e0b0be83e18fdd27",
+      "review_sha256": "8db71ec03b579c37c5a2c284ecb60825cdf360676491fcebc2d7d3b2d556c2c9",
+      "run_id": "sim-held_out-normal-05",
+      "split": "held_out"
+    },
+    {
+      "episode_group": "sim-held_out-expected_rejection-00",
+      "input_family": "sim-held_out-expected_rejection-00",
+      "input_sha256": "9d7dd8e4bc78059d4fd379f1f9f4c5fd0bb8fb5e3bf7518fb9adbbf1850a33b3",
+      "label": "expected_rejection",
+      "manifest_sha256": "a3915e19d4b8fc10194d32878ddc30555dac6e88dce21b6fc0fb921ffe573c0c",
+      "review_sha256": "f51cf25f10368094fe9f90d2aadd180a7a3a2ef8c9f3e3f1f1b7bf89e593fa9f",
+      "run_id": "sim-held_out-expected_rejection-00",
+      "split": "held_out"
+    },
+    {
+      "episode_group": "sim-held_out-expected_rejection-01",
+      "input_family": "sim-held_out-expected_rejection-01",
+      "input_sha256": "73faf22f4783348de1dc28a9913e4840ee053d6df3076baeccb2a2633055c615",
+      "label": "expected_rejection",
+      "manifest_sha256": "474255bdcd5b30b3e18041a0ce8fef8aa877df0a4a5a006087caea27736ab7fa",
+      "review_sha256": "ffa3e3357204dc252a7edfe2bf53a327bb742fd875c549de29657a31aee058ad",
+      "run_id": "sim-held_out-expected_rejection-01",
+      "split": "held_out"
+    },
+    {
+      "episode_group": "sim-held_out-expected_rejection-02",
+      "input_family": "sim-held_out-expected_rejection-02",
+      "input_sha256": "46be2d42689d0d638f7d5b952fab9d03b80ab94723cf99bb4b81d05619706352",
+      "label": "expected_rejection",
+      "manifest_sha256": "429dafa8da9d6dfef6e9ea3958ab9a86601f8d9db1d1d3d6c6f5b6e50e4a22fb",
+      "review_sha256": "d7e02b6fa7a38df4d3ba95a0979ada71f45a581ddab8c4474d851fb794ec1118",
+      "run_id": "sim-held_out-expected_rejection-02",
+      "split": "held_out"
+    },
+    {
+      "episode_group": "sim-held_out-expected_rejection-03",
+      "input_family": "sim-held_out-expected_rejection-03",
+      "input_sha256": "5a1fb7a2f8656f9f8982575700bba5bf124bd02f409d16eeb18c1e4fbd66b916",
+      "label": "expected_rejection",
+      "manifest_sha256": "2b04bd5ce3e6ad36d6745ccd77b24ed1a6bcf1edaf4e343af296818777aeafcd",
+      "review_sha256": "2859a8194dcf13ab4067df86006c27bfe4317def0f47ef2721fbc942921c5a8f",
+      "run_id": "sim-held_out-expected_rejection-03",
+      "split": "held_out"
+    },
+    {
+      "episode_group": "sim-held_out-expected_rejection-04",
+      "input_family": "sim-held_out-expected_rejection-04",
+      "input_sha256": "2785895be6ae91ed7e9075839ab445963f42bb9f981ebbd598d8639c4de51065",
+      "label": "expected_rejection",
+      "manifest_sha256": "90ba3ac21b93c52d440a7015c41689dccc101e7a43c3aca9610cc3b5dbf32e88",
+      "review_sha256": "267d5541088f35cdc37061addf5c1369c483cc7cec417caee0a87d86d22fde47",
+      "run_id": "sim-held_out-expected_rejection-04",
+      "split": "held_out"
+    },
+    {
+      "episode_group": "sim-held_out-expected_rejection-05",
+      "input_family": "sim-held_out-expected_rejection-05",
+      "input_sha256": "23bdd2cf60fd27c49e828ec22fb9a8f63d920393c3b9f40f6c65ca234c0c93d3",
+      "label": "expected_rejection",
+      "manifest_sha256": "a25d4fdb734fdd08bc4de3e4e20a64ea3dff9bd80d5a8027dab6319f8a6fdd7b",
+      "review_sha256": "15f53b0e92bb70ba5d5b6617a603ad14b4b993f16400ddf518eb99ae2f2951d2",
+      "run_id": "sim-held_out-expected_rejection-05",
+      "split": "held_out"
+    },
+    {
+      "episode_group": "sim-held_out-anomalous-00",
+      "input_family": "sim-held_out-anomalous-00",
+      "input_sha256": "aa220261e0593b1e10ec9e5a84ee16b93862a718a692c8d6b31c2a126e7d2614",
+      "label": "anomalous",
+      "manifest_sha256": "46ca4142b275012170599fae851c8ab85392be6b76a8c83c6c8f76084375e841",
+      "review_sha256": "117364ba571d33499d69b5f77cfcad73f375e73688f97beb6f04b700f20b007e",
+      "run_id": "sim-held_out-anomalous-00",
+      "split": "held_out"
+    },
+    {
+      "episode_group": "sim-held_out-anomalous-01",
+      "input_family": "sim-held_out-anomalous-01",
+      "input_sha256": "4887a9b5ad7b1cebd258f88cee8ad4d0dea7c70803772b48342b6486becd84b9",
+      "label": "anomalous",
+      "manifest_sha256": "eac1c6be03b2c1e858766ad2434cbfc4e8af6f6d200f74190f54fe295d778a67",
+      "review_sha256": "54762e11835d2c018afb40ad55b3576fe8d3c570ca981107dcb68be672f71c04",
+      "run_id": "sim-held_out-anomalous-01",
+      "split": "held_out"
+    },
+    {
+      "episode_group": "sim-held_out-anomalous-02",
+      "input_family": "sim-held_out-anomalous-02",
+      "input_sha256": "0671a2933d0080ff665a1617115ef0d5851e39233094551ec0a9eea61284a09e",
+      "label": "anomalous",
+      "manifest_sha256": "33572b4e9e432018283cc6d1c4322777a994586aa1a9dd3628ad366ed3a1d597",
+      "review_sha256": "aaffc86110aa3003a6e67317edebd203759f2a00d0a097a9840dee2ca7e933c6",
+      "run_id": "sim-held_out-anomalous-02",
+      "split": "held_out"
+    },
+    {
+      "episode_group": "sim-held_out-anomalous-03",
+      "input_family": "sim-held_out-anomalous-03",
+      "input_sha256": "c271993ee5660d88846f25699878e3a1f84ce5058c47d5d1b34dbe81e90d622f",
+      "label": "anomalous",
+      "manifest_sha256": "4a792b1568ec123ff92955734116e20083e4e9ff64ed14a6a2a52868d87e343f",
+      "review_sha256": "d2cc51a4d4eca453cba9a4014250126e98e31809b7c8bec37b00fd43ad678690",
+      "run_id": "sim-held_out-anomalous-03",
+      "split": "held_out"
+    },
+    {
+      "episode_group": "sim-held_out-anomalous-04",
+      "input_family": "sim-held_out-anomalous-04",
+      "input_sha256": "e97c9a007ed9104bbf246f0e28be1e31328d50c4fedd0016f20e98cd229e257c",
+      "label": "anomalous",
+      "manifest_sha256": "5261d19f3d9401942f638fefdb177b2dafa922084a148ecfb4f18073cde2820d",
+      "review_sha256": "1a58842432793339357fb4239e5c356e95ed1b35372d138315fc6f69492719ca",
+      "run_id": "sim-held_out-anomalous-04",
+      "split": "held_out"
+    },
+    {
+      "episode_group": "sim-held_out-anomalous-05",
+      "input_family": "sim-held_out-anomalous-05",
+      "input_sha256": "1069c473bed8c49f71561777eebca38799349fb56d0ef84e4cc7dce987eccec0",
+      "label": "anomalous",
+      "manifest_sha256": "528b7c2bf3e39f1e5744f3b564b8472c5c11ca8ee5e754bc5b4c763bca41af3a",
+      "review_sha256": "79846f91f63e92246391e679a57bcc0c95f5a7d008688f7eee3bb051e2ae1f8e",
+      "run_id": "sim-held_out-anomalous-05",
+      "split": "held_out"
+    }
+  ],
+  "schema_version": "fuzz-anomaly-evaluation-v1",
+  "simulation_only": true,
+  "threshold": 0.5,
+  "training_run_count": 36
+}

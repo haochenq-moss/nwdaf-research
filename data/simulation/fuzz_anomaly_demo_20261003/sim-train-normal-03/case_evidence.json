@@ -1,0 +1,40 @@
+{
+  "free5gc_commit": "0000000000000000000000000000000000000000",
+  "input": {
+    "path": "input.bin",
+    "sha256": "0f2749e5e24d34c898601f4f49b8167b75c8615f1f4f98a88079c170cd483d5f"
+  },
+  "input_id": "sim-train-normal-03",
+  "revision_basis": "Simulation placeholder, not tested free5GC revision",
+  "run_id": "sim-train-normal-03",
+  "schema_version": "fuzz-case-evidence-v1",
+  "simulation_only": true,
+  "stages": {
+    "analyst_decision": {
+      "path": "analyst_decision.json",
+      "sha256": "30b07f49eb21cc2ef7471485c47d7e1f2ebeed46703a8e001a11e27188362c73"
+    },
+    "cleanup_review": {
+      "path": "cleanup_review.json",
+      "sha256": "f53fb8fb7d0fd20d8c70267629effda3ce5c06c60aa04f10f2c23be998cf0d31"
+    },
+    "network_observation": {
+      "path": "network_observation.json",
+      "sha256": "f53fb8fb7d0fd20d8c70267629effda3ce5c06c60aa04f10f2c23be998cf0d31"
+    },
+    "protocol_state_review": {
+      "path": "protocol_state_review.json",
+      "sha256": "f53fb8fb7d0fd20d8c70267629effda3ce5c06c60aa04f10f2c23be998cf0d31"
+    },
+    "software_outcome": {
+      "path": "software_outcome.json",
+      "sha256": "f53fb8fb7d0fd20d8c70267629effda3ce5c06c60aa04f10f2c23be998cf0d31"
+    },
+    "telemetry_bundle": {
+      "path": "telemetry_bundle.json",
+      "sha256": "a78ab479e7550be202d6d1728bfdc5b9acb4cdf5b0743ab0480b4e3aebca3bfb"
+    }
+  },
+  "window_end": "2030-01-01T00:03:10+00:00",
+  "window_start": "2030-01-01T00:03:00+00:00"
+}

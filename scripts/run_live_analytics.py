@@ -28,7 +28,9 @@ def main() -> None:
         identity_file=args.identity_file,
     ).observe()
     analyzer = NWDAFResearchAnalyzer(args.raw_root)
-    result = analyzer.score_features(observation.features)
+    result = analyzer.score_live_features(
+        observation.features, unavailable_features=observation.unavailable_features,
+    )
     report = {
         "observed_at": observation.observed_at,
         "host": observation.host,
@@ -36,7 +38,7 @@ def main() -> None:
             "features": observation.features,
             "evidence": observation.evidence,
             "unavailable_features": observation.unavailable_features,
-            "autonomous_response_eligible": observation.complete_for_autonomous_response,
+            "autonomous_response_eligible": False,
         },
         "analytics": result,
     }

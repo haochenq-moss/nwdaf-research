@@ -1,0 +1,25 @@
+{
+  "alert_count": 6,
+  "conclusion": "Offline pipeline demonstration only; easy generator-defined separation is not measured security efficacy.",
+  "feature_count": 16,
+  "held_out_runs": 18,
+  "live_actions_executed": false,
+  "metrics": {
+    "confusion_matrix": {
+      "fn": 0,
+      "fp": 0,
+      "tn": 12,
+      "tp": 6
+    },
+    "f1": 1.0,
+    "false_positive_rate": 0.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "roc_auc": 1.0
+  },
+  "real_nas_data_modified": false,
+  "research_result": false,
+  "seed": 42,
+  "simulation_only": true,
+  "train_runs": 36
+}

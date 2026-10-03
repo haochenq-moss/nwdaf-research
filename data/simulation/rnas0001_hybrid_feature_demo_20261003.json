@@ -1,0 +1,174 @@
+{
+  "actionable": false,
+  "contains_real_log_statistics": true,
+  "feature_values": {
+    "duration_sec": 6.405876768,
+    "linux_event_count": 7,
+    "linux_load_1m_max": 1.0921795677048454,
+    "linux_load_1m_mean": 0.6586003804097997,
+    "linux_load_1m_min": 0.22653596968386364,
+    "linux_load_1m_std": 0.2871551517228033,
+    "linux_memory_available_mean": 885518714.4285715,
+    "linux_memory_total_mean": 2147483648,
+    "memory_available_ratio_mean": 0.41235178449590293,
+    "pfcp_event_count": 0,
+    "pfcp_request_count": 0,
+    "pfcp_response_count": 0,
+    "pfcp_telemetry_available": 1.0,
+    "sbi_error_event_count": 3,
+    "sbi_event_count": 12,
+    "sbi_telemetry_available": 1.0
+  },
+  "feature_vector_complete_for_demo": true,
+  "field_count": 16,
+  "field_provenance": {
+    "duration_sec": {
+      "detail": "Recorded UTC interval; no historical monotonic duration evidence",
+      "origin": "RECOVERED_HISTORICAL_STATISTIC"
+    },
+    "linux_event_count": {
+      "detail": "Seeded synthetic Linux measurements, not values observed during this NAS run",
+      "origin": "SIMULATED"
+    },
+    "linux_load_1m_max": {
+      "detail": "Seeded synthetic Linux measurements, not values observed during this NAS run",
+      "origin": "SIMULATED"
+    },
+    "linux_load_1m_mean": {
+      "detail": "Seeded synthetic Linux measurements, not values observed during this NAS run",
+      "origin": "SIMULATED"
+    },
+    "linux_load_1m_min": {
+      "detail": "Seeded synthetic Linux measurements, not values observed during this NAS run",
+      "origin": "SIMULATED"
+    },
+    "linux_load_1m_std": {
+      "detail": "Seeded synthetic Linux measurements, not values observed during this NAS run",
+      "origin": "SIMULATED"
+    },
+    "linux_memory_available_mean": {
+      "detail": "Seeded synthetic Linux measurements, not values observed during this NAS run",
+      "origin": "SIMULATED"
+    },
+    "linux_memory_total_mean": {
+      "detail": "Seeded synthetic Linux measurements, not values observed during this NAS run",
+      "origin": "SIMULATED"
+    },
+    "memory_available_ratio_mean": {
+      "detail": "Seeded synthetic Linux measurements, not values observed during this NAS run",
+      "origin": "SIMULATED"
+    },
+    "pfcp_event_count": {
+      "detail": "Recomputed matching log records; no complete-traffic or healthy-collector guarantee",
+      "origin": "RECOVERED_HISTORICAL_STATISTIC"
+    },
+    "pfcp_request_count": {
+      "detail": "Recomputed matching log records; no complete-traffic or healthy-collector guarantee",
+      "origin": "RECOVERED_HISTORICAL_STATISTIC"
+    },
+    "pfcp_response_count": {
+      "detail": "Recomputed matching log records; no complete-traffic or healthy-collector guarantee",
+      "origin": "RECOVERED_HISTORICAL_STATISTIC"
+    },
+    "pfcp_telemetry_available": {
+      "detail": "Mock availability only; historical health remains unknown",
+      "origin": "SIMULATED"
+    },
+    "sbi_error_event_count": {
+      "detail": "Recomputed matching log records; no complete-traffic or healthy-collector guarantee",
+      "origin": "RECOVERED_HISTORICAL_STATISTIC"
+    },
+    "sbi_event_count": {
+      "detail": "Recomputed matching log records; no complete-traffic or healthy-collector guarantee",
+      "origin": "RECOVERED_HISTORICAL_STATISTIC"
+    },
+    "sbi_telemetry_available": {
+      "detail": "Mock availability only; historical health remains unknown",
+      "origin": "SIMULATED"
+    }
+  },
+  "ground_truth_label": null,
+  "historical_collector_health": "UNKNOWN",
+  "inference_performed": false,
+  "input_sha256": "49532803b6dd390d756842cf17aa830f0117e2262ec26f85e333d1c097e1b53a",
+  "limitations": [
+    "Hybrid demonstration only; complete numeric fields are not complete real telemetry.",
+    "All existing observations remain unchanged and retain retrospective semantics.",
+    "No security finding, independent review, live detection or zero packet loss is established."
+  ],
+  "observed_field_count": 6,
+  "real_training_ready": false,
+  "requested_contract": "linux-sbi-pfcp-v1",
+  "research_result": false,
+  "run_id": "RNAS0001",
+  "schema_version": "hybrid-feature-demo-v1",
+  "simulated_field_count": 10,
+  "simulated_linux_samples": [
+    {
+      "load_1m": 0.8394267984578838,
+      "memory_available": 765046823,
+      "memory_total": 2147483648,
+      "sample_index": 0,
+      "simulation_only": true
+    },
+    {
+      "load_1m": 0.47502931836911927,
+      "memory_available": 871454629,
+      "memory_total": 2147483648,
+      "sample_index": 1,
+      "simulation_only": true
+    },
+    {
+      "load_1m": 0.9364712141640124,
+      "memory_available": 1114919547,
+      "memory_total": 2147483648,
+      "sample_index": 2,
+      "simulation_only": true
+    },
+    {
+      "load_1m": 1.0921795677048454,
+      "memory_available": 798294207,
+      "memory_total": 2147483648,
+      "sample_index": 3,
+      "simulation_only": true
+    },
+    {
+      "load_1m": 0.6219218196852705,
+      "memory_available": 767616537,
+      "memory_total": 2147483648,
+      "sample_index": 4,
+      "simulation_only": true
+    },
+    {
+      "load_1m": 0.4186379748036034,
+      "memory_available": 1022929831,
+      "memory_total": 2147483648,
+      "sample_index": 5,
+      "simulation_only": true
+    },
+    {
+      "load_1m": 0.22653596968386364,
+      "memory_available": 858369427,
+      "memory_total": 2147483648,
+      "sample_index": 6,
+      "simulation_only": true
+    }
+  ],
+  "simulation_only": true,
+  "simulation_parameters": {
+    "available_memory_fraction_range": [
+      0.35,
+      0.6
+    ],
+    "load_range": [
+      0.2,
+      1.2
+    ],
+    "memory_total_bytes": 2147483648,
+    "parameters_selected_from_case_label": false,
+    "sample_count": 7,
+    "seed": 42
+  },
+  "source_log_sha256": "33134d9795cbdc46df9558596ca14214554a39ca82713fd1d505cfd1ecf9c800",
+  "source_partial_sha256": "7a66d64c8ed4b2930422d805bddda49ee7433b85549454e6fde5a23e8341eb2f"
+}

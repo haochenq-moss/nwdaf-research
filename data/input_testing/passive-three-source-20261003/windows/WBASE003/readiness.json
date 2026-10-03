@@ -1,0 +1,19 @@
+{
+  "contract": "linux-sbi-pfcp-v1",
+  "status": "COLLECTOR_UNAVAILABLE",
+  "features": {},
+  "lifecycle": [],
+  "collector_errors": [
+    "missing source: pfcp",
+    "missing source: sbi",
+    "pfcp: timestamps, sequence and counters must be nonnegative integers",
+    "sbi: timestamps, sequence and counters must be nonnegative integers",
+    "fixed 30-second warmup not ready",
+    "pfcp:log_baseline_failed",
+    "pfcp:log_inventory_failed",
+    "sbi:log_baseline_failed",
+    "sbi:log_inventory_failed"
+  ],
+  "actionable": false,
+  "sealed": false
+}

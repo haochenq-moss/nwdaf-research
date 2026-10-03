@@ -1,0 +1,385 @@
+{
+  "analysis_plan_sha256": "0790df0342efa2f8ddd1a2768a8f63425644ebd56e4bf53b9af76bb0c57ba5dd",
+  "runs": [
+    {
+      "bundle_path": "sim-train-normal-00",
+      "episode_group": "sim-train-normal-00",
+      "input_family": "sim-train-normal-00",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-normal-01",
+      "episode_group": "sim-train-normal-01",
+      "input_family": "sim-train-normal-01",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-normal-02",
+      "episode_group": "sim-train-normal-02",
+      "input_family": "sim-train-normal-02",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-normal-03",
+      "episode_group": "sim-train-normal-03",
+      "input_family": "sim-train-normal-03",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-normal-04",
+      "episode_group": "sim-train-normal-04",
+      "input_family": "sim-train-normal-04",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-normal-05",
+      "episode_group": "sim-train-normal-05",
+      "input_family": "sim-train-normal-05",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-normal-06",
+      "episode_group": "sim-train-normal-06",
+      "input_family": "sim-train-normal-06",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-normal-07",
+      "episode_group": "sim-train-normal-07",
+      "input_family": "sim-train-normal-07",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-normal-08",
+      "episode_group": "sim-train-normal-08",
+      "input_family": "sim-train-normal-08",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-normal-09",
+      "episode_group": "sim-train-normal-09",
+      "input_family": "sim-train-normal-09",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-normal-10",
+      "episode_group": "sim-train-normal-10",
+      "input_family": "sim-train-normal-10",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-normal-11",
+      "episode_group": "sim-train-normal-11",
+      "input_family": "sim-train-normal-11",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-expected_rejection-00",
+      "episode_group": "sim-train-expected_rejection-00",
+      "input_family": "sim-train-expected_rejection-00",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-expected_rejection-01",
+      "episode_group": "sim-train-expected_rejection-01",
+      "input_family": "sim-train-expected_rejection-01",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-expected_rejection-02",
+      "episode_group": "sim-train-expected_rejection-02",
+      "input_family": "sim-train-expected_rejection-02",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-expected_rejection-03",
+      "episode_group": "sim-train-expected_rejection-03",
+      "input_family": "sim-train-expected_rejection-03",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-expected_rejection-04",
+      "episode_group": "sim-train-expected_rejection-04",
+      "input_family": "sim-train-expected_rejection-04",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-expected_rejection-05",
+      "episode_group": "sim-train-expected_rejection-05",
+      "input_family": "sim-train-expected_rejection-05",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-expected_rejection-06",
+      "episode_group": "sim-train-expected_rejection-06",
+      "input_family": "sim-train-expected_rejection-06",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-expected_rejection-07",
+      "episode_group": "sim-train-expected_rejection-07",
+      "input_family": "sim-train-expected_rejection-07",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-expected_rejection-08",
+      "episode_group": "sim-train-expected_rejection-08",
+      "input_family": "sim-train-expected_rejection-08",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-expected_rejection-09",
+      "episode_group": "sim-train-expected_rejection-09",
+      "input_family": "sim-train-expected_rejection-09",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-expected_rejection-10",
+      "episode_group": "sim-train-expected_rejection-10",
+      "input_family": "sim-train-expected_rejection-10",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-expected_rejection-11",
+      "episode_group": "sim-train-expected_rejection-11",
+      "input_family": "sim-train-expected_rejection-11",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-anomalous-00",
+      "episode_group": "sim-train-anomalous-00",
+      "input_family": "sim-train-anomalous-00",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-anomalous-01",
+      "episode_group": "sim-train-anomalous-01",
+      "input_family": "sim-train-anomalous-01",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-anomalous-02",
+      "episode_group": "sim-train-anomalous-02",
+      "input_family": "sim-train-anomalous-02",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-anomalous-03",
+      "episode_group": "sim-train-anomalous-03",
+      "input_family": "sim-train-anomalous-03",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-anomalous-04",
+      "episode_group": "sim-train-anomalous-04",
+      "input_family": "sim-train-anomalous-04",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-anomalous-05",
+      "episode_group": "sim-train-anomalous-05",
+      "input_family": "sim-train-anomalous-05",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-anomalous-06",
+      "episode_group": "sim-train-anomalous-06",
+      "input_family": "sim-train-anomalous-06",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-anomalous-07",
+      "episode_group": "sim-train-anomalous-07",
+      "input_family": "sim-train-anomalous-07",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-anomalous-08",
+      "episode_group": "sim-train-anomalous-08",
+      "input_family": "sim-train-anomalous-08",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-anomalous-09",
+      "episode_group": "sim-train-anomalous-09",
+      "input_family": "sim-train-anomalous-09",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-anomalous-10",
+      "episode_group": "sim-train-anomalous-10",
+      "input_family": "sim-train-anomalous-10",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-train-anomalous-11",
+      "episode_group": "sim-train-anomalous-11",
+      "input_family": "sim-train-anomalous-11",
+      "split": "train",
+      "unseen_declared": false
+    },
+    {
+      "bundle_path": "sim-held_out-normal-00",
+      "episode_group": "sim-held_out-normal-00",
+      "input_family": "sim-held_out-normal-00",
+      "split": "held_out",
+      "unseen_declared": true
+    },
+    {
+      "bundle_path": "sim-held_out-normal-01",
+      "episode_group": "sim-held_out-normal-01",
+      "input_family": "sim-held_out-normal-01",
+      "split": "held_out",
+      "unseen_declared": true
+    },
+    {
+      "bundle_path": "sim-held_out-normal-02",
+      "episode_group": "sim-held_out-normal-02",
+      "input_family": "sim-held_out-normal-02",
+      "split": "held_out",
+      "unseen_declared": true
+    },
+    {
+      "bundle_path": "sim-held_out-normal-03",
+      "episode_group": "sim-held_out-normal-03",
+      "input_family": "sim-held_out-normal-03",
+      "split": "held_out",
+      "unseen_declared": true
+    },
+    {
+      "bundle_path": "sim-held_out-normal-04",
+      "episode_group": "sim-held_out-normal-04",
+      "input_family": "sim-held_out-normal-04",
+      "split": "held_out",
+      "unseen_declared": true
+    },
+    {
+      "bundle_path": "sim-held_out-normal-05",
+      "episode_group": "sim-held_out-normal-05",
+      "input_family": "sim-held_out-normal-05",
+      "split": "held_out",
+      "unseen_declared": true
+    },
+    {
+      "bundle_path": "sim-held_out-expected_rejection-00",
+      "episode_group": "sim-held_out-expected_rejection-00",
+      "input_family": "sim-held_out-expected_rejection-00",
+      "split": "held_out",
+      "unseen_declared": true
+    },
+    {
+      "bundle_path": "sim-held_out-expected_rejection-01",
+      "episode_group": "sim-held_out-expected_rejection-01",
+      "input_family": "sim-held_out-expected_rejection-01",
+      "split": "held_out",
+      "unseen_declared": true
+    },
+    {
+      "bundle_path": "sim-held_out-expected_rejection-02",
+      "episode_group": "sim-held_out-expected_rejection-02",
+      "input_family": "sim-held_out-expected_rejection-02",
+      "split": "held_out",
+      "unseen_declared": true
+    },
+    {
+      "bundle_path": "sim-held_out-expected_rejection-03",
+      "episode_group": "sim-held_out-expected_rejection-03",
+      "input_family": "sim-held_out-expected_rejection-03",
+      "split": "held_out",
+      "unseen_declared": true
+    },
+    {
+      "bundle_path": "sim-held_out-expected_rejection-04",
+      "episode_group": "sim-held_out-expected_rejection-04",
+      "input_family": "sim-held_out-expected_rejection-04",
+      "split": "held_out",
+      "unseen_declared": true
+    },
+    {
+      "bundle_path": "sim-held_out-expected_rejection-05",
+      "episode_group": "sim-held_out-expected_rejection-05",
+      "input_family": "sim-held_out-expected_rejection-05",
+      "split": "held_out",
+      "unseen_declared": true
+    },
+    {
+      "bundle_path": "sim-held_out-anomalous-00",
+      "episode_group": "sim-held_out-anomalous-00",
+      "input_family": "sim-held_out-anomalous-00",
+      "split": "held_out",
+      "unseen_declared": true
+    },
+    {
+      "bundle_path": "sim-held_out-anomalous-01",
+      "episode_group": "sim-held_out-anomalous-01",
+      "input_family": "sim-held_out-anomalous-01",
+      "split": "held_out",
+      "unseen_declared": true
+    },
+    {
+      "bundle_path": "sim-held_out-anomalous-02",
+      "episode_group": "sim-held_out-anomalous-02",
+      "input_family": "sim-held_out-anomalous-02",
+      "split": "held_out",
+      "unseen_declared": true
+    },
+    {
+      "bundle_path": "sim-held_out-anomalous-03",
+      "episode_group": "sim-held_out-anomalous-03",
+      "input_family": "sim-held_out-anomalous-03",
+      "split": "held_out",
+      "unseen_declared": true
+    },
+    {
+      "bundle_path": "sim-held_out-anomalous-04",
+      "episode_group": "sim-held_out-anomalous-04",
+      "input_family": "sim-held_out-anomalous-04",
+      "split": "held_out",
+      "unseen_declared": true
+    },
+    {
+      "bundle_path": "sim-held_out-anomalous-05",
+      "episode_group": "sim-held_out-anomalous-05",
+      "input_family": "sim-held_out-anomalous-05",
+      "split": "held_out",
+      "unseen_declared": true
+    }
+  ],
+  "schema_version": "fuzz-anomaly-dataset-v1",
+  "simulation_only": true
+}

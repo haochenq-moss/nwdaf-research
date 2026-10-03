@@ -1,0 +1,209 @@
+{
+  "actionable": false,
+  "campaign_count": 1,
+  "campaigns": [
+    {
+      "artifact_sha256": {
+        "capture.json": "65610a66283caeabf7e29f925a088af70d19d98ae008cfd14e5c9d1d9e676455",
+        "manifest.json": "93be8426e08d386a174e12a57ee7b4aa86bcebc69ae595ce43fbf14f8c821dce",
+        "report.json": "cc1fde684bd72344f6ec8a7d3e4be7d3aa7cbbc9acd686ec0f3e809b85335b66",
+        "windows/WBASE001/metadata.json": "622bb38ce0367d9d075009124dcc1f1bb80174e3c495e31dff6ce8a6af2113f1",
+        "windows/WBASE001/readiness.json": "f40eca92812aba9457a4f7bfdef8d1c82c89adfad295325a1ff12693fab78dc3",
+        "windows/WBASE001/snapshots.jsonl": "a388896352c9d967e1b2787f84d762a09c90f93f1d5d5e0bd180461e6585bb54",
+        "windows/WBASE002/metadata.json": "c2c43db2f9fd14c4826f008552c9b5f481b6f4f691da6eb85698a436b2e74286",
+        "windows/WBASE002/readiness.json": "45f28a8432e9ca906b651a547611c08f33b89f5908ed48f489def519188466d0",
+        "windows/WBASE002/snapshots.jsonl": "5870be7818e8c259cf9364d732fe1571fa4562416f368dec124f42513f4bd498",
+        "windows/WBASE003/metadata.json": "a959cfc51a2a1e3cf0a1e0b35dbfbfda21f4b5cac612f3f65e0a2014d844c67f",
+        "windows/WBASE003/readiness.json": "9961c40157542cc37ecbddfda4af7ac699897e0d1172baf783f622b6e75597ea",
+        "windows/WBASE003/snapshots.jsonl": "cf9f1ce12a2ba373d6015da2faf1102650fbd7cac5aca0324bd821385a3ee948"
+      },
+      "blockers": [],
+      "boot_id": "b7be8cad-6385-400f-9164-3362839e91cc",
+      "campaign_id": "passive-three-source-20261003-v3",
+      "capture_sha256": "65610a66283caeabf7e29f925a088af70d19d98ae008cfd14e5c9d1d9e676455",
+      "evaluation_group": "65610a66283caeabf7e29f925a088af70d19d98ae008cfd14e5c9d1d9e676455",
+      "free5gc_commit": "4aa237be57404dea5b49ca8f332c6e25ede052de",
+      "hostname": "free5gc",
+      "label_review": "not_performed",
+      "status": "READY",
+      "windows": [
+        {
+          "features": {
+            "duration_sec": 10.003946,
+            "linux_event_count": 10,
+            "linux_load_1m_max": 1.2,
+            "linux_load_1m_mean": 1.101,
+            "linux_load_1m_min": 1.02,
+            "linux_load_1m_std": 0.06299999999999999,
+            "linux_memory_available_mean": 686827929.6,
+            "linux_memory_total_mean": 2059497472.0,
+            "memory_available_ratio_mean": 0.33349297046381615,
+            "pfcp_event_count": 1,
+            "pfcp_request_count": 1,
+            "pfcp_response_count": 0,
+            "pfcp_telemetry_available": 1.0,
+            "sbi_error_event_count": 0,
+            "sbi_event_count": 0,
+            "sbi_telemetry_available": 1.0
+          },
+          "status": "READY",
+          "window_id": "WBASE001"
+        },
+        {
+          "features": {
+            "duration_sec": 9.993823,
+            "linux_event_count": 10,
+            "linux_load_1m_max": 1.02,
+            "linux_load_1m_mean": 0.9559999999999997,
+            "linux_load_1m_min": 0.94,
+            "linux_load_1m_std": 0.032000000000000035,
+            "linux_memory_available_mean": 686856601.6,
+            "linux_memory_total_mean": 2059497472.0,
+            "memory_available_ratio_mean": 0.3335068923065908,
+            "pfcp_event_count": 1,
+            "pfcp_request_count": 1,
+            "pfcp_response_count": 0,
+            "pfcp_telemetry_available": 1.0,
+            "sbi_error_event_count": 0,
+            "sbi_event_count": 0,
+            "sbi_telemetry_available": 1.0
+          },
+          "status": "READY",
+          "window_id": "WBASE002"
+        },
+        {
+          "features": {
+            "duration_sec": 10.00118,
+            "linux_event_count": 10,
+            "linux_load_1m_max": 0.94,
+            "linux_load_1m_mean": 0.8630000000000001,
+            "linux_load_1m_min": 0.8,
+            "linux_load_1m_std": 0.04899999999999997,
+            "linux_memory_available_mean": 686877900.8,
+            "linux_memory_total_mean": 2059497472.0,
+            "memory_available_ratio_mean": 0.33351723424693774,
+            "pfcp_event_count": 3,
+            "pfcp_request_count": 1,
+            "pfcp_response_count": 1,
+            "pfcp_telemetry_available": 1.0,
+            "sbi_error_event_count": 0,
+            "sbi_event_count": 0,
+            "sbi_telemetry_available": 1.0
+          },
+          "status": "READY",
+          "window_id": "WBASE003"
+        }
+      ]
+    }
+  ],
+  "contract": "linux-sbi-pfcp-v1",
+  "evaluation_ready": false,
+  "feature_statistics": {
+    "duration_sec": {
+      "max": 10.003946,
+      "mean": 9.999649666666667,
+      "min": 9.993823,
+      "population_std": 0.004272019220721784
+    },
+    "linux_event_count": {
+      "max": 10,
+      "mean": 10,
+      "min": 10,
+      "population_std": 0.0
+    },
+    "linux_load_1m_max": {
+      "max": 1.2,
+      "mean": 1.0533333333333332,
+      "min": 0.94,
+      "population_std": 0.10873004286866726
+    },
+    "linux_load_1m_mean": {
+      "max": 1.101,
+      "mean": 0.9733333333333333,
+      "min": 0.8630000000000001,
+      "population_std": 0.09793308373011075
+    },
+    "linux_load_1m_min": {
+      "max": 1.02,
+      "mean": 0.92,
+      "min": 0.8,
+      "population_std": 0.09092121131323902
+    },
+    "linux_load_1m_std": {
+      "max": 0.06299999999999999,
+      "mean": 0.047999999999999994,
+      "min": 0.032000000000000035,
+      "population_std": 0.012675435561221008
+    },
+    "linux_memory_available_mean": {
+      "max": 686877900.8,
+      "mean": 686854144.0,
+      "min": 686827929.6,
+      "population_std": 20474.537938266978
+    },
+    "linux_memory_total_mean": {
+      "max": 2059497472.0,
+      "mean": 2059497472.0,
+      "min": 2059497472.0,
+      "population_std": 0.0
+    },
+    "memory_available_ratio_mean": {
+      "max": 0.33351723424693774,
+      "mean": 0.3335056990057816,
+      "min": 0.33349297046381615,
+      "population_std": 9.941521277246315e-06
+    },
+    "pfcp_event_count": {
+      "max": 3,
+      "mean": 1.6666666666666667,
+      "min": 1,
+      "population_std": 0.9428090415820634
+    },
+    "pfcp_request_count": {
+      "max": 1,
+      "mean": 1,
+      "min": 1,
+      "population_std": 0.0
+    },
+    "pfcp_response_count": {
+      "max": 1,
+      "mean": 0.3333333333333333,
+      "min": 0,
+      "population_std": 0.4714045207910317
+    },
+    "pfcp_telemetry_available": {
+      "max": 1.0,
+      "mean": 1.0,
+      "min": 1.0,
+      "population_std": 0.0
+    },
+    "sbi_error_event_count": {
+      "max": 0,
+      "mean": 0,
+      "min": 0,
+      "population_std": 0.0
+    },
+    "sbi_event_count": {
+      "max": 0,
+      "mean": 0,
+      "min": 0,
+      "population_std": 0.0
+    },
+    "sbi_telemetry_available": {
+      "max": 1.0,
+      "mean": 1.0,
+      "min": 1.0,
+      "population_std": 0.0
+    }
+  },
+  "inference_performed": false,
+  "limitations": [
+    "Declared passive labels have not been independently reviewed.",
+    "Consecutive windows are correlated; keep each capture group in one evaluation partition.",
+    "No matched benign-action or confirmed-case condition is present in this passive summary.",
+    "Feature variation is not an anomaly-score distribution or detection-quality result.",
+    "Artifact hashes support identity checking, not proof of authenticity."
+  ],
+  "ready_window_count": 3,
+  "schema_version": "baseline-evidence-summary-v1"
+}

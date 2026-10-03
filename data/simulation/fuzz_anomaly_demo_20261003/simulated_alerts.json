@@ -1,0 +1,50 @@
+[
+  {
+    "actionable": false,
+    "anomaly_probability": 1.0,
+    "network_action": "NONE",
+    "run_id": "sim-held_out-anomalous-00",
+    "simulation_only": true,
+    "status": "SIMULATED_REVIEW_REQUIRED"
+  },
+  {
+    "actionable": false,
+    "anomaly_probability": 0.96,
+    "network_action": "NONE",
+    "run_id": "sim-held_out-anomalous-01",
+    "simulation_only": true,
+    "status": "SIMULATED_REVIEW_REQUIRED"
+  },
+  {
+    "actionable": false,
+    "anomaly_probability": 1.0,
+    "network_action": "NONE",
+    "run_id": "sim-held_out-anomalous-02",
+    "simulation_only": true,
+    "status": "SIMULATED_REVIEW_REQUIRED"
+  },
+  {
+    "actionable": false,
+    "anomaly_probability": 1.0,
+    "network_action": "NONE",
+    "run_id": "sim-held_out-anomalous-03",
+    "simulation_only": true,
+    "status": "SIMULATED_REVIEW_REQUIRED"
+  },
+  {
+    "actionable": false,
+    "anomaly_probability": 1.0,
+    "network_action": "NONE",
+    "run_id": "sim-held_out-anomalous-04",
+    "simulation_only": true,
+    "status": "SIMULATED_REVIEW_REQUIRED"
+  },
+  {
+    "actionable": false,
+    "anomaly_probability": 0.99,
+    "network_action": "NONE",
+    "run_id": "sim-held_out-anomalous-05",
+    "simulation_only": true,
+    "status": "SIMULATED_REVIEW_REQUIRED"
+  }
+]

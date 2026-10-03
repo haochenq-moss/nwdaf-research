@@ -1,0 +1,22 @@
+{
+  "schema_version": "benign-held-out-authorization-v1",
+  "recorded_date": "2026-10-03",
+  "approver_id": "workspace-user",
+  "user_statement": "go ahead I give permission",
+  "identity_authenticated": false,
+  "plan_sha256": "1589f643ddd1bfcf5fd068c21f3d682ef5d6504242afc5d0883f1a3788b17b77",
+  "allowed_pair_ids": [5, 6, 7, 8, 9, 10, 11, 12],
+  "registered_nf_instance_id": "53494dfe-e7bc-4709-a240-44db37750381",
+  "operation_scope": "One fixed OAuth token POST and one fixed read-only NRF discovery GET per benign block; matched passive block; preserve active UE",
+  "held_out_collection_authorized": true,
+  "inference_authorized": false,
+  "model_deployment_authorized": false,
+  "network_enforcement_authorized": false,
+  "response_scope": "operator_alert_only",
+  "response_trigger": "Explicit operator request using verified evidence; not an unvalidated model score",
+  "response_target": "operator notification only; no UE, NF, subscriber or interface mutation",
+  "rollback_scope": "Cancel notification delivery; no network state change to undo",
+  "held_out_result_policy": "Do not inspect count deltas, feature distributions or scores until model and analysis choices are frozen",
+  "independent_review_completed": false,
+  "scientific_model_validation_established": false
+}

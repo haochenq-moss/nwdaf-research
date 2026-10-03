@@ -1,0 +1,19 @@
+{
+  "contract": "linux-sbi-pfcp-v1",
+  "status": "COLLECTOR_UNAVAILABLE",
+  "features": {},
+  "lifecycle": [],
+  "collector_errors": [
+    "pfcp: heartbeat arrival coverage gap",
+    "pfcp: timestamps, sequence and counters must be nonnegative integers",
+    "sbi: heartbeat arrival coverage gap",
+    "sbi: timestamps, sequence and counters must be nonnegative integers",
+    "stale heartbeat/watermark: pfcp",
+    "stale heartbeat/watermark: sbi",
+    "fixed 30-second warmup not ready",
+    "pfcp:parser_failed",
+    "sbi:parser_failed"
+  ],
+  "actionable": false,
+  "sealed": false
+}

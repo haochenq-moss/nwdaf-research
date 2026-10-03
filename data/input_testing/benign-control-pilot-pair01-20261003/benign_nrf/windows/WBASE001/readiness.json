@@ -1,0 +1,40 @@
+{
+  "contract": "linux-sbi-pfcp-v1",
+  "status": "READY",
+  "window_start": "2026-10-03T04:17:33.803877+00:00",
+  "window_end": "2026-10-03T04:17:43.801050+00:00",
+  "sealed": true,
+  "sample_count": 11,
+  "features": {
+    "linux_event_count": 10,
+    "sbi_event_count": 0,
+    "sbi_error_event_count": 0,
+    "pfcp_event_count": 3,
+    "pfcp_request_count": 1,
+    "pfcp_response_count": 1,
+    "duration_sec": 9.997173,
+    "linux_load_1m_mean": 1.391,
+    "linux_load_1m_std": 0.0459238500128201,
+    "linux_load_1m_min": 1.31,
+    "linux_load_1m_max": 1.43,
+    "linux_memory_total_mean": 2059497472.0,
+    "linux_memory_available_mean": 618752000.0,
+    "memory_available_ratio_mean": 0.3004383391639337,
+    "sbi_telemetry_available": 1.0,
+    "pfcp_telemetry_available": 1.0
+  },
+  "missing_features": [],
+  "collector_errors": [],
+  "evidence_errors": [],
+  "lifecycle": [
+    {
+      "observed_at": "2026-10-03T04:17:33.803877+00:00",
+      "status": "ACCUMULATING"
+    },
+    {
+      "observed_at": "2026-10-03T04:17:43.801050+00:00",
+      "status": "READY"
+    }
+  ],
+  "actionable": false
+}

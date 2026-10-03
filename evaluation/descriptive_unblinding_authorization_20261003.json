@@ -1,0 +1,17 @@
+{
+  "schema_version": "benign-descriptive-unblinding-v1",
+  "recorded_date": "2026-10-03",
+  "approver_id": "workspace-user",
+  "user_statement": "continue",
+  "context": "Permission to continue following the proposed scoped descriptive unblinding step",
+  "analysis_lock_sha256": "adac2105bb165e33551150aee14f5506bd5d26ac023b4cf444638cddd25fb8f5",
+  "collection_plan_sha256": "1589f643ddd1bfcf5fd068c21f3d682ef5d6504242afc5d0883f1a3788b17b77",
+  "allowed_pair_ids": [5, 6, 7, 8, 9, 10, 11, 12],
+  "descriptive_unblinding_authorized": true,
+  "training_authorized": false,
+  "inference_authorized": false,
+  "threshold_selection_authorized": false,
+  "mitigation_authorized": false,
+  "independent_review_completed": false,
+  "identity_authenticated": false
+}

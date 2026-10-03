@@ -1,0 +1,45 @@
+{
+  "observed_at": "2026-10-03T02:51:12.473277+00:00",
+  "host": "free5gc",
+  "observation": {
+    "features": {
+      "linux_load_1m_mean": 1.43,
+      "linux_load_1m_std": 0.0,
+      "linux_load_1m_max": 1.43,
+      "linux_load_1m_min": 1.43,
+      "linux_memory_total_mean": 2059497472.0,
+      "linux_memory_available_mean": 615198720.0,
+      "memory_available_ratio_mean": 0.29871302507721653
+    },
+    "evidence": {
+      "source": "remote_proc_ip_ss",
+      "collection": "single_read_only_snapshot",
+      "ssh_endpoint": "127.0.0.1",
+      "process_count": 206,
+      "ue_tunnel_count": 0,
+      "ue_namespace_available": false,
+      "listening_socket_count": 33,
+      "pfcp_recent_log_events": 363,
+      "sbi_recent_log_events": 83,
+      "event_count_window": "tail-2000-log-lines"
+    },
+    "unavailable_features": [
+      "linux_event_count",
+      "process_event_count",
+      "linux_load_1m_std_over_window",
+      "sbi_event_rate",
+      "pfcp_message_rate",
+      "service_latency",
+      "ue_namespace_tunnel_count"
+    ],
+    "autonomous_response_eligible": false
+  },
+  "analytics": {
+    "predicted_label": "ANOMALY",
+    "anomaly_probability": 0.955,
+    "confidence": 0.955,
+    "model_name": "random_forest",
+    "model_version": "rf-v1",
+    "feature_schema": "run-linux-v1"
+  }
+}

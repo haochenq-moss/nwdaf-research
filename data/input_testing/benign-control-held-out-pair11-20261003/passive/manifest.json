@@ -1,0 +1,42 @@
+{
+  "schema": "passive-campaign-v1",
+  "contract": "linux-sbi-pfcp-v1",
+  "source_count": 3,
+  "hostname": "free5gc",
+  "boot_id": "b7be8cad-6385-400f-9164-3362839e91cc",
+  "git_revision": "4aa237be57404dea5b49ca8f332c6e25ede052de",
+  "parser_paths": {
+    "sbi": "research/collectors/sbi.py",
+    "pfcp": "research/collectors/pfcp.py"
+  },
+  "clock_basis": "CLOCK_MONOTONIC_PROJECTED_UTC",
+  "clock_domain": "free5gc/b7be8cad-6385-400f-9164-3362839e91cc/CLOCK_MONOTONIC",
+  "collector_instance_id": "8bf00586-c896-4684-b794-5fc3791cd954",
+  "anchor_monotonic_ns": 48362086508374,
+  "anchor_projected_utc": "2026-10-03T05:03:02.662326+00:00",
+  "warmup_sec": 30,
+  "window_count": 3,
+  "nominal_duration_sec": 10,
+  "read_budget": {
+    "source_poll_bytes": 2097152,
+    "per_log_bytes": 524288,
+    "aggregate_poll_bytes": 2097152
+  },
+  "source_notes": {
+    "linux": "Synchronous /proc/loadavg and /proc/meminfo observations.",
+    "sbi": "Log-derived SBI from the newest timestamped run directory, not pcap; unmatched semantic lines cannot certify parser completeness.",
+    "pfcp": "Log-derived PFCP from the newest timestamped run directory, not pcap; unmatched semantic lines cannot certify parser completeness.",
+    "time": "Observation-time cursor reads; projected monotonic time, not physical UTC, packet time or causal subscriber actions."
+  },
+  "collection_semantics": "observation_time_cursor_reads_excluding_preexisting_history",
+  "network_transmission_executed": false,
+  "transport": "single_read_only_ssh_acquisition",
+  "network_transmission_scope": "No generated SBI/PFCP/test/subscriber traffic; SSH transport is used for acquisition.",
+  "publication_policy": "atomic_noreplace_when_supported_else_exclusive_hardlinks_with_rollback",
+  "inference_performed": false,
+  "active_ue_not_modified": true,
+  "parser_sha256": {
+    "sbi": "7fd216c3b1b9f58b10ee2bcc916f0eed4c438664e75bd5cea9fb4715cb5cbfe5",
+    "pfcp": "d739ca926fd3d51ab2a219750499b01c7dc9e5bef465ddce5fcbc5bfb71ca861"
+  }
+}

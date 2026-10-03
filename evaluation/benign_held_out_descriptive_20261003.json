@@ -1,0 +1,1743 @@
+{
+  "actionable": false,
+  "analysis_lock_sha256": "adac2105bb165e33551150aee14f5506bd5d26ac023b4cf444638cddd25fb8f5",
+  "authorization_sha256": "5140c1276f463991af8d0a3125a89b39542f27e0d764a459818541e254e1e06f",
+  "collection_plan_sha256": "1589f643ddd1bfcf5fd068c21f3d682ef5d6504242afc5d0883f1a3788b17b77",
+  "implementation_strata": {
+    "45b5c84c8c2f3d12bccff7e8252fb06964dc8068b6a7fbc1e68180934bcf1612": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "independent_review_completed": false,
+  "inference_performed": false,
+  "interpretation": "Descriptive observability of known benign OAuth/discovery traffic in log-derived windows; not fuzz-triggered detection, vulnerability classification, model efficacy or mitigation evaluation.",
+  "invalid_pair_count": 0,
+  "model_approved": false,
+  "pairs": [
+    {
+      "artifact_sha256": {
+        "benign_nrf/capture.json": "9f5b3db67105ff0694a19c631140acc90a9204026a38f2d53f94873a0c772b2a",
+        "benign_nrf/manifest.json": "1eeb3984c3eb2df7adf4c8eeb27f7ecd994af9eb9dade9b691f6f5053ee0edef",
+        "benign_nrf/report.json": "ea890a9ba14a0ccd557fcbe7ef78c824bb2c14eb965b122fb14f73b5b505c59b",
+        "benign_nrf/windows/WBASE001/metadata.json": "e0bec7b5cf529cbcb63400e4eb99d5e4ff43a4294df5f94d1ba9f367cad48794",
+        "benign_nrf/windows/WBASE001/readiness.json": "b2abaf0592b60240037fa62b3a7ff9789b9cb933e8928be623d3d58e72220ec4",
+        "benign_nrf/windows/WBASE001/snapshots.jsonl": "4ee0bcc279dbb5d815e4e2da7c62e511293e9febeaa946c1d2c0e1f6713919f8",
+        "benign_nrf/windows/WBASE002/metadata.json": "1237ae5f75cfe91de212850084d7ec55bf77e9b0a536f98924023cca5a6f7ddf",
+        "benign_nrf/windows/WBASE002/readiness.json": "5fa05a0704b6112d503614d82532a68b7866795f8efad549ea9f40eb96d9e6d8",
+        "benign_nrf/windows/WBASE002/snapshots.jsonl": "076bf865e85074fc5d7217f60821b64bafce14ee660edfb56ff0b9e0e6eeb455",
+        "benign_nrf/windows/WBASE003/metadata.json": "9c9b239802bc10813c803228580bf7522ed31452763a5d4be56b54e63ff9114a",
+        "benign_nrf/windows/WBASE003/readiness.json": "84ee8b6e2b40de5ed01b6a943d6a8d67605025463d43891d62436f8f92bf476f",
+        "benign_nrf/windows/WBASE003/snapshots.jsonl": "00069d2be10116e970c70fd46b9786f1f4286177d07a1f8fac93d18bbb7b4f1a",
+        "frozen_plan.json": "1589f643ddd1bfcf5fd068c21f3d682ef5d6504242afc5d0883f1a3788b17b77",
+        "pair.json": "0cdde7a24378d442244d9e3e8a1d0c52757bb26345b1e9c44f63992b4e537293",
+        "pair_summary.json": "36ad778447cacf12c782e1e900ab0329bcff2fc5d2379013b32ea75749728be9",
+        "passive/capture.json": "7abb8ab06c89ee27a4b4dc6c879f9a5e576d1aa32a7446914786edc28fef0214",
+        "passive/manifest.json": "b71a1005006dbc9011e5d357df1f6177ed1d7b5aafd3b90be0518a9c38f905e3",
+        "passive/report.json": "a5359106688ad1b50cf1774d7ea9ff820260f4d97fc05e4948d0749d45cec7e3",
+        "passive/windows/WBASE001/metadata.json": "fafae9feb823c64cc5f41a8ea7afc1121eaf2b768a69cf8e57107019ea2ea8d4",
+        "passive/windows/WBASE001/readiness.json": "5a9970371dc22e7dc5c8550c93a593da46147cfe05ea20b067fffb9e00c2ae86",
+        "passive/windows/WBASE001/snapshots.jsonl": "9c07897948c176679c0e2458e320db2e996f59199b6e95259c0fa8ea1d5a345f",
+        "passive/windows/WBASE002/metadata.json": "93ebeaa400e50440346b6912a38396bece7f3763685e062c557573c0529aea34",
+        "passive/windows/WBASE002/readiness.json": "065eda5d9d1b41c183059d911352cba3f9987d5b9854f1c1239fbd0d0edb4cfc",
+        "passive/windows/WBASE002/snapshots.jsonl": "11d0fda7359be8bf21361e630509e6010103f0e70ed5e316febb0df6da84655f",
+        "passive/windows/WBASE003/metadata.json": "5f45523d42f5cfb69e6c1f68384f6b32309fbbe47714577873c7f27845086a55",
+        "passive/windows/WBASE003/readiness.json": "88a369b953d40c488e60eca893418da97c033cf6bf10746a2a4b8aca9b6a60be",
+        "passive/windows/WBASE003/snapshots.jsonl": "2a8983913156a28f56ea55fbc2fca6d7c80287e5de06357254dd9d5e2de09060"
+      },
+      "conditions": {
+        "benign_nrf": {
+          "parser_sha256": {
+            "pfcp": "d739ca926fd3d51ab2a219750499b01c7dc9e5bef465ddce5fcbc5bfb71ca861",
+            "sbi": "7fd216c3b1b9f58b10ee2bcc916f0eed4c438664e75bd5cea9fb4715cb5cbfe5"
+          },
+          "windows": [
+            {
+              "features": {
+                "duration_sec": 10.001731,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.62,
+                "linux_load_1m_mean": 0.461,
+                "linux_load_1m_min": 0.41,
+                "linux_load_1m_std": 0.08055432949258531,
+                "linux_memory_available_mean": 605520691.2,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.2940138064903631,
+                "pfcp_event_count": 3,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 1,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE001"
+            },
+            {
+              "features": {
+                "duration_sec": 9.998737,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.62,
+                "linux_load_1m_mean": 0.575,
+                "linux_load_1m_min": 0.52,
+                "linux_load_1m_std": 0.034999999999999996,
+                "linux_memory_available_mean": 606049894.4,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.2942707639312897,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 2,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE002"
+            },
+            {
+              "features": {
+                "duration_sec": 9.999054,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.52,
+                "linux_load_1m_mean": 0.4840000000000001,
+                "linux_load_1m_min": 0.44,
+                "linux_load_1m_std": 0.028000000000000008,
+                "linux_memory_available_mean": 606169907.2,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.2943290367874752,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE003"
+            }
+          ]
+        },
+        "passive": {
+          "parser_sha256": {
+            "pfcp": "d739ca926fd3d51ab2a219750499b01c7dc9e5bef465ddce5fcbc5bfb71ca861",
+            "sbi": "7fd216c3b1b9f58b10ee2bcc916f0eed4c438664e75bd5cea9fb4715cb5cbfe5"
+          },
+          "windows": [
+            {
+              "features": {
+                "duration_sec": 9.997034,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.68,
+                "linux_load_1m_mean": 0.655,
+                "linux_load_1m_min": 0.63,
+                "linux_load_1m_std": 0.025000000000000026,
+                "linux_memory_available_mean": 604296396.8,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.293419343803885,
+                "pfcp_event_count": 3,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 1,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE001"
+            },
+            {
+              "features": {
+                "duration_sec": 10.000228,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.58,
+                "linux_load_1m_mean": 0.555,
+                "linux_load_1m_min": 0.53,
+                "linux_load_1m_std": 0.024999999999999967,
+                "linux_memory_available_mean": 604334489.6,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.29343783996642847,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE002"
+            },
+            {
+              "features": {
+                "duration_sec": 10.000637,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.49,
+                "linux_load_1m_mean": 0.4700000000000001,
+                "linux_load_1m_min": 0.45,
+                "linux_load_1m_std": 0.01999999999999999,
+                "linux_memory_available_mean": 604350873.6,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.2934457953051568,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE003"
+            }
+          ]
+        }
+      },
+      "endpoint": 2,
+      "evidence_binding_sha256": "22fa2ac158e5d5c1be318fa35a65df442b9552296223f20dcf747d431e315d3e",
+      "execution_order": [
+        "passive",
+        "benign_nrf"
+      ],
+      "implementation_hashes": {
+        "benign_remote_code_sha256": "8e4d22656d133aa610f5914034c95a80b65587e84d8dbc1137248d181e636b13",
+        "collector_module_sha256": "8d459d430b6f7a1cc0fbfce98f7d395705f4b5800dad2ddc9c3eb38fbdd6db26",
+        "control_module_sha256": "1babd8c8d9eb8987f8c5e3aaaf82ac284243154dd312e105471b2dda1d27b988",
+        "remote_code_sha256": "5a9c9e4b2c225f59b9fd996518cc289aa2742f6af8d50ac50cff907dddb144a4"
+      },
+      "integrity_status": "VERIFIED",
+      "issues": [],
+      "label_review": "not_performed",
+      "operation_receipt": {
+        "auth_performed": true,
+        "auth_status": 200,
+        "discovery_end_monotonic_ns": 47175422213587,
+        "discovery_start_monotonic_ns": 47175378503042,
+        "http_status": 200,
+        "method": "GET",
+        "operation_end_monotonic_ns": 47175422227500,
+        "operation_error": null,
+        "operation_start_monotonic_ns": 47175324288413,
+        "performed": true,
+        "request_identity": "GET /nnrf-disc/v1/nf-instances?requester-nf-type=AMF&target-nf-type=AUSF&service-names=nausf-auth; Authorization/token excluded",
+        "request_target_sha256": "d25edf729beac2de92eaa6256840654661a01867f8701f0d2ad1c4e81a026eb0",
+        "schema": "benign-nrf-receipt-v1",
+        "trigger_index": 41,
+        "warmup_admitted": true,
+        "worker_completed": true
+      },
+      "pair_id": 5
+    },
+    {
+      "artifact_sha256": {
+        "benign_nrf/capture.json": "817a5582137e3ca227169bd2021677f1c8f565a04a6ae50d2dc0e884570231a3",
+        "benign_nrf/manifest.json": "c1fd78e7ad42cef5704e67869f39507d5d162644da78920361a251add6665b98",
+        "benign_nrf/report.json": "747728d34655adda097abfc41fcc375da15667b64994885a76c3d589e2002548",
+        "benign_nrf/windows/WBASE001/metadata.json": "4a914e711ec38ef5973cd56c28bbae4c4480fc4817dacfa87492ca96db324059",
+        "benign_nrf/windows/WBASE001/readiness.json": "093290f991a8c8d069277074069505538f9cf442fa3bcd6ba393bbcd1f263620",
+        "benign_nrf/windows/WBASE001/snapshots.jsonl": "a6f0604c27227d6372b02338d97f5f867f4b1f352960c8f6e65080d5c3251dbd",
+        "benign_nrf/windows/WBASE002/metadata.json": "8c1a0817172fc90621cc7207eeaa30bae62cfe90b65cac93cf4465fd2ae4cf71",
+        "benign_nrf/windows/WBASE002/readiness.json": "602633ac5739f5a210f766474b9098b556adc804ea186a344265435057885957",
+        "benign_nrf/windows/WBASE002/snapshots.jsonl": "acc53c2af164ad7bbcd73dfc8ff034d1c1bc28cb777bb2fe5f1f788f25e43d7f",
+        "benign_nrf/windows/WBASE003/metadata.json": "d64fff421005bcb9dcd62fd239c05f0f24290cdd829669132f426863d5463853",
+        "benign_nrf/windows/WBASE003/readiness.json": "705dd357a64fe41c559d8b0c71cb2ffed75ae734d69cf92d504bf6311452d465",
+        "benign_nrf/windows/WBASE003/snapshots.jsonl": "2fd4b9132a35a3991725464874cb0b6f4ae180e019ad2c85b1cedb4c8b9ce0e2",
+        "frozen_plan.json": "1589f643ddd1bfcf5fd068c21f3d682ef5d6504242afc5d0883f1a3788b17b77",
+        "pair.json": "d40ab2cb37a8e8ab554801fa9f79028f185b00ee0a9b23d71e0a4729e1ff3671",
+        "pair_summary.json": "049667210c6bbd3ced65838610ed47ff1a532388418eedfd054c12fb9733ad98",
+        "passive/capture.json": "043f49428d07715d65ffd912f102ac47674d78527920949eb40af9ed77ce1046",
+        "passive/manifest.json": "19774b774700dcaf856caa9e6fcc45571bd069ec31f02f5b5f986cdcab6d7c8a",
+        "passive/report.json": "e2faa74fcbc381a64b4ddfcd56a1d7670adcdb87317c38496fda1724e9b427e2",
+        "passive/windows/WBASE001/metadata.json": "168423f82f9337a740e97dbe31c9d99be2b2d4e5e252801f9a6dc0b5486dd15d",
+        "passive/windows/WBASE001/readiness.json": "b888356e2d28dac9dd056c1c250c0bf9496c499c9d31491561548a2dbbfb4237",
+        "passive/windows/WBASE001/snapshots.jsonl": "9701f200d0bca9a65795144ae2067a9056d8f1e81d243b0bbfeb4a98fec77f85",
+        "passive/windows/WBASE002/metadata.json": "3bff357fb6db5712565711b5509eac2703d505c2041708dd2946494384781a86",
+        "passive/windows/WBASE002/readiness.json": "0f4dd8d1b697aa724a54f1ff52b98d140f5f2e13f0c3a3b8e62ba5abab119dac",
+        "passive/windows/WBASE002/snapshots.jsonl": "9c7841cb8939196bfd87108f36abb23d3f52d2cae08f00613a40876affc1c968",
+        "passive/windows/WBASE003/metadata.json": "ed479e06b5f94f82bbc35a69fe613b3b73d01c11ed25017b161b0e85f9edc775",
+        "passive/windows/WBASE003/readiness.json": "ddfecec7b73845d0cd8ee0292b24844b26a5612558ca341464d4f842c32b1f2c",
+        "passive/windows/WBASE003/snapshots.jsonl": "248959cd97a9d9f3639ed9bd16cf1eff88d7682b7acf9d44a656f2e46cc631f2"
+      },
+      "conditions": {
+        "benign_nrf": {
+          "parser_sha256": {
+            "pfcp": "d739ca926fd3d51ab2a219750499b01c7dc9e5bef465ddce5fcbc5bfb71ca861",
+            "sbi": "7fd216c3b1b9f58b10ee2bcc916f0eed4c438664e75bd5cea9fb4715cb5cbfe5"
+          },
+          "windows": [
+            {
+              "features": {
+                "duration_sec": 9.9996,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 1.14,
+                "linux_load_1m_mean": 1.0909999999999997,
+                "linux_load_1m_min": 1.05,
+                "linux_load_1m_std": 0.04109744517606896,
+                "linux_memory_available_mean": 611234611.2,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.2967882308718853,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE001"
+            },
+            {
+              "features": {
+                "duration_sec": 9.998979,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 1.76,
+                "linux_load_1m_mean": 1.6410000000000005,
+                "linux_load_1m_min": 1.13,
+                "linux_load_1m_std": 0.18267183690979844,
+                "linux_memory_available_mean": 611252633.6,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.2967969817444864,
+                "pfcp_event_count": 3,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 1,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 2,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE002"
+            },
+            {
+              "features": {
+                "duration_sec": 10.004752,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 1.62,
+                "linux_load_1m_mean": 1.4550000000000005,
+                "linux_load_1m_min": 1.37,
+                "linux_load_1m_std": 0.07889866919029748,
+                "linux_memory_available_mean": 611267379.2,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.296804141549342,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE003"
+            }
+          ]
+        },
+        "passive": {
+          "parser_sha256": {
+            "pfcp": "d739ca926fd3d51ab2a219750499b01c7dc9e5bef465ddce5fcbc5bfb71ca861",
+            "sbi": "7fd216c3b1b9f58b10ee2bcc916f0eed4c438664e75bd5cea9fb4715cb5cbfe5"
+          },
+          "windows": [
+            {
+              "features": {
+                "duration_sec": 9.98249,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 1.04,
+                "linux_load_1m_mean": 0.9960000000000001,
+                "linux_load_1m_min": 0.95,
+                "linux_load_1m_std": 0.04409081537009724,
+                "linux_memory_available_mean": 611318579.2,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.29682900198286816,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE001"
+            },
+            {
+              "features": {
+                "duration_sec": 10.005047,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.96,
+                "linux_load_1m_mean": 0.905,
+                "linux_load_1m_min": 0.81,
+                "linux_load_1m_std": 0.049244289008980494,
+                "linux_memory_available_mean": 611404185.6,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.29687056862772393,
+                "pfcp_event_count": 3,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 1,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE002"
+            },
+            {
+              "features": {
+                "duration_sec": 9.995093,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.81,
+                "linux_load_1m_mean": 0.7620000000000001,
+                "linux_load_1m_min": 0.68,
+                "linux_load_1m_std": 0.042848570571257114,
+                "linux_memory_available_mean": 611441459.2,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.29688866702333105,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE003"
+            }
+          ]
+        }
+      },
+      "endpoint": 2,
+      "evidence_binding_sha256": "56dc930dcd0dc7160e69f5c46f815700a0ec4af1b18650dcb0feabd315a23a4d",
+      "execution_order": [
+        "benign_nrf",
+        "passive"
+      ],
+      "implementation_hashes": {
+        "benign_remote_code_sha256": "8e4d22656d133aa610f5914034c95a80b65587e84d8dbc1137248d181e636b13",
+        "collector_module_sha256": "8d459d430b6f7a1cc0fbfce98f7d395705f4b5800dad2ddc9c3eb38fbdd6db26",
+        "control_module_sha256": "1babd8c8d9eb8987f8c5e3aaaf82ac284243154dd312e105471b2dda1d27b988",
+        "remote_code_sha256": "5a9c9e4b2c225f59b9fd996518cc289aa2742f6af8d50ac50cff907dddb144a4"
+      },
+      "integrity_status": "VERIFIED",
+      "issues": [],
+      "label_review": "not_performed",
+      "operation_receipt": {
+        "auth_performed": true,
+        "auth_status": 200,
+        "discovery_end_monotonic_ns": 47493129100360,
+        "discovery_start_monotonic_ns": 47493059518111,
+        "http_status": 200,
+        "method": "GET",
+        "operation_end_monotonic_ns": 47493129112064,
+        "operation_error": null,
+        "operation_start_monotonic_ns": 47492997694612,
+        "performed": true,
+        "request_identity": "GET /nnrf-disc/v1/nf-instances?requester-nf-type=AMF&target-nf-type=AUSF&service-names=nausf-auth; Authorization/token excluded",
+        "request_target_sha256": "d25edf729beac2de92eaa6256840654661a01867f8701f0d2ad1c4e81a026eb0",
+        "schema": "benign-nrf-receipt-v1",
+        "trigger_index": 41,
+        "warmup_admitted": true,
+        "worker_completed": true
+      },
+      "pair_id": 6
+    },
+    {
+      "artifact_sha256": {
+        "benign_nrf/capture.json": "8fbc98d16a6b826de519830c4c76f95304209e46a426f10728412fc88e7cfc7f",
+        "benign_nrf/manifest.json": "320a4f4b20e683200a181cecb11bc66ecf88aa1740b9335764b05f1230e3b788",
+        "benign_nrf/report.json": "be3ca5e2a1c96e79d6c732a037740f03adb3ae4b98224d52205303e4399e7dff",
+        "benign_nrf/windows/WBASE001/metadata.json": "14525931869b0f31ab5e0ab90ac71205c2122ba7d56055f4789b935b55ecdd72",
+        "benign_nrf/windows/WBASE001/readiness.json": "d57bfff61c6cd7c48c0a3b2a98c76dc7244c23df339707d531effe0d69964c9b",
+        "benign_nrf/windows/WBASE001/snapshots.jsonl": "227ff84630ca20ae2a336fb01b2025b130ab112f2a2b74d4ed44a23ad7b8eeb1",
+        "benign_nrf/windows/WBASE002/metadata.json": "2bdbda1312a6352d49d98fe3ee9c3c389960d561f6b7adbf935e75f39f7fa67c",
+        "benign_nrf/windows/WBASE002/readiness.json": "1c1dede1d5975dff7fa61098065d5fcc33aa5cd0e8c9a74a99ed8683cd70ba91",
+        "benign_nrf/windows/WBASE002/snapshots.jsonl": "d8db7ca33c46d88d448a26f0a01bc6261693eff470c2a754834eab86c66acf8f",
+        "benign_nrf/windows/WBASE003/metadata.json": "dc86864dda5a94b193182b5c724c535835bdbf82f39b503a18d32f3c5960a009",
+        "benign_nrf/windows/WBASE003/readiness.json": "5f2ae506f5c84db05bf8d70adc93567741dca1bb4cc05499c9cb484e1c09d35e",
+        "benign_nrf/windows/WBASE003/snapshots.jsonl": "14f117973c436dc5000feac95ec4e91381f376c41d95e2129c0491a3b69c35d6",
+        "frozen_plan.json": "1589f643ddd1bfcf5fd068c21f3d682ef5d6504242afc5d0883f1a3788b17b77",
+        "pair.json": "59bb63b97102604a25724797622827b79d193918fc92e464984516a4ed8d3a20",
+        "pair_summary.json": "ac8b7c1a5d0f00a31ba06e632c05afabe79bc16c5b85afa39b3fedae5a465a54",
+        "passive/capture.json": "1ddc2d41af8068e1db0e1c47501267fc7d5eccee01f4718f358a9740bac4a7e7",
+        "passive/manifest.json": "ef4d906606cebe4d4278e6ce76803c104987cb38a21612b0563a88f072283503",
+        "passive/report.json": "160b0e9da4a3c440d3c8fcaf2d787c299bae2c9a5b5823532b236587d2447c46",
+        "passive/windows/WBASE001/metadata.json": "42fe859881c70369080ca0aa1df42ed58ff78b258baf92852f8536e0cc60f87f",
+        "passive/windows/WBASE001/readiness.json": "fbcf8e9938e105f141643177a55f71a5ae9b09ca77f95c8da7c9d889e2bff010",
+        "passive/windows/WBASE001/snapshots.jsonl": "d7532e273c836e778eb269d1e580a891ba9559b3230558e3eceebcad15b02966",
+        "passive/windows/WBASE002/metadata.json": "5e627fdb0e3994b19ba85741cd4e8f104d977696687418e40d6c94a224eba2bb",
+        "passive/windows/WBASE002/readiness.json": "948cf42c0a7a96375426aa9a053b1716c0ee104214e6d0e6729bc4b48f43f093",
+        "passive/windows/WBASE002/snapshots.jsonl": "a1760d7e87182eb06cffb3668c8f92ae2b4ef66051b7939646ae069844e56152",
+        "passive/windows/WBASE003/metadata.json": "f5ebcb094d595f7548cdccfc1678ad8930fbac7a3d08e691fd37dc7c5e422932",
+        "passive/windows/WBASE003/readiness.json": "2c16c4657076de85a950476b7a2e38cbf1e5f984d325dd51bd86dbece90d7d52",
+        "passive/windows/WBASE003/snapshots.jsonl": "4b6d1dfcb871d135332d32c268840c53000dc1f0338388463f0905950afbedfe"
+      },
+      "conditions": {
+        "benign_nrf": {
+          "parser_sha256": {
+            "pfcp": "d739ca926fd3d51ab2a219750499b01c7dc9e5bef465ddce5fcbc5bfb71ca861",
+            "sbi": "7fd216c3b1b9f58b10ee2bcc916f0eed4c438664e75bd5cea9fb4715cb5cbfe5"
+          },
+          "windows": [
+            {
+              "features": {
+                "duration_sec": 9.999334,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.65,
+                "linux_load_1m_mean": 0.6249999999999999,
+                "linux_load_1m_min": 0.6,
+                "linux_load_1m_std": 0.02500000000000002,
+                "linux_memory_available_mean": 598829465.6,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.29076484615369325,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE001"
+            },
+            {
+              "features": {
+                "duration_sec": 10.000507,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.55,
+                "linux_load_1m_mean": 0.5299999999999999,
+                "linux_load_1m_min": 0.51,
+                "linux_load_1m_std": 0.020000000000000018,
+                "linux_memory_available_mean": 598850355.2,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.2907749892105719,
+                "pfcp_event_count": 3,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 1,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 2,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE002"
+            },
+            {
+              "features": {
+                "duration_sec": 10.000373,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.46,
+                "linux_load_1m_mean": 0.445,
+                "linux_load_1m_min": 0.43,
+                "linux_load_1m_std": 0.015000000000000015,
+                "linux_memory_available_mean": 598867558.4,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.2907833423162366,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE003"
+            }
+          ]
+        },
+        "passive": {
+          "parser_sha256": {
+            "pfcp": "d739ca926fd3d51ab2a219750499b01c7dc9e5bef465ddce5fcbc5bfb71ca861",
+            "sbi": "7fd216c3b1b9f58b10ee2bcc916f0eed4c438664e75bd5cea9fb4715cb5cbfe5"
+          },
+          "windows": [
+            {
+              "features": {
+                "duration_sec": 9.992577,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 1.26,
+                "linux_load_1m_mean": 1.1269999999999998,
+                "linux_load_1m_min": 0.77,
+                "linux_load_1m_std": 0.18105524018928584,
+                "linux_memory_available_mean": 600219648.0,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.2914398566447961,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE001"
+            },
+            {
+              "features": {
+                "duration_sec": 9.992838,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 1.32,
+                "linux_load_1m_mean": 1.2750000000000004,
+                "linux_load_1m_min": 1.21,
+                "linux_load_1m_std": 0.04821825380496482,
+                "linux_memory_available_mean": 594893619.2,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.2888537749076684,
+                "pfcp_event_count": 3,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 1,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE002"
+            },
+            {
+              "features": {
+                "duration_sec": 10.008781,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 1.21,
+                "linux_load_1m_mean": 1.1030000000000002,
+                "linux_load_1m_min": 1.02,
+                "linux_load_1m_std": 0.06618912297349164,
+                "linux_memory_available_mean": 591200256.0,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.28706044267482356,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE003"
+            }
+          ]
+        }
+      },
+      "endpoint": 2,
+      "evidence_binding_sha256": "aa70032ae8cf06f9641de74b121b274fa77864c75a19a9c2cd5f0908d2c2ed88",
+      "execution_order": [
+        "passive",
+        "benign_nrf"
+      ],
+      "implementation_hashes": {
+        "benign_remote_code_sha256": "8e4d22656d133aa610f5914034c95a80b65587e84d8dbc1137248d181e636b13",
+        "collector_module_sha256": "8d459d430b6f7a1cc0fbfce98f7d395705f4b5800dad2ddc9c3eb38fbdd6db26",
+        "control_module_sha256": "1babd8c8d9eb8987f8c5e3aaaf82ac284243154dd312e105471b2dda1d27b988",
+        "remote_code_sha256": "5a9c9e4b2c225f59b9fd996518cc289aa2742f6af8d50ac50cff907dddb144a4"
+      },
+      "integrity_status": "VERIFIED",
+      "issues": [],
+      "label_review": "not_performed",
+      "operation_receipt": {
+        "auth_performed": true,
+        "auth_status": 200,
+        "discovery_end_monotonic_ns": 47798740430593,
+        "discovery_start_monotonic_ns": 47798732068947,
+        "http_status": 200,
+        "method": "GET",
+        "operation_end_monotonic_ns": 47798740442304,
+        "operation_error": null,
+        "operation_start_monotonic_ns": 47798711920177,
+        "performed": true,
+        "request_identity": "GET /nnrf-disc/v1/nf-instances?requester-nf-type=AMF&target-nf-type=AUSF&service-names=nausf-auth; Authorization/token excluded",
+        "request_target_sha256": "d25edf729beac2de92eaa6256840654661a01867f8701f0d2ad1c4e81a026eb0",
+        "schema": "benign-nrf-receipt-v1",
+        "trigger_index": 41,
+        "warmup_admitted": true,
+        "worker_completed": true
+      },
+      "pair_id": 7
+    },
+    {
+      "artifact_sha256": {
+        "benign_nrf/capture.json": "1ad68dd7684b9114597c603328b5a7807bb5c07b85dc8c3624b851c96e12f922",
+        "benign_nrf/manifest.json": "a350872c956e0f4795e7f9d9c2722eb97395daae514180b88f1c941de227a05c",
+        "benign_nrf/report.json": "9ae95d0e3027f853b9ad3a00ba823838e22a0fe48e370f29e1e70517a7bd9e7f",
+        "benign_nrf/windows/WBASE001/metadata.json": "9b0df1b9b1e224a862b9f743cd6ad45eb949c41fdb3444a2a51879aef2ff944f",
+        "benign_nrf/windows/WBASE001/readiness.json": "de7b11682606aa8e0a5434afab2d26fdefd28fb9a0fc32786fceefa8d9db02ee",
+        "benign_nrf/windows/WBASE001/snapshots.jsonl": "d04d464b56a70dee13d247f77017fa3916fda596b8ca6cb87b1b8c3548ecd937",
+        "benign_nrf/windows/WBASE002/metadata.json": "ab50a6f563d55bfdefe93b7f5984a8d70605f6909ee2c34e3ee910fe3235cef4",
+        "benign_nrf/windows/WBASE002/readiness.json": "1d64e2c30031a3e30125c9cbbb063a4d5fd73be3570f577596bb5c20bca335f1",
+        "benign_nrf/windows/WBASE002/snapshots.jsonl": "0610caf786beda71a314f5e3f414550a2504241239003f5556afc157be648d7a",
+        "benign_nrf/windows/WBASE003/metadata.json": "2d1718bfd0438e83a3c48d5118a2f05004d80f552e06f13a4dec51a9449b6b25",
+        "benign_nrf/windows/WBASE003/readiness.json": "598a7647b3d9afa3b62c4e31a46ec6e0b409600fa62863f37f3c48f6e2f6b2ed",
+        "benign_nrf/windows/WBASE003/snapshots.jsonl": "6f6c2baf80b36005fc83b2c5f7e0b3ba59d5a3a764740c0df9a755d66573279c",
+        "frozen_plan.json": "1589f643ddd1bfcf5fd068c21f3d682ef5d6504242afc5d0883f1a3788b17b77",
+        "pair.json": "ee8cc32d1f336d4ab5f71412cb85c59e9ea06ff24c52a4407ada68854c09ce28",
+        "pair_summary.json": "1575e78b1bbb8cdce7046c03c540e2419748970f100b21af821765bdf1dc8574",
+        "passive/capture.json": "172699f733d2bac7e9017f60acd0318993818d1cc70c00e1062c0fa1a0815d99",
+        "passive/manifest.json": "bcf4fd2f2269a86ab0244a9fb7b89f805ced4a6b01c0a5e74014be97b382927d",
+        "passive/report.json": "dce88546bcbeccefb3bc49d7956d43b4299d9b9b1eefbe021b18bd1a4fdbf0af",
+        "passive/windows/WBASE001/metadata.json": "df6bff7aa15f9feb687fe0e09665316aa6c94669f3b2cfe3ec0c8227735116d6",
+        "passive/windows/WBASE001/readiness.json": "d8f7926b8de13211e6af925f3e45e3c64711b35e98934f4b3d0293ec3faec2c6",
+        "passive/windows/WBASE001/snapshots.jsonl": "f963813d5e5295d13830c12340eeac1df5d92f1ea67fc74b1f80175ac5bd1e64",
+        "passive/windows/WBASE002/metadata.json": "8d07eb9a4324a6fd777fe8732e3fd98d49b6875c21dd16d0fa17a93b2f4110ee",
+        "passive/windows/WBASE002/readiness.json": "c2e99a767592f6e4e70b107a6a9d0e844946fc72f38290b58d0d872d006ab237",
+        "passive/windows/WBASE002/snapshots.jsonl": "420710b035969f868eab7f48bd5f8a4c3a4214c66fcda9a6a08bd4a8711b47af",
+        "passive/windows/WBASE003/metadata.json": "4a2435cbc922509cc561a16be93e39ba9dfbc4cbcc38cf8f1f5621c95b2aa2e3",
+        "passive/windows/WBASE003/readiness.json": "606135c866079c94deeb686470a753bd9f6d0323418f3021c19f0a5889626953",
+        "passive/windows/WBASE003/snapshots.jsonl": "f10a26cfe88cc9cb2bea39b45a89f306a942f318e463adcbfe9061518537ed2f"
+      },
+      "conditions": {
+        "benign_nrf": {
+          "parser_sha256": {
+            "pfcp": "d739ca926fd3d51ab2a219750499b01c7dc9e5bef465ddce5fcbc5bfb71ca861",
+            "sbi": "7fd216c3b1b9f58b10ee2bcc916f0eed4c438664e75bd5cea9fb4715cb5cbfe5"
+          },
+          "windows": [
+            {
+              "features": {
+                "duration_sec": 9.995959,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.39,
+                "linux_load_1m_mean": 0.36899999999999994,
+                "linux_load_1m_min": 0.33,
+                "linux_load_1m_std": 0.019209372712298552,
+                "linux_memory_available_mean": 644365516.8,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.31287511908147664,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE001"
+            },
+            {
+              "features": {
+                "duration_sec": 10.000674,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.33,
+                "linux_load_1m_mean": 0.31500000000000006,
+                "linux_load_1m_min": 0.28,
+                "linux_load_1m_std": 0.015000000000000001,
+                "linux_memory_available_mean": 643875225.6,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.31263705557002985,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 2,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE002"
+            },
+            {
+              "features": {
+                "duration_sec": 10.007603,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.28,
+                "linux_load_1m_mean": 0.266,
+                "linux_load_1m_min": 0.24,
+                "linux_load_1m_std": 0.012806248474865708,
+                "linux_memory_available_mean": 643593420.8,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.31250022374390174,
+                "pfcp_event_count": 3,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 1,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE003"
+            }
+          ]
+        },
+        "passive": {
+          "parser_sha256": {
+            "pfcp": "d739ca926fd3d51ab2a219750499b01c7dc9e5bef465ddce5fcbc5bfb71ca861",
+            "sbi": "7fd216c3b1b9f58b10ee2bcc916f0eed4c438664e75bd5cea9fb4715cb5cbfe5"
+          },
+          "windows": [
+            {
+              "features": {
+                "duration_sec": 9.972285,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.55,
+                "linux_load_1m_mean": 0.45999999999999996,
+                "linux_load_1m_min": 0.2,
+                "linux_load_1m_std": 0.13114877048604004,
+                "linux_memory_available_mean": 644242636.8,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.3128154540410137,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE001"
+            },
+            {
+              "features": {
+                "duration_sec": 10.003977,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.55,
+                "linux_load_1m_mean": 0.49800000000000005,
+                "linux_load_1m_min": 0.46,
+                "linux_load_1m_std": 0.03124099870362662,
+                "linux_memory_available_mean": 644418355.2,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.31290077504887565,
+                "pfcp_event_count": 3,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 1,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE002"
+            },
+            {
+              "features": {
+                "duration_sec": 9.996085,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.46,
+                "linux_load_1m_mean": 0.41900000000000004,
+                "linux_load_1m_min": 0.39,
+                "linux_load_1m_std": 0.024269322199023193,
+                "linux_memory_available_mean": 644454809.6,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.31291847567754627,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE003"
+            }
+          ]
+        }
+      },
+      "endpoint": 2,
+      "evidence_binding_sha256": "6e1f22f07c8c1d8b498b65449467eed5e244807dc61d6b788c8adbdd52d99fc7",
+      "execution_order": [
+        "benign_nrf",
+        "passive"
+      ],
+      "implementation_hashes": {
+        "benign_remote_code_sha256": "8e4d22656d133aa610f5914034c95a80b65587e84d8dbc1137248d181e636b13",
+        "collector_module_sha256": "8d459d430b6f7a1cc0fbfce98f7d395705f4b5800dad2ddc9c3eb38fbdd6db26",
+        "control_module_sha256": "1babd8c8d9eb8987f8c5e3aaaf82ac284243154dd312e105471b2dda1d27b988",
+        "remote_code_sha256": "5a9c9e4b2c225f59b9fd996518cc289aa2742f6af8d50ac50cff907dddb144a4"
+      },
+      "integrity_status": "VERIFIED",
+      "issues": [],
+      "label_review": "not_performed",
+      "operation_receipt": {
+        "auth_performed": true,
+        "auth_status": 200,
+        "discovery_end_monotonic_ns": 47879843154010,
+        "discovery_start_monotonic_ns": 47879824066244,
+        "http_status": 200,
+        "method": "GET",
+        "operation_end_monotonic_ns": 47879843160718,
+        "operation_error": null,
+        "operation_start_monotonic_ns": 47879799969369,
+        "performed": true,
+        "request_identity": "GET /nnrf-disc/v1/nf-instances?requester-nf-type=AMF&target-nf-type=AUSF&service-names=nausf-auth; Authorization/token excluded",
+        "request_target_sha256": "d25edf729beac2de92eaa6256840654661a01867f8701f0d2ad1c4e81a026eb0",
+        "schema": "benign-nrf-receipt-v1",
+        "trigger_index": 41,
+        "warmup_admitted": true,
+        "worker_completed": true
+      },
+      "pair_id": 8
+    },
+    {
+      "artifact_sha256": {
+        "benign_nrf/capture.json": "f6021e1ed26f507c82bc5ce1ac773050ba94baeddf4650d05b2b4a206bc4810a",
+        "benign_nrf/manifest.json": "19e7cc3f4a05333ef5ac11a4906c3651ad7071382afc996016060fd8867ba8a7",
+        "benign_nrf/report.json": "75a674c12c63a3524cc017cefe5b8af3a3edbc07da05e17f3de57c724fc57344",
+        "benign_nrf/windows/WBASE001/metadata.json": "45557f75a7189586b8f4a0c8769f056583a3b0285b2d23164c6826fe25d11aa3",
+        "benign_nrf/windows/WBASE001/readiness.json": "cf3fa39e9a9c4d4bc67c3e490c937f13329d2ebe606687bb906af7093193e8ec",
+        "benign_nrf/windows/WBASE001/snapshots.jsonl": "6f9ddb03236627b65305e1e6e609ecf9bd0483ee8370bb81208529078d86bf98",
+        "benign_nrf/windows/WBASE002/metadata.json": "7728086b561b33152404025f3438fc276a251038a04967bc796db7b45dd11e22",
+        "benign_nrf/windows/WBASE002/readiness.json": "5168d21d9ac128d91421c302b676e14c5f155abb248c92a04cb07b882a1589dc",
+        "benign_nrf/windows/WBASE002/snapshots.jsonl": "6d8eb522f2a615333b22db94f7431f9bb33e5f5ced4cadd0c750d9cffdf9f753",
+        "benign_nrf/windows/WBASE003/metadata.json": "409e1f1b024fd56365babadafe2169eacb17ede861c76ed06f8f60d1d56f3b07",
+        "benign_nrf/windows/WBASE003/readiness.json": "1ae23b03e251a0c51d24f8bb07edabb72649bc3cf20e15957ffe4160f50b550d",
+        "benign_nrf/windows/WBASE003/snapshots.jsonl": "bfc0af8cd306f35844595a2054316f51a33575aaa97dddcb6b873da9ba20f7bd",
+        "frozen_plan.json": "1589f643ddd1bfcf5fd068c21f3d682ef5d6504242afc5d0883f1a3788b17b77",
+        "pair.json": "5d0a16dce44106baf703db913758dfd52c52daab2a4cbb1846f2b2232200e1e7",
+        "pair_summary.json": "e16cc92014ebeebcb1804e32a48e4954c4876f13fea300264863319385c4e35e",
+        "passive/capture.json": "019d20c045a88574838a6a45fa76414796844de9a93f109b1a99c10082348202",
+        "passive/manifest.json": "572417416d61b6650b9567b9c72dff026900c4a272c81e6ab2dfc011f8ac52e5",
+        "passive/report.json": "42df6996432078c53f86d0a82f6fadce4b19eccd7a39400d08bf77f85cd39b10",
+        "passive/windows/WBASE001/metadata.json": "9e946b5ef0efacf102c36f0ef9777159f8dfcf2c54d62965887d5365f286c2a2",
+        "passive/windows/WBASE001/readiness.json": "5b17ace46d725b78348da43a133435e356b211ed0b7a76fefac5fe8bfc5d47a8",
+        "passive/windows/WBASE001/snapshots.jsonl": "aa301826daa5f791c6918a87c9fd297cb1dd009a1a15fb8b9260b45a308f642f",
+        "passive/windows/WBASE002/metadata.json": "521b6d3164d9d8d8a1a0d0a64f7b023309f6afae3c3d1c40f1416ab23c983820",
+        "passive/windows/WBASE002/readiness.json": "c9d8385884a6fd5902aabcdca264272d3a6cabe07106662e42e79cd9dfd11418",
+        "passive/windows/WBASE002/snapshots.jsonl": "10184966221ff5d6ab33e62772eead53bad5c7fa28187d23a9ef8dafb4b140c1",
+        "passive/windows/WBASE003/metadata.json": "58ffb0763121ec882bde684da1279321cbb8d7c3d7a5945b40132d6b57b423c7",
+        "passive/windows/WBASE003/readiness.json": "424664218f581a79f952607292cfcf759dc170428ba2d7285bbe9c3f4175985b",
+        "passive/windows/WBASE003/snapshots.jsonl": "c2fb25c7e634274d408c88bec797601f5998ebede35de121e71c3633b46d1a15"
+      },
+      "conditions": {
+        "benign_nrf": {
+          "parser_sha256": {
+            "pfcp": "d739ca926fd3d51ab2a219750499b01c7dc9e5bef465ddce5fcbc5bfb71ca861",
+            "sbi": "7fd216c3b1b9f58b10ee2bcc916f0eed4c438664e75bd5cea9fb4715cb5cbfe5"
+          },
+          "windows": [
+            {
+              "features": {
+                "duration_sec": 9.995531,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.63,
+                "linux_load_1m_mean": 0.5650000000000002,
+                "linux_load_1m_min": 0.53,
+                "linux_load_1m_std": 0.03201562118716422,
+                "linux_memory_available_mean": 600999116.8,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.2918183318847987,
+                "pfcp_event_count": 3,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 1,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE001"
+            },
+            {
+              "features": {
+                "duration_sec": 10.006201,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.53,
+                "linux_load_1m_mean": 0.4780000000000001,
+                "linux_load_1m_min": 0.45,
+                "linux_load_1m_std": 0.02561249694973139,
+                "linux_memory_available_mean": 601019187.2,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.2918280771747409,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 2,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE002"
+            },
+            {
+              "features": {
+                "duration_sec": 9.998432,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.45,
+                "linux_load_1m_mean": 0.40199999999999997,
+                "linux_load_1m_min": 0.38,
+                "linux_load_1m_std": 0.02135415650406262,
+                "linux_memory_available_mean": 601035571.2,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.2918360325134694,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE003"
+            }
+          ]
+        },
+        "passive": {
+          "parser_sha256": {
+            "pfcp": "d739ca926fd3d51ab2a219750499b01c7dc9e5bef465ddce5fcbc5bfb71ca861",
+            "sbi": "7fd216c3b1b9f58b10ee2bcc916f0eed4c438664e75bd5cea9fb4715cb5cbfe5"
+          },
+          "windows": [
+            {
+              "features": {
+                "duration_sec": 10.00052,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.55,
+                "linux_load_1m_mean": 0.5119999999999999,
+                "linux_load_1m_min": 0.46,
+                "linux_load_1m_std": 0.031240998703626628,
+                "linux_memory_available_mean": 619041587.2,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.3005789497759578,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE001"
+            },
+            {
+              "features": {
+                "duration_sec": 10.00293,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.46,
+                "linux_load_1m_mean": 0.43100000000000005,
+                "linux_load_1m_min": 0.39,
+                "linux_load_1m_std": 0.024269322199023197,
+                "linux_memory_available_mean": 619061248.0,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.3005884961824319,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE002"
+            },
+            {
+              "features": {
+                "duration_sec": 9.995721,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.39,
+                "linux_load_1m_mean": 0.36299999999999993,
+                "linux_load_1m_min": 0.33,
+                "linux_load_1m_std": 0.021000000000000005,
+                "linux_memory_available_mean": 619077632.0,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.3005964515211602,
+                "pfcp_event_count": 3,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 1,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE003"
+            }
+          ]
+        }
+      },
+      "endpoint": 2,
+      "evidence_binding_sha256": "6694bb061cc4450446d88c2875822367d50e1c741b1fd944c7173bfb4164f14c",
+      "execution_order": [
+        "benign_nrf",
+        "passive"
+      ],
+      "implementation_hashes": {
+        "benign_remote_code_sha256": "8e4d22656d133aa610f5914034c95a80b65587e84d8dbc1137248d181e636b13",
+        "collector_module_sha256": "8d459d430b6f7a1cc0fbfce98f7d395705f4b5800dad2ddc9c3eb38fbdd6db26",
+        "control_module_sha256": "1babd8c8d9eb8987f8c5e3aaaf82ac284243154dd312e105471b2dda1d27b988",
+        "remote_code_sha256": "5a9c9e4b2c225f59b9fd996518cc289aa2742f6af8d50ac50cff907dddb144a4"
+      },
+      "integrity_status": "VERIFIED",
+      "issues": [],
+      "label_review": "not_performed",
+      "operation_receipt": {
+        "auth_performed": true,
+        "auth_status": 200,
+        "discovery_end_monotonic_ns": 48017921494335,
+        "discovery_start_monotonic_ns": 48017873339211,
+        "http_status": 200,
+        "method": "GET",
+        "operation_end_monotonic_ns": 48017921503870,
+        "operation_error": null,
+        "operation_start_monotonic_ns": 48017732040675,
+        "performed": true,
+        "request_identity": "GET /nnrf-disc/v1/nf-instances?requester-nf-type=AMF&target-nf-type=AUSF&service-names=nausf-auth; Authorization/token excluded",
+        "request_target_sha256": "d25edf729beac2de92eaa6256840654661a01867f8701f0d2ad1c4e81a026eb0",
+        "schema": "benign-nrf-receipt-v1",
+        "trigger_index": 41,
+        "warmup_admitted": true,
+        "worker_completed": true
+      },
+      "pair_id": 9
+    },
+    {
+      "artifact_sha256": {
+        "benign_nrf/capture.json": "8b6ad185447a7be7413037c5ff3a00fb5ca63b1f5000efbd383b22abf84fa299",
+        "benign_nrf/manifest.json": "e3800358fac8fecca3ac4fe28c0ab73ba0bdce60ad0e2a4b5edbbe3aa075af03",
+        "benign_nrf/report.json": "58bd8d40a2efaa1f6110ff5742ca1d345aeefd5e0071026d9faaa172ea0ca6fe",
+        "benign_nrf/windows/WBASE001/metadata.json": "1bd41158300a743f196a3c9890bd0de05c80bd415db2717e5c91035f36d1ffcb",
+        "benign_nrf/windows/WBASE001/readiness.json": "1afe7b9d3a6f9047d5aabc8ea8cdd2c40ceb3123814c2bf3bee724acb7671a62",
+        "benign_nrf/windows/WBASE001/snapshots.jsonl": "4dec5d46c283170632880a77a3915e346338240b3f10d8dda3265da3af55a11d",
+        "benign_nrf/windows/WBASE002/metadata.json": "2b4d8fdd2e16e9bf405f3468fc4aa5cfeed7e4b61e4287715f7c187640ef1bd1",
+        "benign_nrf/windows/WBASE002/readiness.json": "4ed651404867f74b2b05d340b9b74d64bd6054bf73479ff4eacfac8ad5ea8cd6",
+        "benign_nrf/windows/WBASE002/snapshots.jsonl": "ab40fbf345a44fcbac03e8f5a4cd720439ab7ebaa145b5337348050f9b1ef27b",
+        "benign_nrf/windows/WBASE003/metadata.json": "d737192ad6750e52ac5f78f492f41dbd7cb50c024d30855ac64e92385204e0cf",
+        "benign_nrf/windows/WBASE003/readiness.json": "7f22b8915701ee056226fbe7b6ff795ce75e1991333bb1f47574fcf4178846ae",
+        "benign_nrf/windows/WBASE003/snapshots.jsonl": "47ac6575bcbb0dfd302f2872706c2d2355d2dde77d4a3df469b39a5973099ccf",
+        "frozen_plan.json": "1589f643ddd1bfcf5fd068c21f3d682ef5d6504242afc5d0883f1a3788b17b77",
+        "pair.json": "1a39f068f7ea438083ce1c67feff1a91acad8cfe064d944ecd6dfcc554588bec",
+        "pair_summary.json": "eef09620c4268f63f5f4423fdcfa8b25f3874429b744cb35fea3adddfeff8265",
+        "passive/capture.json": "a59437723c1c853f472ecbd9c76820df69c8f304fd946fd82bede565c1782388",
+        "passive/manifest.json": "b77dc0f94093998c0ee308cfcc07035e44fe5434cfb66f0bf90942976ba0bd42",
+        "passive/report.json": "9004d5c3ff1a934fb8c1b7edc58a3ad1a0f6e016c0e588210f96380b29e7fcc9",
+        "passive/windows/WBASE001/metadata.json": "78e7587db657f5fda1793c97d6f1632f82a7890e3d90f02e025def4693dbce7d",
+        "passive/windows/WBASE001/readiness.json": "5f6b48bf73af39bcb5c0e6102bdb9c986252038f2c55268dab24af7e258046c1",
+        "passive/windows/WBASE001/snapshots.jsonl": "509ea6c78e2414377359dc8798d154d74a005d6cd5a2952b941d52545f02bd77",
+        "passive/windows/WBASE002/metadata.json": "69e5242dcbd300566f5ec1d6b8d5b3924f50a92b05b12496d28371e34b55646e",
+        "passive/windows/WBASE002/readiness.json": "20f520a0034af2c6c4883cf6eea7bc7bf7601065343b4cfbc4e0a0bf38e8c75d",
+        "passive/windows/WBASE002/snapshots.jsonl": "f3a15fb9ec3d66aa6b2b424b835826e595232294f0f7ed03d84907004bcab7c4",
+        "passive/windows/WBASE003/metadata.json": "2ea40c5fce2e724ed46587e65431c3914fe5ebfeef9a9472e5555a4ff3594195",
+        "passive/windows/WBASE003/readiness.json": "7fe6b6411381e19177330550c75e59b0dc321c0574e69dc54baebec45db255bf",
+        "passive/windows/WBASE003/snapshots.jsonl": "e287ffe6c5dc44d40650b09ad36582c8f6a747e6bfdfe67ea299171d27bb4046"
+      },
+      "conditions": {
+        "benign_nrf": {
+          "parser_sha256": {
+            "pfcp": "d739ca926fd3d51ab2a219750499b01c7dc9e5bef465ddce5fcbc5bfb71ca861",
+            "sbi": "7fd216c3b1b9f58b10ee2bcc916f0eed4c438664e75bd5cea9fb4715cb5cbfe5"
+          },
+          "windows": [
+            {
+              "features": {
+                "duration_sec": 10.005629,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 1.07,
+                "linux_load_1m_mean": 0.9980000000000002,
+                "linux_load_1m_min": 0.98,
+                "linux_load_1m_std": 0.036000000000000025,
+                "linux_memory_available_mean": 619418419.2,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.3007619225667105,
+                "pfcp_event_count": 3,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 1,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE001"
+            },
+            {
+              "features": {
+                "duration_sec": 9.993516,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.98,
+                "linux_load_1m_mean": 0.8950000000000001,
+                "linux_load_1m_min": 0.83,
+                "linux_load_1m_std": 0.05220153254455276,
+                "linux_memory_available_mean": 619656806.4,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.3008776727452084,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 2,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE002"
+            },
+            {
+              "features": {
+                "duration_sec": 10.000388,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.83,
+                "linux_load_1m_mean": 0.761,
+                "linux_load_1m_min": 0.7,
+                "linux_load_1m_std": 0.045923850012820136,
+                "linux_memory_available_mean": 619696947.2,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.300897163325093,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE003"
+            }
+          ]
+        },
+        "passive": {
+          "parser_sha256": {
+            "pfcp": "d739ca926fd3d51ab2a219750499b01c7dc9e5bef465ddce5fcbc5bfb71ca861",
+            "sbi": "7fd216c3b1b9f58b10ee2bcc916f0eed4c438664e75bd5cea9fb4715cb5cbfe5"
+          },
+          "windows": [
+            {
+              "features": {
+                "duration_sec": 10.002359,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 1.82,
+                "linux_load_1m_mean": 1.722,
+                "linux_load_1m_min": 1.61,
+                "linux_load_1m_std": 0.07794870107962028,
+                "linux_memory_available_mean": 618253926.4,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.30019649686659095,
+                "pfcp_event_count": 3,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 1,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE001"
+            },
+            {
+              "features": {
+                "duration_sec": 10.01903,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 1.61,
+                "linux_load_1m_mean": 1.47,
+                "linux_load_1m_min": 1.36,
+                "linux_load_1m_std": 0.08717797887081347,
+                "linux_memory_available_mean": 618251878.4,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.30019550244925,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE002"
+            },
+            {
+              "features": {
+                "duration_sec": 9.97886,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 1.36,
+                "linux_load_1m_mean": 1.2420000000000002,
+                "linux_load_1m_min": 1.15,
+                "linux_load_1m_std": 0.07318469785412801,
+                "linux_memory_available_mean": 618278912.0,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.3002086287581518,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE003"
+            }
+          ]
+        }
+      },
+      "endpoint": 2,
+      "evidence_binding_sha256": "2f8087948b4f50871288c514c2e643862f7b0d406e97867119b3949b5e78d25b",
+      "execution_order": [
+        "passive",
+        "benign_nrf"
+      ],
+      "implementation_hashes": {
+        "benign_remote_code_sha256": "8e4d22656d133aa610f5914034c95a80b65587e84d8dbc1137248d181e636b13",
+        "collector_module_sha256": "8d459d430b6f7a1cc0fbfce98f7d395705f4b5800dad2ddc9c3eb38fbdd6db26",
+        "control_module_sha256": "1babd8c8d9eb8987f8c5e3aaaf82ac284243154dd312e105471b2dda1d27b988",
+        "remote_code_sha256": "5a9c9e4b2c225f59b9fd996518cc289aa2742f6af8d50ac50cff907dddb144a4"
+      },
+      "integrity_status": "VERIFIED",
+      "issues": [],
+      "label_review": "not_performed",
+      "operation_receipt": {
+        "auth_performed": true,
+        "auth_status": 200,
+        "discovery_end_monotonic_ns": 48257452595095,
+        "discovery_start_monotonic_ns": 48257439227887,
+        "http_status": 200,
+        "method": "GET",
+        "operation_end_monotonic_ns": 48257452603100,
+        "operation_error": null,
+        "operation_start_monotonic_ns": 48257413912736,
+        "performed": true,
+        "request_identity": "GET /nnrf-disc/v1/nf-instances?requester-nf-type=AMF&target-nf-type=AUSF&service-names=nausf-auth; Authorization/token excluded",
+        "request_target_sha256": "d25edf729beac2de92eaa6256840654661a01867f8701f0d2ad1c4e81a026eb0",
+        "schema": "benign-nrf-receipt-v1",
+        "trigger_index": 41,
+        "warmup_admitted": true,
+        "worker_completed": true
+      },
+      "pair_id": 10
+    },
+    {
+      "artifact_sha256": {
+        "benign_nrf/capture.json": "67b04d4bbbc450f3bf04f175f215fc6bad98876c5c7f1f5b9a785eae5ed03fb7",
+        "benign_nrf/manifest.json": "00f84ffefd7ed8b3fe01813979731b5ed536429094fffb5d66d3d045d30b8992",
+        "benign_nrf/report.json": "3b293c1dd8bc85ff1caacfb6e90992b756b9151edbf2a43b6c2f91b9458feb79",
+        "benign_nrf/windows/WBASE001/metadata.json": "ffd238e028dbb2ae0f4b2a6f575f1cb67cd7b05fde564b8c0826243a86f6a843",
+        "benign_nrf/windows/WBASE001/readiness.json": "82e047229c57b6f67e619d5bae764e17053e572b6b76637f5ce843e3ba01734b",
+        "benign_nrf/windows/WBASE001/snapshots.jsonl": "da67ded37a7333de25a3b4d23ed8d2c2f76aafba7656b69d6c67082e107fc9a5",
+        "benign_nrf/windows/WBASE002/metadata.json": "dfbd6d2cccdc8ab5587bc7a97bd7b235e9426635a7546168a8e7e6c45a858691",
+        "benign_nrf/windows/WBASE002/readiness.json": "2251b83aa09e2205a088b6de07de532ea1ad6f0b1bc34917d68d84d36f500685",
+        "benign_nrf/windows/WBASE002/snapshots.jsonl": "e917e1f156fb09c243356b17e9627cdb5b43f7c68c89653c19b39d0b1f3e7f05",
+        "benign_nrf/windows/WBASE003/metadata.json": "b8900b28225e02b6067bd8cf16cf8a7d3b65159196dfe8ec92c49203bd6d9f90",
+        "benign_nrf/windows/WBASE003/readiness.json": "1c1f590e64e77ce17d4331a8f60d41d6b2f805fe336d9f20e14b526edea6b5cf",
+        "benign_nrf/windows/WBASE003/snapshots.jsonl": "e006a2b0a2df67191c456aba6618bec1db87493cea7f6d8e271f9a0a495fa967",
+        "frozen_plan.json": "1589f643ddd1bfcf5fd068c21f3d682ef5d6504242afc5d0883f1a3788b17b77",
+        "pair.json": "4f684cd0fa48e01e35d65cc938fe035898fdef2596ed65e7f2fb2ef2a21d246a",
+        "pair_summary.json": "1e10f97335f7e7568a0829d9b0bc2c3ca723bf195cfaa8d7c0e61f93d0e4297e",
+        "passive/capture.json": "6eeffe45e584cb878a9de81a032d4ed41726cef06adfbf76e8ad27fd70a293f3",
+        "passive/manifest.json": "12b20e6efe59bc0c3f6d27ee447444d49d27dbf8d87b2370c4560091b4e00431",
+        "passive/report.json": "e01f5ca21d747d6a58c23cda1b59349315f36fae28589d14c04259a15e2297ea",
+        "passive/windows/WBASE001/metadata.json": "8f7850ac00280d7a393fa6619d9b69b83305d8a214f25a53139246ba0c8a2e20",
+        "passive/windows/WBASE001/readiness.json": "33c52ac63f4365d8bf9a8b41099cb97048ee0a4d8d370cbdae95a33bf23f6534",
+        "passive/windows/WBASE001/snapshots.jsonl": "1bb86bf422159c19aa1181e871c0b2d067ca2803d9f5804278b65befe1f6ae86",
+        "passive/windows/WBASE002/metadata.json": "976831da1879d01cb63a6a81772c4ca250b1a468494cf62ca2e4306134d8b760",
+        "passive/windows/WBASE002/readiness.json": "6e3af2c4891540dd5eb6d4c88c6118f81b491d7cab25c7a1b0aa5250bc50b826",
+        "passive/windows/WBASE002/snapshots.jsonl": "260b7f2b23396aa42048f3d40d348a3c8046a2a8bef0927ab4fc9d64a2e6a71c",
+        "passive/windows/WBASE003/metadata.json": "70efeae2386a4d13c07c8407ca88221e2399211d15ff33c88b7b32ea1ae2047e",
+        "passive/windows/WBASE003/readiness.json": "23e3bad150db20b138e9e5affcf40c05ab7432bad55d6422ed42b03bb02180e0",
+        "passive/windows/WBASE003/snapshots.jsonl": "f5953146586d18074681a925e25342f3f487ce3500c66a5b634b1a19b94edff7"
+      },
+      "conditions": {
+        "benign_nrf": {
+          "parser_sha256": {
+            "pfcp": "d739ca926fd3d51ab2a219750499b01c7dc9e5bef465ddce5fcbc5bfb71ca861",
+            "sbi": "7fd216c3b1b9f58b10ee2bcc916f0eed4c438664e75bd5cea9fb4715cb5cbfe5"
+          },
+          "windows": [
+            {
+              "features": {
+                "duration_sec": 10.000044,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.45,
+                "linux_load_1m_mean": 0.40199999999999997,
+                "linux_load_1m_min": 0.38,
+                "linux_load_1m_std": 0.02135415650406262,
+                "linux_memory_available_mean": 614585139.2,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.29841509764183877,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE001"
+            },
+            {
+              "features": {
+                "duration_sec": 10.005181,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.38,
+                "linux_load_1m_mean": 0.34099999999999997,
+                "linux_load_1m_min": 0.32,
+                "linux_load_1m_std": 0.019209372712298542,
+                "linux_memory_available_mean": 614683443.2,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.298462829674209,
+                "pfcp_event_count": 3,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 1,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 2,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE002"
+            },
+            {
+              "features": {
+                "duration_sec": 10.000588,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.32,
+                "linux_load_1m_mean": 0.28500000000000003,
+                "linux_load_1m_min": 0.27,
+                "linux_load_1m_std": 0.014999999999999989,
+                "linux_memory_available_mean": 614802227.2,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.29852050587998974,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE003"
+            }
+          ]
+        },
+        "passive": {
+          "parser_sha256": {
+            "pfcp": "d739ca926fd3d51ab2a219750499b01c7dc9e5bef465ddce5fcbc5bfb71ca861",
+            "sbi": "7fd216c3b1b9f58b10ee2bcc916f0eed4c438664e75bd5cea9fb4715cb5cbfe5"
+          },
+          "windows": [
+            {
+              "features": {
+                "duration_sec": 9.995207,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.44,
+                "linux_load_1m_mean": 0.3970000000000001,
+                "linux_load_1m_min": 0.37,
+                "linux_load_1m_std": 0.023685438564654014,
+                "linux_memory_available_mean": 614769049.6,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.2985043963190648,
+                "pfcp_event_count": 3,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 1,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE001"
+            },
+            {
+              "features": {
+                "duration_sec": 10.011244,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.37,
+                "linux_load_1m_mean": 0.33100000000000007,
+                "linux_load_1m_min": 0.31,
+                "linux_load_1m_std": 0.01920937271229855,
+                "linux_memory_available_mean": 614892339.2,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.2985642602429958,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE002"
+            },
+            {
+              "features": {
+                "duration_sec": 9.997433,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.35,
+                "linux_load_1m_mean": 0.316,
+                "linux_load_1m_min": 0.29,
+                "linux_load_1m_std": 0.028354893757515647,
+                "linux_memory_available_mean": 615178240.0,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.29870308090380593,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE003"
+            }
+          ]
+        }
+      },
+      "endpoint": 2,
+      "evidence_binding_sha256": "3e4a18d3fa3477425c3b6a6f12fe55e628ff425f3160e8f64942ee7e3c77ed9e",
+      "execution_order": [
+        "benign_nrf",
+        "passive"
+      ],
+      "implementation_hashes": {
+        "benign_remote_code_sha256": "8e4d22656d133aa610f5914034c95a80b65587e84d8dbc1137248d181e636b13",
+        "collector_module_sha256": "8d459d430b6f7a1cc0fbfce98f7d395705f4b5800dad2ddc9c3eb38fbdd6db26",
+        "control_module_sha256": "1babd8c8d9eb8987f8c5e3aaaf82ac284243154dd312e105471b2dda1d27b988",
+        "remote_code_sha256": "5a9c9e4b2c225f59b9fd996518cc289aa2742f6af8d50ac50cff907dddb144a4"
+      },
+      "integrity_status": "VERIFIED",
+      "issues": [],
+      "label_review": "not_performed",
+      "operation_receipt": {
+        "auth_performed": true,
+        "auth_status": 200,
+        "discovery_end_monotonic_ns": 48338102654484,
+        "discovery_start_monotonic_ns": 48338089038958,
+        "http_status": 200,
+        "method": "GET",
+        "operation_end_monotonic_ns": 48338102660088,
+        "operation_error": null,
+        "operation_start_monotonic_ns": 48338063248735,
+        "performed": true,
+        "request_identity": "GET /nnrf-disc/v1/nf-instances?requester-nf-type=AMF&target-nf-type=AUSF&service-names=nausf-auth; Authorization/token excluded",
+        "request_target_sha256": "d25edf729beac2de92eaa6256840654661a01867f8701f0d2ad1c4e81a026eb0",
+        "schema": "benign-nrf-receipt-v1",
+        "trigger_index": 41,
+        "warmup_admitted": true,
+        "worker_completed": true
+      },
+      "pair_id": 11
+    },
+    {
+      "artifact_sha256": {
+        "benign_nrf/capture.json": "f70463492909f60d8113f69f2d7b59ae8b4ad05b22000a6b43e9d0f3ed0edaaf",
+        "benign_nrf/manifest.json": "378b79b36874db18cf5b62e1acc1cf848a3b332478ec4650d7882fcc3272260b",
+        "benign_nrf/report.json": "b08ce6c38d8efd0e9b187f4836aa4b1e83111b874630f596f1d1c31471297942",
+        "benign_nrf/windows/WBASE001/metadata.json": "8e7febcb084e121a580b4e6581e3f43b1d11300f85385b450e4af47140f3baeb",
+        "benign_nrf/windows/WBASE001/readiness.json": "844559b1944890d543948fa989d1faefe79d0254fd069716277eda9293bc2897",
+        "benign_nrf/windows/WBASE001/snapshots.jsonl": "a547fb5f396ded52fb76527f1a1a3238f1ebcb2414889fbdbc7e00671d246993",
+        "benign_nrf/windows/WBASE002/metadata.json": "bcdd06dc86d8dcf7ea5e56bf2b5bc3ea1fad0e0ddd93e6d5f9167b7bb317fc5d",
+        "benign_nrf/windows/WBASE002/readiness.json": "fe196d724d9bf631607c9dec86fe26a6a5ac18efd8b56510266b670e2bcafc73",
+        "benign_nrf/windows/WBASE002/snapshots.jsonl": "286e8bebcb64826cc454a4602404d743ec1980b39a0d6b9b3877a0e51b369a35",
+        "benign_nrf/windows/WBASE003/metadata.json": "87835f3cb4f7483a2f703119c82dc6e4daa3c45b0fdc3e562df3aec3c0e751bc",
+        "benign_nrf/windows/WBASE003/readiness.json": "c2386faf20dae3e2f87f7fa480520ce83334abf3f4500b65b35c9a4d9eae4aa5",
+        "benign_nrf/windows/WBASE003/snapshots.jsonl": "cd0da2002c2b9d02a5434de00823cb584f6116884f7dc8557b6a985632781e87",
+        "frozen_plan.json": "1589f643ddd1bfcf5fd068c21f3d682ef5d6504242afc5d0883f1a3788b17b77",
+        "pair.json": "f02d3c7af0af206b6d726d377c2f081ca1c216270e724a13692839c3d101c940",
+        "pair_summary.json": "a4d722a726c11b9d0d446e49aae2cd221f7e124315cff641856d07ab42cdbda0",
+        "passive/capture.json": "880a82b9c358d756a31f8a9a0da924fd514360d36f561d5bed95117c0147398b",
+        "passive/manifest.json": "68ae4f1e1aeeb4199fb2bae05c5b0759abed63be8818281dcb79040a1561674e",
+        "passive/report.json": "f8a27567df20ea57a7722a85da8428a6a49c9384c1832481fbdaab18ce82a564",
+        "passive/windows/WBASE001/metadata.json": "3b471eb8fd444b84c554d591f1465a6df824d4c6d57a9da06ef580d3af72263e",
+        "passive/windows/WBASE001/readiness.json": "f02e41d1a44b588cc3bd5cca9d8865cdd6cf2db71480c1af79445e4861a5bf88",
+        "passive/windows/WBASE001/snapshots.jsonl": "7bc9831c9c26fbf54c2488091d77a66eb187a2c1d5ff1b34dca3ede08f3ae9a0",
+        "passive/windows/WBASE002/metadata.json": "071a379f8da31139839c75eed12e9cbc21f7c229aea0e6b382ae6c13257f29fa",
+        "passive/windows/WBASE002/readiness.json": "f2b650a038dc71aebaca08352ddd001c19cdbe9f10a1bbbedb9f14da89089969",
+        "passive/windows/WBASE002/snapshots.jsonl": "ea5e3a994c3543bb31afc9d3f9da9e02c1c9221aa9b22e4d589871e751902718",
+        "passive/windows/WBASE003/metadata.json": "3f788256407748b27ea1befba6aca13321d5c4bd265a8965f8992b40fefb9e1d",
+        "passive/windows/WBASE003/readiness.json": "029e615f9b0ada51e5c34f4fd78a27d4497f59dc0c9930b49a098e5f208a9090",
+        "passive/windows/WBASE003/snapshots.jsonl": "a10ae87ad2f0909603f0589f4ce492af7b1802b81ed7b2fd21d89033049af2e1"
+      },
+      "conditions": {
+        "benign_nrf": {
+          "parser_sha256": {
+            "pfcp": "d739ca926fd3d51ab2a219750499b01c7dc9e5bef465ddce5fcbc5bfb71ca861",
+            "sbi": "7fd216c3b1b9f58b10ee2bcc916f0eed4c438664e75bd5cea9fb4715cb5cbfe5"
+          },
+          "windows": [
+            {
+              "features": {
+                "duration_sec": 10.002366,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.42,
+                "linux_load_1m_mean": 0.33299999999999996,
+                "linux_load_1m_min": 0.29,
+                "linux_load_1m_std": 0.0574543296888929,
+                "linux_memory_available_mean": 600659558.4,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.2916534574896531,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE001"
+            },
+            {
+              "features": {
+                "duration_sec": 10.017556,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.44,
+                "linux_load_1m_mean": 0.41100000000000003,
+                "linux_load_1m_min": 0.39,
+                "linux_load_1m_std": 0.022113344387495973,
+                "linux_memory_available_mean": 600709120.0,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.29167752238930633,
+                "pfcp_event_count": 3,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 1,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 2,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE002"
+            },
+            {
+              "features": {
+                "duration_sec": 9.985402,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 1.44,
+                "linux_load_1m_mean": 1.2069999999999999,
+                "linux_load_1m_min": 0.44,
+                "linux_load_1m_std": 0.3864466327968197,
+                "linux_memory_available_mean": 600733286.4,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.29168925651393074,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE003"
+            }
+          ]
+        },
+        "passive": {
+          "parser_sha256": {
+            "pfcp": "d739ca926fd3d51ab2a219750499b01c7dc9e5bef465ddce5fcbc5bfb71ca861",
+            "sbi": "7fd216c3b1b9f58b10ee2bcc916f0eed4c438664e75bd5cea9fb4715cb5cbfe5"
+          },
+          "windows": [
+            {
+              "features": {
+                "duration_sec": 10.006296,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.85,
+                "linux_load_1m_mean": 0.8020000000000002,
+                "linux_load_1m_min": 0.72,
+                "linux_load_1m_std": 0.042848570571257086,
+                "linux_memory_available_mean": 595421593.6,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.2891101356981904,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE001"
+            },
+            {
+              "features": {
+                "duration_sec": 9.996985,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.72,
+                "linux_load_1m_mean": 0.679,
+                "linux_load_1m_min": 0.61,
+                "linux_load_1m_std": 0.03645545226711635,
+                "linux_memory_available_mean": 595582156.8,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.2891880980177285,
+                "pfcp_event_count": 3,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 1,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE002"
+            },
+            {
+              "features": {
+                "duration_sec": 9.998861,
+                "linux_event_count": 10,
+                "linux_load_1m_max": 0.61,
+                "linux_load_1m_mean": 0.575,
+                "linux_load_1m_min": 0.51,
+                "linux_load_1m_std": 0.03201562118716422,
+                "linux_memory_available_mean": 595816448.0,
+                "linux_memory_total_mean": 2059497472.0,
+                "memory_available_ratio_mean": 0.2893018593615443,
+                "pfcp_event_count": 1,
+                "pfcp_request_count": 1,
+                "pfcp_response_count": 0,
+                "pfcp_telemetry_available": 1.0,
+                "sbi_error_event_count": 0,
+                "sbi_event_count": 0,
+                "sbi_telemetry_available": 1.0
+              },
+              "window_id": "WBASE003"
+            }
+          ]
+        }
+      },
+      "endpoint": 2,
+      "evidence_binding_sha256": "c5bc08197bdc3d615e8c7e06ad386a685fd8c09efa100212822865dc6a712f86",
+      "execution_order": [
+        "passive",
+        "benign_nrf"
+      ],
+      "implementation_hashes": {
+        "benign_remote_code_sha256": "8e4d22656d133aa610f5914034c95a80b65587e84d8dbc1137248d181e636b13",
+        "collector_module_sha256": "8d459d430b6f7a1cc0fbfce98f7d395705f4b5800dad2ddc9c3eb38fbdd6db26",
+        "control_module_sha256": "1babd8c8d9eb8987f8c5e3aaaf82ac284243154dd312e105471b2dda1d27b988",
+        "remote_code_sha256": "5a9c9e4b2c225f59b9fd996518cc289aa2742f6af8d50ac50cff907dddb144a4"
+      },
+      "integrity_status": "VERIFIED",
+      "issues": [],
+      "label_review": "not_performed",
+      "operation_receipt": {
+        "auth_performed": true,
+        "auth_status": 200,
+        "discovery_end_monotonic_ns": 48547342699194,
+        "discovery_start_monotonic_ns": 48547336265336,
+        "http_status": 200,
+        "method": "GET",
+        "operation_end_monotonic_ns": 48547342708737,
+        "operation_error": null,
+        "operation_start_monotonic_ns": 48547292819273,
+        "performed": true,
+        "request_identity": "GET /nnrf-disc/v1/nf-instances?requester-nf-type=AMF&target-nf-type=AUSF&service-names=nausf-auth; Authorization/token excluded",
+        "request_target_sha256": "d25edf729beac2de92eaa6256840654661a01867f8701f0d2ad1c4e81a026eb0",
+        "schema": "benign-nrf-receipt-v1",
+        "trigger_index": 41,
+        "warmup_admitted": true,
+        "worker_completed": true
+      },
+      "pair_id": 12
+    }
+  ],
+  "planned_pair_count": 8,
+  "primary_endpoint_summary": {
+    "maximum": 2,
+    "median": 2.0,
+    "minimum": 2,
+    "negative": 0,
+    "paired_values": [
+      {
+        "pair_id": 5,
+        "value": 2
+      },
+      {
+        "pair_id": 6,
+        "value": 2
+      },
+      {
+        "pair_id": 7,
+        "value": 2
+      },
+      {
+        "pair_id": 8,
+        "value": 2
+      },
+      {
+        "pair_id": 9,
+        "value": 2
+      },
+      {
+        "pair_id": 10,
+        "value": 2
+      },
+      {
+        "pair_id": 11,
+        "value": 2
+      },
+      {
+        "pair_id": 12,
+        "value": 2
+      }
+    ],
+    "positive": 8,
+    "zero": 0
+  },
+  "schema_version": "benign-held-out-descriptive-results-v1",
+  "unblinded": true,
+  "verified_pair_count": 8
+}

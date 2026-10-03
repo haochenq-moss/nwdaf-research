@@ -1,0 +1,21 @@
+{
+  "schema_version": "fuzz-anomaly-data-readiness-v1",
+  "status": "BLOCKED",
+  "case_run_id": "RNAS0001",
+  "contract": "linux-sbi-pfcp-v1",
+  "case_source": "data/input_testing/nas-afl-structured-20261002",
+  "blockers": [
+    "No same-run Linux/SBI/PFCP telemetry bundle exists for RNAS0001",
+    "Registration rejection has an authentication-data fixture confound",
+    "Protocol release handshake and independent cleanup review are unconfirmed",
+    "No independently reviewed normal/expected_rejection/anomalous dataset is supplied",
+    "No prospective frozen anomaly-model plan and newly collected unseen evaluation runs are supplied"
+  ],
+  "model_fitted_on_research_data": false,
+  "research_metrics": null,
+  "synthetic_unit_tests_are_research_results": false,
+  "historical_nrf_data_substituted": false,
+  "live_actions_executed": false,
+  "model_deployment_approved": false,
+  "actionable": false
+}

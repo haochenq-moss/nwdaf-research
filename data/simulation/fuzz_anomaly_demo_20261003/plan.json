@@ -1,0 +1,29 @@
+{
+  "collection_semantics": "observation_time_cursor_reads_excluding_preexisting_history",
+  "contract": "linux-sbi-pfcp-v1",
+  "feature_names": [
+    "duration_sec",
+    "linux_load_1m_mean",
+    "linux_load_1m_std",
+    "linux_load_1m_min",
+    "linux_load_1m_max",
+    "linux_memory_total_mean",
+    "linux_memory_available_mean",
+    "memory_available_ratio_mean",
+    "linux_event_count",
+    "sbi_event_count",
+    "sbi_error_event_count",
+    "pfcp_event_count",
+    "pfcp_request_count",
+    "pfcp_response_count",
+    "sbi_telemetry_available",
+    "pfcp_telemetry_available"
+  ],
+  "frozen": true,
+  "frozen_at": "2030-01-02T00:00:00Z",
+  "model": "random_forest_200_seed42",
+  "schema_version": "fuzz-anomaly-analysis-plan-v1",
+  "simulation_only": true,
+  "threshold": 0.5,
+  "timestamp_basis": "Virtual test clock, not actual collection time"
+}

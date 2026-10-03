@@ -1,0 +1,51 @@
+{
+  "schema_version": "baseline-control-plan-v1",
+  "plan_id": "linux-sbi-pfcp-benign-control-v1",
+  "contract": "linux-sbi-pfcp-v1",
+  "stage": "prospective_design_not_executed",
+  "inference_enabled": false,
+  "mitigation_enabled": false,
+  "collection": {
+    "warmup_sec": 30,
+    "window_count_per_block": 3,
+    "nominal_window_duration_sec": 10,
+    "poll_interval_sec": 1,
+    "heartbeat_timeout_sec": 2,
+    "sources": ["linux", "sbi", "pfcp"],
+    "preserve_active_ue": true,
+    "source_semantics": "observation-time host samples and log-derived SBI/PFCP",
+    "retain_actual_boundary_durations": true
+  },
+  "conditions": [
+    {"id": "passive", "operation": "No generated testbed protocol requests"},
+    {"id": "benign_nrf", "operation": "One existing fixed authenticated read-only NRF discovery GET within the middle window", "arbitrary_urls_allowed": false}
+  ],
+  "schedule": {
+    "pair_count": 12,
+    "pilot_pairs": [1, 2, 3, 4],
+    "held_out_pairs": [5, 6, 7, 8, 9, 10, 11, 12],
+    "first_condition": ["passive", "benign_nrf", "benign_nrf", "passive", "passive", "benign_nrf", "passive", "benign_nrf", "benign_nrf", "passive", "benign_nrf", "passive"],
+    "grouping": "Keep both matched blocks and all their windows in the same pair partition",
+    "failure_policy": "Retain every failed block; do not selectively replace failures or silently reuse pair IDs"
+  },
+  "primary_analysis": {
+    "measurement": "Within-pair difference in middle-window SBI event count, benign_nrf minus passive",
+    "unit": "Matched pair, not individual adjacent windows",
+    "secondary": ["SBI error counts", "PFCP counts", "Linux load and memory summaries", "actual duration and collection readiness"],
+    "causal_limit": "No attribution of background PFCP to NRF and no claim of fuzz-triggered anomaly detection"
+  },
+  "model_gate": {
+    "historical_model_approved": false,
+    "normal_only_calibration_is_not_detection_efficacy": true,
+    "future_model_plan_required": ["Independent reviewed outcome labels", "Artifact and feature-semantics manifest", "Grouped splits", "Frozen model and threshold before held-out scoring", "Normal false-positive evaluation", "Separate confirmed-case evaluation"]
+  },
+  "execution_prerequisites": [
+    "Reviewed window-synchronized benign-operation runner (not yet implemented)",
+    "Non-secret current AMF NF instance identity",
+    "Request start/end receipt and exact request hash",
+    "Verify request interval lies inside the middle measured window",
+    "Matched collection limits and parser revisions",
+    "Independent label/fixture review with evidence references"
+  ],
+  "historical_pilot_exclusion": ["passive-three-source-20261003", "passive-three-source-20261003-v2", "passive-three-source-20261003-v3"]
+}

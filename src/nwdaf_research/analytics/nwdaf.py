@@ -8,6 +8,7 @@ from typing import Any
 import numpy as np
 
 from nwdaf_research.analytics.baseline import BaselineAnomalyModel
+from nwdaf_research.live.telemetry_window import FULL_CONTRACT, TelemetryStatus, TelemetryWindow
 from nwdaf_research.provenance import build_model_manifest, write_manifest
 
 
@@ -93,6 +94,50 @@ class NWDAFResearchAnalyzer:
         """Return the numeric feature vector derived from one verified run."""
         return self._vectorize_run(run_id)[0]
 
+    def score_live_features(
+        self, features: dict[str, float], *, unavailable_features: list[str],
+    ) -> dict[str, Any]:
+        """Abstain when live evidence cannot satisfy the trained feature contract."""
+        self._train_model()
+        expected = list(self._feature_names or [])
+        missing = sorted(set(expected) - set(features))
+        invalid = []
+        for name in expected:
+            if name not in features:
+                continue
+            value = features[name]
+            try:
+                valid = not isinstance(value, bool) and bool(np.isfinite(float(value)))
+            except (TypeError, ValueError, OverflowError):
+                valid = False
+            if not valid:
+                invalid.append(name)
+        unavailable = sorted(set(unavailable_features))
+        compatibility = {
+            "expected_features": expected,
+            "missing_features": missing,
+            "invalid_features": sorted(invalid),
+            "unavailable_features": unavailable,
+            "compatible": bool(expected) and not (missing or invalid or unavailable),
+        }
+        if not compatibility["compatible"]:
+            return {
+                "predicted_label": "INSUFFICIENT_EVIDENCE",
+                "anomaly_probability": None,
+                "confidence": None,
+                "inference_performed": False,
+                "actionable": False,
+                "feature_compatibility": compatibility,
+                "interpretation": "Incomplete live evidence; no anomaly verdict or response authorization.",
+            }
+        return {
+            **self.score_features(features),
+            "inference_performed": True,
+            "actionable": False,
+            "feature_compatibility": compatibility,
+            "interpretation": "Exploratory inference only; feature completeness does not establish distribution compatibility or authorize response.",
+        }
+
     def batch_score_runs(self, run_ids: list[str] | None = None) -> list[dict[str, Any]]:
         if run_ids is None:
             run_dir = self.model.feature_builder.raw_root
@@ -104,6 +149,35 @@ class NWDAFResearchAnalyzer:
         for run_id in run_ids:
             scores.append(self.score_run(run_id))
         return scores
+
+    def score_live_window(self, window: TelemetryWindow, *, now: str) -> dict[str, Any]:
+        """Check collector and temporal evidence before invoking live inference."""
+        evidence = window.inspect(now)
+        if evidence["status"] != TelemetryStatus.READY.value:
+            return {
+                "status": evidence["status"],
+                "predicted_label": evidence["status"],
+                "anomaly_probability": None, "confidence": None,
+                "inference_performed": False, "actionable": False,
+                "lifecycle": evidence["lifecycle"],
+                "window": evidence,
+            }
+        if evidence["contract"] != FULL_CONTRACT:
+            return {
+                "status": "MODEL_NOT_APPROVED", "predicted_label": None,
+                "anomaly_probability": None, "confidence": None,
+                "inference_performed": False, "actionable": False,
+                "interpretation": "The historical model is not approved for this reduced telemetry contract.",
+                "lifecycle": evidence["lifecycle"], "window": evidence,
+            }
+        result = self.score_live_features(evidence["features"], unavailable_features=[])
+        status = "INFERENCE_COMPLETE" if result["inference_performed"] else "INSUFFICIENT_EVIDENCE"
+        return {
+            **result,
+            "status": status,
+            "lifecycle": evidence["lifecycle"] + [{"observed_at": now, "status": status}],
+            "window": evidence,
+        }
 
     def export_batch_scores(self, output_path: str | Path | None = None) -> list[dict[str, Any]]:
         scores = self.batch_score_runs()

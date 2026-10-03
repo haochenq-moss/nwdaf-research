@@ -1,0 +1,744 @@
+{
+  "causal_attribution": "not_established",
+  "collection_mode": "retrospective_log_extraction",
+  "collector_health_at_execution": "unknown",
+  "counts": {
+    "after/free5gc": 3,
+    "after/pfcp": 4,
+    "before/pfcp": 2,
+    "during/free5gc": 45,
+    "during/sbi": 12
+  },
+  "events": [
+    {
+      "category": "PFCP",
+      "direction": "request",
+      "event_time": "2026-10-02T20:58:24.416355394+08:00",
+      "event_time_ns": 1790945904416355394,
+      "nf_type": "UPF",
+      "observation_markers": [],
+      "phase": "before",
+      "source": "pfcp",
+      "source_line": 1294
+    },
+    {
+      "category": "PFCP",
+      "direction": "request",
+      "event_time": "2026-10-02T20:58:34.424021300+08:00",
+      "event_time_ns": 1790945914424021300,
+      "nf_type": "UPF",
+      "observation_markers": [],
+      "phase": "before",
+      "source": "pfcp",
+      "source_line": 1295
+    },
+    {
+      "category": "Ngap",
+      "event_time": "2026-10-02T20:58:34.634928027+08:00",
+      "event_time_ns": 1790945914634928027,
+      "nf_type": "AMF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1296
+    },
+    {
+      "category": "Ngap",
+      "event_time": "2026-10-02T20:58:34.834723109+08:00",
+      "event_time_ns": 1790945914834723109,
+      "nf_type": "AMF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1297
+    },
+    {
+      "category": "Ngap",
+      "event_time": "2026-10-02T20:58:34.887442350+08:00",
+      "event_time_ns": 1790945914887442350,
+      "nf_type": "AMF",
+      "observation_markers": [
+        "ng_setup"
+      ],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1298
+    },
+    {
+      "category": "Ngap",
+      "event_time": "2026-10-02T20:58:34.949378371+08:00",
+      "event_time_ns": 1790945914949378371,
+      "nf_type": "AMF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1299
+    },
+    {
+      "category": "Ngap",
+      "event_time": "2026-10-02T20:58:34.987617859+08:00",
+      "event_time_ns": 1790945914987617859,
+      "nf_type": "AMF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1300
+    },
+    {
+      "category": "other",
+      "event_time": "2026-10-02T20:58:35.007677594+08:00",
+      "event_time_ns": 1790945915007677594,
+      "nf_type": "AMF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1301
+    },
+    {
+      "category": "Gmm",
+      "event_time": "2026-10-02T20:58:35.019901632+08:00",
+      "event_time_ns": 1790945915019901632,
+      "nf_type": "AMF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1302
+    },
+    {
+      "category": "Gmm",
+      "event_time": "2026-10-02T20:58:35.020433237+08:00",
+      "event_time_ns": 1790945915020433237,
+      "nf_type": "AMF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1303
+    },
+    {
+      "category": "Gmm",
+      "event_time": "2026-10-02T20:58:35.024841258+08:00",
+      "event_time_ns": 1790945915024841258,
+      "nf_type": "AMF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1304
+    },
+    {
+      "category": "Gmm",
+      "event_time": "2026-10-02T20:58:35.031378437+08:00",
+      "event_time_ns": 1790945915031378437,
+      "nf_type": "AMF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1305
+    },
+    {
+      "category": "Gmm",
+      "event_time": "2026-10-02T20:58:35.040588303+08:00",
+      "event_time_ns": 1790945915040588303,
+      "nf_type": "AMF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1306
+    },
+    {
+      "category": "Gmm",
+      "event_time": "2026-10-02T20:58:35.050570226+08:00",
+      "event_time_ns": 1790945915050570226,
+      "nf_type": "AMF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1307
+    },
+    {
+      "category": "other",
+      "event_time": "2026-10-02T20:58:36.103624898+08:00",
+      "event_time_ns": 1790945916103624898,
+      "nf_type": "NRF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1308
+    },
+    {
+      "category": "GIN",
+      "event_time": "2026-10-02T20:58:36.989613106+08:00",
+      "event_time_ns": 1790945916989613106,
+      "http_method": "POST",
+      "http_status": 200,
+      "nf_type": "NRF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "sbi",
+      "source_line": 1309
+    },
+    {
+      "category": "other",
+      "event_time": "2026-10-02T20:58:37.092368544+08:00",
+      "event_time_ns": 1790945917092368544,
+      "nf_type": "NRF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1310
+    },
+    {
+      "category": "GIN",
+      "event_time": "2026-10-02T20:58:37.165574428+08:00",
+      "event_time_ns": 1790945917165574428,
+      "http_method": "GET",
+      "http_status": 200,
+      "nf_type": "NRF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "sbi",
+      "source_line": 1311
+    },
+    {
+      "category": "other",
+      "event_time": "2026-10-02T20:58:37.220790431+08:00",
+      "event_time_ns": 1790945917220790431,
+      "nf_type": "NRF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1312
+    },
+    {
+      "category": "GIN",
+      "event_time": "2026-10-02T20:58:37.337783402+08:00",
+      "event_time_ns": 1790945917337783402,
+      "http_method": "POST",
+      "http_status": 200,
+      "nf_type": "NRF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "sbi",
+      "source_line": 1313
+    },
+    {
+      "category": "other",
+      "event_time": "2026-10-02T20:58:37.859324478+08:00",
+      "event_time_ns": 1790945917859324478,
+      "nf_type": "AUSF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1314
+    },
+    {
+      "category": "other",
+      "event_time": "2026-10-02T20:58:37.869004117+08:00",
+      "event_time_ns": 1790945917869004117,
+      "nf_type": "AUSF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1315
+    },
+    {
+      "category": "other",
+      "event_time": "2026-10-02T20:58:37.926616512+08:00",
+      "event_time_ns": 1790945917926616512,
+      "nf_type": "NRF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1316
+    },
+    {
+      "category": "GIN",
+      "event_time": "2026-10-02T20:58:37.951957363+08:00",
+      "event_time_ns": 1790945917951957363,
+      "http_method": "POST",
+      "http_status": 200,
+      "nf_type": "NRF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "sbi",
+      "source_line": 1317
+    },
+    {
+      "category": "other",
+      "event_time": "2026-10-02T20:58:37.991360500+08:00",
+      "event_time_ns": 1790945917991360500,
+      "nf_type": "NRF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1318
+    },
+    {
+      "category": "GIN",
+      "event_time": "2026-10-02T20:58:38.057693704+08:00",
+      "event_time_ns": 1790945918057693704,
+      "http_method": "GET",
+      "http_status": 200,
+      "nf_type": "NRF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "sbi",
+      "source_line": 1319
+    },
+    {
+      "category": "other",
+      "event_time": "2026-10-02T20:58:38.089503734+08:00",
+      "event_time_ns": 1790945918089503734,
+      "nf_type": "NRF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1320
+    },
+    {
+      "category": "GIN",
+      "event_time": "2026-10-02T20:58:38.258047340+08:00",
+      "event_time_ns": 1790945918258047340,
+      "http_method": "POST",
+      "http_status": 200,
+      "nf_type": "NRF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "sbi",
+      "source_line": 1321
+    },
+    {
+      "category": "other",
+      "event_time": "2026-10-02T20:58:39.124824939+08:00",
+      "event_time_ns": 1790945919124824939,
+      "nf_type": "UDM",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1322
+    },
+    {
+      "category": "other",
+      "event_time": "2026-10-02T20:58:39.190267389+08:00",
+      "event_time_ns": 1790945919190267389,
+      "nf_type": "NRF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1323
+    },
+    {
+      "category": "GIN",
+      "event_time": "2026-10-02T20:58:39.204581514+08:00",
+      "event_time_ns": 1790945919204581514,
+      "http_method": "POST",
+      "http_status": 200,
+      "nf_type": "NRF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "sbi",
+      "source_line": 1324
+    },
+    {
+      "category": "other",
+      "event_time": "2026-10-02T20:58:39.220728182+08:00",
+      "event_time_ns": 1790945919220728182,
+      "nf_type": "UDM",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1325
+    },
+    {
+      "category": "other",
+      "event_time": "2026-10-02T20:58:39.221154618+08:00",
+      "event_time_ns": 1790945919221154618,
+      "nf_type": "UDM",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1326
+    },
+    {
+      "category": "other",
+      "event_time": "2026-10-02T20:58:39.225644050+08:00",
+      "event_time_ns": 1790945919225644050,
+      "nf_type": "NRF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1327
+    },
+    {
+      "category": "GIN",
+      "event_time": "2026-10-02T20:58:39.241546707+08:00",
+      "event_time_ns": 1790945919241546707,
+      "http_method": "POST",
+      "http_status": 200,
+      "nf_type": "NRF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "sbi",
+      "source_line": 1328
+    },
+    {
+      "category": "other",
+      "event_time": "2026-10-02T20:58:40.284431225+08:00",
+      "event_time_ns": 1790945920284431225,
+      "nf_type": "NRF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1329
+    },
+    {
+      "category": "GIN",
+      "event_time": "2026-10-02T20:58:40.287083245+08:00",
+      "event_time_ns": 1790945920287083245,
+      "http_method": "GET",
+      "http_status": 200,
+      "nf_type": "NRF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "sbi",
+      "source_line": 1330
+    },
+    {
+      "category": "other",
+      "event_time": "2026-10-02T20:58:40.903821673+08:00",
+      "event_time_ns": 1790945920903821673,
+      "nf_type": "UDR",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1331
+    },
+    {
+      "category": "GIN",
+      "event_time": "2026-10-02T20:58:40.922038017+08:00",
+      "event_time_ns": 1790945920922038017,
+      "http_method": "GET",
+      "http_status": 404,
+      "nf_type": "UDR",
+      "observation_markers": [
+        "authentication_subscription"
+      ],
+      "phase": "during",
+      "source": "sbi",
+      "source_line": 1332
+    },
+    {
+      "category": "other",
+      "event_time": "2026-10-02T20:58:40.938232881+08:00",
+      "event_time_ns": 1790945920938232881,
+      "nf_type": "UDM",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1333
+    },
+    {
+      "category": "other",
+      "event_time": "2026-10-02T20:58:40.938632740+08:00",
+      "event_time_ns": 1790945920938632740,
+      "nf_type": "UDM",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1334
+    },
+    {
+      "category": "GIN",
+      "event_time": "2026-10-02T20:58:40.938867249+08:00",
+      "event_time_ns": 1790945920938867249,
+      "http_method": "POST",
+      "http_status": 404,
+      "nf_type": "UDM",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "sbi",
+      "source_line": 1335
+    },
+    {
+      "category": "GIN",
+      "event_time": "2026-10-02T20:58:40.954027497+08:00",
+      "event_time_ns": 1790945920954027497,
+      "http_method": "POST",
+      "http_status": 404,
+      "nf_type": "AUSF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "sbi",
+      "source_line": 1336
+    },
+    {
+      "category": "Gmm",
+      "event_time": "2026-10-02T20:58:40.986838280+08:00",
+      "event_time_ns": 1790945920986838280,
+      "nf_type": "AMF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1337
+    },
+    {
+      "category": "Gmm",
+      "event_time": "2026-10-02T20:58:40.988512422+08:00",
+      "event_time_ns": 1790945920988512422,
+      "nf_type": "AMF",
+      "observation_markers": [
+        "registration_reject"
+      ],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1338
+    },
+    {
+      "category": "Ngap",
+      "event_time": "2026-10-02T20:58:40.988852716+08:00",
+      "event_time_ns": 1790945920988852716,
+      "nf_type": "AMF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1339
+    },
+    {
+      "category": "Gmm",
+      "event_time": "2026-10-02T20:58:40.989701532+08:00",
+      "event_time_ns": 1790945920989701532,
+      "nf_type": "AMF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1340
+    },
+    {
+      "category": "Gmm",
+      "event_time": "2026-10-02T20:58:40.990264360+08:00",
+      "event_time_ns": 1790945920990264360,
+      "nf_type": "AMF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1341
+    },
+    {
+      "category": "Gmm",
+      "event_time": "2026-10-02T20:58:40.990795679+08:00",
+      "event_time_ns": 1790945920990795679,
+      "nf_type": "AMF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1342
+    },
+    {
+      "category": "Gmm",
+      "event_time": "2026-10-02T20:58:40.992134452+08:00",
+      "event_time_ns": 1790945920992134452,
+      "nf_type": "AMF",
+      "observation_markers": [
+        "registration_reject"
+      ],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1343
+    },
+    {
+      "category": "Ngap",
+      "event_time": "2026-10-02T20:58:40.999426469+08:00",
+      "event_time_ns": 1790945920999426469,
+      "nf_type": "AMF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1344
+    },
+    {
+      "category": "Ngap",
+      "event_time": "2026-10-02T20:58:41.038562721+08:00",
+      "event_time_ns": 1790945921038562721,
+      "nf_type": "AMF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1345
+    },
+    {
+      "category": "Ngap",
+      "event_time": "2026-10-02T20:58:41.038793591+08:00",
+      "event_time_ns": 1790945921038793591,
+      "nf_type": "AMF",
+      "observation_markers": [
+        "sctp_shutdown"
+      ],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1346
+    },
+    {
+      "category": "Ngap",
+      "event_time": "2026-10-02T20:58:41.038946703+08:00",
+      "event_time_ns": 1790945921038946703,
+      "nf_type": "AMF",
+      "observation_markers": [
+        "ran_context_removal"
+      ],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1347
+    },
+    {
+      "category": "Ngap",
+      "event_time": "2026-10-02T20:58:41.039124827+08:00",
+      "event_time_ns": 1790945921039124827,
+      "nf_type": "AMF",
+      "observation_markers": [],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1348
+    },
+    {
+      "category": "Ngap",
+      "event_time": "2026-10-02T20:58:41.040475486+08:00",
+      "event_time_ns": 1790945921040475486,
+      "nf_type": "AMF",
+      "observation_markers": [
+        "ran_context_removal"
+      ],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1349
+    },
+    {
+      "category": "Ngap",
+      "event_time": "2026-10-02T20:58:41.040634619+08:00",
+      "event_time_ns": 1790945921040634619,
+      "nf_type": "AMF",
+      "observation_markers": [
+        "ran_context_removal"
+      ],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1350
+    },
+    {
+      "category": "Ngap",
+      "event_time": "2026-10-02T20:58:41.040708625+08:00",
+      "event_time_ns": 1790945921040708625,
+      "nf_type": "AMF",
+      "observation_markers": [
+        "ran_context_removal"
+      ],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1351
+    },
+    {
+      "category": "Ngap",
+      "event_time": "2026-10-02T20:58:41.040804795+08:00",
+      "event_time_ns": 1790945921040804795,
+      "nf_type": "AMF",
+      "observation_markers": [
+        "ng_setup"
+      ],
+      "phase": "during",
+      "source": "free5gc",
+      "source_line": 1352
+    },
+    {
+      "category": "PFCP",
+      "direction": "request",
+      "event_time": "2026-10-02T20:58:44.440585199+08:00",
+      "event_time_ns": 1790945924440585199,
+      "nf_type": "UPF",
+      "observation_markers": [],
+      "phase": "after",
+      "source": "pfcp",
+      "source_line": 1353
+    },
+    {
+      "category": "other",
+      "event_time": "2026-10-02T20:58:47.743457898+08:00",
+      "event_time_ns": 1790945927743457898,
+      "nf_type": "UPF",
+      "observation_markers": [],
+      "phase": "after",
+      "source": "free5gc",
+      "source_line": 1354
+    },
+    {
+      "category": "PFCP",
+      "direction": "unknown",
+      "event_time": "2026-10-02T20:58:47.747651405+08:00",
+      "event_time_ns": 1790945927747651405,
+      "nf_type": "UPF",
+      "observation_markers": [],
+      "phase": "after",
+      "source": "pfcp",
+      "source_line": 1355
+    },
+    {
+      "category": "other",
+      "event_time": "2026-10-02T20:58:47.748552749+08:00",
+      "event_time_ns": 1790945927748552749,
+      "nf_type": "SMF",
+      "observation_markers": [],
+      "phase": "after",
+      "source": "free5gc",
+      "source_line": 1356
+    },
+    {
+      "category": "other",
+      "event_time": "2026-10-02T20:58:47.748662551+08:00",
+      "event_time_ns": 1790945927748662551,
+      "nf_type": "SMF",
+      "observation_markers": [],
+      "phase": "after",
+      "source": "free5gc",
+      "source_line": 1357
+    },
+    {
+      "category": "PFCP",
+      "direction": "response",
+      "event_time": "2026-10-02T20:58:47.749859016+08:00",
+      "event_time_ns": 1790945927749859016,
+      "nf_type": "UPF",
+      "observation_markers": [],
+      "phase": "after",
+      "source": "pfcp",
+      "source_line": 1358
+    },
+    {
+      "category": "PFCP",
+      "direction": "request",
+      "event_time": "2026-10-02T20:58:54.459689537+08:00",
+      "event_time_ns": 1790945934459689537,
+      "nf_type": "UPF",
+      "observation_markers": [],
+      "phase": "after",
+      "source": "pfcp",
+      "source_line": 1359
+    }
+  ],
+  "input_sha256": "49532803b6dd390d756842cf17aa830f0117e2262ec26f85e333d1c097e1b53a",
+  "limitations": [
+    "Log events are shared-host observations, not exclusive attribution to the test UE.",
+    "No historical collector health, kernel/packet completeness or Linux samples are reconstructed.",
+    "Regex markers are observations to review, not proof of successful release or causality."
+  ],
+  "linux_samples": null,
+  "model_training_ready": false,
+  "monotonic_clock_evidence": null,
+  "recovered_at": "2026-10-03T06:22:13.658289+00:00",
+  "run_id": "RNAS0001",
+  "schema_version": "retrospective-nas-log-recovery-v1",
+  "source_log": "~/free5gc/log/20261002_200341/free5gc.log",
+  "source_log_sha256": "33134d9795cbdc46df9558596ca14214554a39ca82713fd1d505cfd1ecf9c800",
+  "source_size_bytes": 386186,
+  "source_unchanged_during_read": true,
+  "telemetry_window_ready": false,
+  "unparsed_timestamp_line_count": 0,
+  "window_end": "2026-10-02T20:58:41.040804795+08:00",
+  "window_start": "2026-10-02T20:58:34.634928027+08:00"
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": "passive-nas-activity-check-v1",
+  "campaign_path": "data/input_testing/passive-nas-activity-check-20261003",
+  "contract": "linux-sbi-pfcp-v1",
+  "observation_start_projected_utc": "2026-10-03T06:30:25.614558+00:00",
+  "observation_end_projected_utc": "2026-10-03T06:31:25.615893+00:00",
+  "clock_basis": "CLOCK_MONOTONIC_PROJECTED_UTC",
+  "collection_status": "READY",
+  "windows": [
+    {"window_id": "WBASE001", "feature_count": 16, "linux_samples": 10, "sbi_events": 0, "pfcp_events": 1},
+    {"window_id": "WBASE002", "feature_count": 16, "linux_samples": 10, "sbi_events": 0, "pfcp_events": 3},
+    {"window_id": "WBASE003", "feature_count": 16, "linux_samples": 10, "sbi_events": 0, "pfcp_events": 1}
+  ],
+  "nas_activity_log_check": {
+    "source_log": "~/free5gc/log/20261003_101446/free5gc.log",
+    "source_snapshot_sha256": "1fda54b008e46eda7b6030e5bc9a7454251e2ce19c542ff35b702fe911a39d24",
+    "source_snapshot_bytes": 603240,
+    "timestamp_parse_failures": 0,
+    "full_observation_interval_includes_warmup": true,
+    "category_counts": {"PFCP": 10, "other": 6},
+    "nas_related_log_records": [],
+    "method": "Exact nanosecond log timestamp filtering and coarse NAS-related category/message-pattern inspection",
+    "limitation": "No matching log records does not prove absence of all NAS traffic; this is not packet capture or validated parser completeness"
+  },
+  "classification": "background_observation_no_new_nas_case_established",
+  "new_nas_case_count": 0,
+  "exact_nas_input_identity": null,
+  "ground_truth_label": null,
+  "independent_label_review": "PENDING",
+  "model_training_ready": false,
+  "testbed_protocol_stimulus_executed": false,
+  "ue_restart_executed": false,
+  "active_gnb_pid_observed": 63862,
+  "active_ue_pid_observed": 64022,
+  "inference_performed": false,
+  "mitigation_executed": false,
+  "invalid_intermediate_check": "A Python-3.8 nanosecond datetime parsing check initially failed; its empty-count result was discarded and replaced by exact integer-nanosecond parsing",
+  "next_requirement": "A separately operated standard synthetic-UE NAS activity, coordinated in advance with passive capture; preserve the existing active UE"
+}

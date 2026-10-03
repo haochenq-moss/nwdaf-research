@@ -1,0 +1,17 @@
+{
+  "window_id": "WBASE001",
+  "contract": "linux-sbi-pfcp-v1",
+  "clock_basis": "CLOCK_MONOTONIC_PROJECTED_UTC",
+  "start_index": 30,
+  "end_index": 40,
+  "nominal_duration_sec": 10,
+  "actual_duration_sec": 9.998548,
+  "warmup_admitted": true,
+  "capture_complete": true,
+  "declared_label": "normal/passive",
+  "label_basis": "declared_by_protocol_not_validated",
+  "start_monotonic_ns": 48823476783491,
+  "end_monotonic_ns": 48833475331081,
+  "start_projected_at": "2026-10-03T05:10:44.052601+00:00",
+  "end_projected_at": "2026-10-03T05:10:54.051149+00:00"
+}

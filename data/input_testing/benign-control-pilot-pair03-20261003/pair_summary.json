@@ -1,0 +1,59 @@
+{
+  "schema": "benign-control-pair-v1",
+  "pair_id": 3,
+  "group": "pilot-pair-03",
+  "split": "pilot",
+  "attempt_id": "b3ce41fd-4544-4d31-ae02-f6df02ac06c0",
+  "plan_sha256": "1589f643ddd1bfcf5fd068c21f3d682ef5d6504242afc5d0883f1a3788b17b77",
+  "collector_module_sha256": "8d459d430b6f7a1cc0fbfce98f7d395705f4b5800dad2ddc9c3eb38fbdd6db26",
+  "control_module_sha256": "1babd8c8d9eb8987f8c5e3aaaf82ac284243154dd312e105471b2dda1d27b988",
+  "remote_code_sha256": "5a9c9e4b2c225f59b9fd996518cc289aa2742f6af8d50ac50cff907dddb144a4",
+  "benign_remote_code_sha256": "8e4d22656d133aa610f5914034c95a80b65587e84d8dbc1137248d181e636b13",
+  "registered_nf_instance_id": "53494dfe-e7bc-4709-a240-44db37750381",
+  "condition_order": [
+    "benign_nrf",
+    "passive"
+  ],
+  "status": "READY",
+  "executed_conditions": [
+    "benign_nrf",
+    "passive"
+  ],
+  "outcomes": {
+    "benign_nrf": {
+      "status": "READY",
+      "blockers": [],
+      "window_status_counts": {
+        "READY": 3
+      },
+      "campaign_dir": "/home/msai/qinh0007/nwdaf-research/data/input_testing/benign-control-pilot-pair03-20261003/benign_nrf",
+      "manifest_path": "/home/msai/qinh0007/nwdaf-research/data/input_testing/benign-control-pilot-pair03-20261003/benign_nrf/manifest.json",
+      "report_path": "/home/msai/qinh0007/nwdaf-research/data/input_testing/benign-control-pilot-pair03-20261003/benign_nrf/report.json",
+      "condition": "benign_nrf",
+      "provenance_verified": true,
+      "collector_module_sha256": "8d459d430b6f7a1cc0fbfce98f7d395705f4b5800dad2ddc9c3eb38fbdd6db26",
+      "remote_code_sha256": "8e4d22656d133aa610f5914034c95a80b65587e84d8dbc1137248d181e636b13"
+    },
+    "passive": {
+      "status": "READY",
+      "blockers": [],
+      "window_status_counts": {
+        "READY": 3
+      },
+      "campaign_dir": "/home/msai/qinh0007/nwdaf-research/data/input_testing/benign-control-pilot-pair03-20261003/passive",
+      "manifest_path": "/home/msai/qinh0007/nwdaf-research/data/input_testing/benign-control-pilot-pair03-20261003/passive/manifest.json",
+      "report_path": "/home/msai/qinh0007/nwdaf-research/data/input_testing/benign-control-pilot-pair03-20261003/passive/report.json",
+      "condition": "passive",
+      "provenance_verified": true,
+      "collector_module_sha256": "8d459d430b6f7a1cc0fbfce98f7d395705f4b5800dad2ddc9c3eb38fbdd6db26",
+      "remote_code_sha256": "5a9c9e4b2c225f59b9fd996518cc289aa2742f6af8d50ac50cff907dddb144a4"
+    }
+  },
+  "error_type": null,
+  "control_valid": true,
+  "blockers": [],
+  "middle_sbi_event_count_delta": 2,
+  "inference_performed": false,
+  "label_basis": "declared_by_protocol_not_validated",
+  "efficacy_claim": false
+}

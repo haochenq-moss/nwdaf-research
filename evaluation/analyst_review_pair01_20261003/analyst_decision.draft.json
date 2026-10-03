@@ -1,0 +1,17 @@
+{
+  "checks": {
+    "artifact_identity": false,
+    "background_activity_limits": false,
+    "fixture_and_label_basis": false,
+    "operation_synchronization": false,
+    "provenance_limitations": false,
+    "window_integrity": false
+  },
+  "decision": "inconclusive",
+  "independence_declared": false,
+  "packet_binding_sha256": "a114c50e9082c0af67bce79ecde8d85ed4a124cace0adc9a1655ab0325294be5",
+  "rationale": "",
+  "reviewed_at": null,
+  "reviewer_id": "",
+  "schema_version": "benign-pair-analyst-decision-v1"
+}

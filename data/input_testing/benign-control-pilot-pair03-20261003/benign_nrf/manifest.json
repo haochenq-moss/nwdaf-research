@@ -1,0 +1,63 @@
+{
+  "schema": "passive-campaign-v1",
+  "contract": "linux-sbi-pfcp-v1",
+  "source_count": 3,
+  "hostname": "free5gc",
+  "boot_id": "b7be8cad-6385-400f-9164-3362839e91cc",
+  "git_revision": "4aa237be57404dea5b49ca8f332c6e25ede052de",
+  "parser_paths": {
+    "sbi": "research/collectors/sbi.py",
+    "pfcp": "research/collectors/pfcp.py"
+  },
+  "clock_basis": "CLOCK_MONOTONIC_PROJECTED_UTC",
+  "clock_domain": "free5gc/b7be8cad-6385-400f-9164-3362839e91cc/CLOCK_MONOTONIC",
+  "collector_instance_id": "4ab7583e-0b4b-4053-8101-6471396183d5",
+  "anchor_monotonic_ns": 48651657273718,
+  "anchor_projected_utc": "2026-10-03T05:07:52.233086+00:00",
+  "warmup_sec": 30,
+  "window_count": 3,
+  "nominal_duration_sec": 10,
+  "read_budget": {
+    "source_poll_bytes": 2097152,
+    "per_log_bytes": 524288,
+    "aggregate_poll_bytes": 2097152
+  },
+  "source_notes": {
+    "linux": "Synchronous /proc/loadavg and /proc/meminfo observations.",
+    "sbi": "Log-derived SBI from the newest timestamped run directory, not pcap; unmatched semantic lines cannot certify parser completeness.",
+    "pfcp": "Log-derived PFCP from the newest timestamped run directory, not pcap; unmatched semantic lines cannot certify parser completeness.",
+    "time": "Observation-time cursor reads; projected monotonic time, not physical UTC, packet time or causal subscriber actions."
+  },
+  "collection_semantics": "observation_time_cursor_reads_excluding_preexisting_history",
+  "network_transmission_executed": true,
+  "transport": "single_ssh_acquisition_with_fixed_benign_nrf",
+  "network_transmission_scope": "Fixed OAuth and one fixed read-only NRF discovery only; active UE not modified; continuity not verified.",
+  "publication_policy": "atomic_noreplace_when_supported_else_exclusive_hardlinks_with_rollback",
+  "inference_performed": false,
+  "active_ue_not_modified": true,
+  "parser_sha256": {
+    "sbi": "7fd216c3b1b9f58b10ee2bcc916f0eed4c438664e75bd5cea9fb4715cb5cbfe5",
+    "pfcp": "d739ca926fd3d51ab2a219750499b01c7dc9e5bef465ddce5fcbc5bfb71ca861"
+  },
+  "condition": "benign_nrf",
+  "operation_receipt": {
+    "schema": "benign-nrf-receipt-v1",
+    "method": "GET",
+    "request_identity": "GET /nnrf-disc/v1/nf-instances?requester-nf-type=AMF&target-nf-type=AUSF&service-names=nausf-auth; Authorization/token excluded",
+    "request_target_sha256": "d25edf729beac2de92eaa6256840654661a01867f8701f0d2ad1c4e81a026eb0",
+    "auth_performed": true,
+    "performed": true,
+    "auth_status": 200,
+    "http_status": 200,
+    "operation_start_monotonic_ns": 48692685111433,
+    "operation_end_monotonic_ns": 48692718451127,
+    "discovery_start_monotonic_ns": 48692715654939,
+    "discovery_end_monotonic_ns": 48692718446938,
+    "operation_error": null,
+    "worker_completed": true,
+    "warmup_admitted": true,
+    "trigger_index": 41
+  },
+  "control_valid": true,
+  "generated_traffic_status": "discovery_attempted"
+}
